@@ -202,6 +202,33 @@ body {
   margin-bottom: 1rem;
 }
 
+/* About section — long-form prose inside the CRT theme.
+ * Capped at ~70ch for readability (per feedback-full-width-content: prose
+ * is the exception to the full-width rule). No scanlines on the prose
+ * itself — those only overlay .terminal::after. */
+.about-section {
+  background: var(--terminal-bg);
+  color: var(--terminal-fg);
+  font-family: var(--terminal-font);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  padding: 4rem 1.5rem;
+}
+
+.about-section h2 {
+  color: var(--terminal-accent);
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.about-prose {
+  max-width: 70ch;
+}
+
+.about-prose p + p {
+  margin-top: 1.5rem;
+}
+
 /* Skills section — categorized grid, data from content/resume.json (#04). */
 .skills-section {
   background: var(--terminal-bg);
