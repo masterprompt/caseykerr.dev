@@ -37,3 +37,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# personal source materials (private drafts; canonical resume comes from resumatic
+# via content/resume.json per docs/adr/0002)
+/docs/profile.md
+/docs/resume.md
+/docs/experience.md
+
+# Claude Code per-user state (shared settings, if any, live in .claude/settings.json)
+.claude/settings.local.json
