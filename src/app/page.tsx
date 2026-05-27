@@ -1,13 +1,14 @@
 import { AboutSection } from "@/components/sections/AboutSection";
+import { NowSection } from "@/components/sections/NowSection";
 import { SkillsSection } from "@/components/sections/SkillsSection";
 import { Terminal } from "@/components/terminal/Terminal";
 
 // Sections rendered below the Terminal hero. Custom-component sections opt
 // into their own renderer; the rest use the placeholder until the matching
-// content slice lands (#07 Now, #08 Projects+Contact).
+// content slice lands (#08 Projects+Contact, future Work).
 const SECTIONS: { id: string; title: string; Component?: () => React.ReactNode }[] = [
   { id: "about", title: "About", Component: AboutSection },
-  { id: "now", title: "Now" },
+  { id: "now", title: "Now", Component: NowSection },
   { id: "work", title: "Work" },
   { id: "projects", title: "Projects" },
   { id: "skills", title: "Skills", Component: SkillsSection },

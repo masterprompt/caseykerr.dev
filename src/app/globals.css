@@ -221,12 +221,90 @@ body {
   margin-bottom: 2rem;
 }
 
-.about-prose {
-  max-width: 70ch;
-}
-
 .about-prose p + p {
   margin-top: 1.5rem;
+}
+
+/* Now section — Sivers-convention `/now` content. Also rendered standalone
+ * at /now for nownownow.com indexing (see src/app/now/page.tsx). */
+.now-section {
+  background: var(--terminal-bg);
+  color: var(--terminal-fg);
+  font-family: var(--terminal-font);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  padding: 4rem 1.5rem;
+}
+
+.now-section h2 {
+  color: var(--terminal-accent);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.now-meta {
+  opacity: 0.6;
+  font-size: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+.now-intro {
+  margin-bottom: 1rem;
+}
+
+.now-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.now-list li {
+  margin-bottom: 1.5rem;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.now-list li::before {
+  content: "·";
+  color: var(--terminal-accent);
+  opacity: 0.7;
+  position: absolute;
+  left: 0;
+}
+
+.now-list strong {
+  color: var(--terminal-accent);
+  font-weight: 600;
+}
+
+.now-footer {
+  margin-top: 2rem;
+  opacity: 0.75;
+  font-size: 0.9rem;
+}
+
+.now-link {
+  color: var(--terminal-accent);
+  text-decoration: underline;
+}
+
+.now-footer code {
+  font-family: inherit;
+  background: rgba(255, 176, 0, 0.1);
+  padding: 0 0.25rem;
+  border-radius: 2px;
+}
+
+.now-back-nav {
+  background: var(--terminal-bg);
+  font-family: var(--terminal-font);
+  font-size: 0.9rem;
+  padding: 0 1.5rem 4rem;
+}
+
+.now-back-nav a {
+  color: var(--terminal-accent);
+  text-decoration: underline;
 }
 
 /* Skills section — categorized grid, data from content/resume.json (#04). */
