@@ -14,6 +14,12 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+# Opt JavaScript actions into Node.js 24 ahead of GitHub's 2026-06-02 cutover
+# so the runner stops emitting deprecation warnings for actions/checkout@v4,
+# configure-pages@v5, setup-node@v4, and transitive upload-artifact@v4.
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 jobs:
   build:
     runs-on: ubuntu-latest
