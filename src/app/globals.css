@@ -5,12 +5,14 @@
   --foreground: #171717;
 
   /* CRT Terminal hero theme tokens.
-   * Vocabulary per CONTEXT.md; consumed by later slices (#03 REPL polish,
-   * #07/#08 prose styling, #12 scanlines/bloom). */
-  --terminal-bg: #0a0a0a;
+   * Vocabulary per CONTEXT.md; consumed across slices (#03 REPL,
+   * #07/#08 prose, #12 scanlines + bloom). Tunable here. */
+  --terminal-bg: #141414;
   --terminal-fg: #39ff14;
   --terminal-accent: #ffb000;
   --terminal-font: var(--font-geist-mono), "Courier New", ui-monospace, monospace;
+  --terminal-bloom: 0 0 3px currentColor;
+  --terminal-scanline-opacity: 0.45;
 }
 
 @theme inline {
@@ -47,6 +49,58 @@ body {
   min-height: 100vh;
   padding: 2rem 1.5rem;
   cursor: text;
+  position: relative; /* anchor for the ::after scanline overlay */
+  text-shadow: var(--terminal-bloom);
+}
+
+/* Scanlines + subtle flicker — overlay sits above content via ::after but
+ * doesn't block clicks (pointer-events: none). Lines are ~1px on / 2px off
+ * at low opacity; readability stays fine. */
+.terminal::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.6) 0,
+    rgba(0, 0, 0, 0.6) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  opacity: var(--terminal-scanline-opacity);
+  animation: terminal-flicker 8s infinite;
+}
+
+@keyframes terminal-flicker {
+  0%,
+  92%,
+  100% {
+    opacity: var(--terminal-scanline-opacity);
+  }
+  93% {
+    opacity: calc(var(--terminal-scanline-opacity) - 0.05);
+  }
+  94% {
+    opacity: calc(var(--terminal-scanline-opacity) + 0.05);
+  }
+  96% {
+    opacity: calc(var(--terminal-scanline-opacity) - 0.03);
+  }
+  98% {
+    opacity: var(--terminal-scanline-opacity);
+  }
+}
+
+/* Respect the user's motion preference: kill the cursor blink, scanline
+ * flicker, and dance bounce. Scanlines themselves stay (static is fine);
+ * the cursor stays visible as a solid block. */
+@media (prefers-reduced-motion: reduce) {
+  .terminal::after,
+  .terminal-cursor,
+  .terminal-dance {
+    animation: none;
+  }
 }
 
 .terminal-line {
