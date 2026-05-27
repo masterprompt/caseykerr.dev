@@ -1,10 +1,7 @@
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-900">
-      <main className="text-center">
-        <h1 className="text-5xl font-bold text-white mb-4">Casey Kerr</h1>
-        <p className="text-xl text-zinc-400">Coming Soon</p>
-      </main>
-    </div>
+    <main className="flex min-h-screen items-center justify-center bg-black px-6 font-mono text-sm text-zinc-400">
+      caseykerr.dev — coming soon. — Casey
+    </main>
   );
 }
