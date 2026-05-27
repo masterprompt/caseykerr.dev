@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 
 import { ConsoleEgg } from "@/components/eggs/ConsoleEgg";
 
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
 };
 
 // View-source easter egg (#09). JSX can't render real HTML comments, so we
-// deliver this as an inert <script type="application/x-source-art"> tag —
+// deliver this as an inert <script type="application/x-source-art"> tag;
 // browser ignores the unknown script type, but view-source shows the ASCII
 // art and credits clean and legible right up at the top of <head>.
 const SOURCE_ART = `
@@ -50,7 +51,7 @@ const SOURCE_ART = `
   if you're reading this, you're my kind of nerd. say hi:
   me@caseykerr.com
 
-  (this page is also a terminal — try typing 'help' in the box up top,
+  (this page is also a terminal. try typing 'help' in the box up top,
    or 'help()' in this console.)
 
 `;
@@ -73,6 +74,14 @@ export default function RootLayout({
       >
         <ConsoleEgg />
         {children}
+        {/* GoatCounter pageview tracking (#13). No cookies, no fingerprinting;
+            counts page hits and basic referrer data only. Loaded after
+            hydration so it doesn't block first paint. */}
+        <Script
+          data-goatcounter="https://masterprompt.goatcounter.com/count"
+          src="https://gc.zgo.at/count.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

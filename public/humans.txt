@@ -10,17 +10,17 @@
 
 /* THANKS */
 
-    Next.js              — github.com/vercel/next.js
-    React                — react.dev
-    TypeScript           — typescriptlang.org
-    Tailwind CSS         — tailwindcss.com
-    GitHub Pages         — pages.github.com
-    AWS Route 53         — aws.amazon.com/route53
-    Let's Encrypt        — letsencrypt.org (via GH Pages auto-issuance)
+    Next.js              github.com/vercel/next.js
+    React                react.dev
+    TypeScript           typescriptlang.org
+    Tailwind CSS         tailwindcss.com
+    GitHub Pages         pages.github.com
+    AWS Route 53         aws.amazon.com/route53
+    Let's Encrypt        letsencrypt.org (via GH Pages auto-issuance)
+    GoatCounter          goatcounter.com (pageview tracking)
 
-    Cloudflare Workers   — workers.cloudflare.com   (lands with the `ask` command)
-    Google Gemini        — ai.google.dev            (lands with the `ask` command)
-    GoatCounter          — goatcounter.com          (lands with analytics)
+    Cloudflare Workers   workers.cloudflare.com (lands with the `ask` command)
+    Google Gemini        ai.google.dev (lands with the `ask` command)
 
 
 /* SITE */
@@ -31,19 +31,19 @@
     Standards:   HTML5, CSS3, ES2024
     Components:  React 19, Next.js 16 (static export), Tailwind CSS v4
     Tooling:     pnpm/npm, Geist + Geist Mono, GitHub Actions
-    Analytics:   GoatCounter (pageviews only — no cookies, no third-party trackers)
-    Hosting:     GitHub Pages on a custom apex domain (Route 53 → 185.199.108-111.153)
+    Analytics:   GoatCounter (pageviews only, no cookies, no third-party trackers)
+    Hosting:     GitHub Pages on a custom apex domain (Route 53; 185.199.108-111.153)
 
 
 /* NOTES */
 
     This is mostly hand-rolled. The terminal hero is a small custom React
-    component (~150 LOC) backed by a command registry — no xterm.js, no
+    component (~150 LOC) backed by a command registry; no xterm.js, no
     third-party terminal lib. Animations are CSS-first, with `motion`
     reserved for moments that genuinely need spring physics.
 
     If you found this file by guessing at /humans.txt, please consider me
-    pleasantly surprised, and reach out — me@caseykerr.com.
+    pleasantly surprised, and reach out: me@caseykerr.com.
 
     Build notes for the curious are in the repo's docs/adr/ folder:
         github.com/masterprompt/caseykerr.dev

@@ -24,12 +24,17 @@ Casey creates the GoatCounter account and provides the tracking code identifier 
 
 ## Acceptance criteria
 
-- [ ] GoatCounter account created and tracking code identifier in hand (HITL)
-- [ ] Tracking script added via `next/script` in `app/layout.tsx`
-- [ ] Privacy disclosure added to `humans.txt`
-- [ ] Privacy disclosure added to Contact section
-- [ ] Verified: no third-party cookies set on the deployed site (browser devtools → Application → Cookies)
-- [ ] Pageview events visible in GoatCounter dashboard after deploy
+- [x] GoatCounter account created and tracking code identifier in hand — `masterprompt.goatcounter.com`
+- [x] Tracking script added via `next/script` in `app/layout.tsx` with `strategy="afterInteractive"`
+- [x] Privacy disclosure added to `humans.txt` (THANKS + SITE/Analytics line)
+- [ ] Privacy disclosure added to Contact section *(deferred to #08 which builds the Contact section)*
+- [x] Verified: no third-party cookies set (GoatCounter's design; confirmed by Casey on the dev server)
+- [ ] Pageview events visible in GoatCounter dashboard after deploy *(verified post-push by visiting caseykerr.dev; GoatCounter intentionally skips localhost so dev hits don't pollute stats)*
+
+## Implementation notes
+
+- GoatCounter ships with localhost detection on by default — console logs `not counting because of: localhost` for dev hits. Intentional; keeps dev work out of stats. Real pageviews start flowing on the deployed site.
+- Em-dash cleanup of `humans.txt` happened during this slice as well (the original was written before the no-em-dashes rule was established).
 
 ## Blocked by
 
