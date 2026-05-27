@@ -15,7 +15,7 @@ This is the foundation every other slice depends on.
 - [x] `npm run build` produces a successful static export to `out/`
 - [x] GitHub Actions workflow runs to completion on push to `main`
 - [x] `caseykerr.dev` resolves and serves the hello-world content (verified via HTTP — title "Casey Kerr", body matches expected)
-- [ ] HTTPS works (waiting on GitHub Pages to auto-provision the Let's Encrypt cert; toggle "Enforce HTTPS" in repo Settings → Pages once available)
+- [x] HTTPS works — cert provisioned overnight (2026-05-27 AM); `https://caseykerr.dev` returns 200 and HTTP→HTTPS redirect is active
 - [x] CNAME file in `/public` is preserved through the build (confirmed `out/CNAME` contains `caseykerr.dev`)
 - [x] No console errors on load
 - [x] Build artifact size noted: **1.2 MB**

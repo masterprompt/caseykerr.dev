@@ -1,0 +1,2413 @@
+{
+  "meta": {
+    "name": "Casey Kerr",
+    "email": "me@caseykerr.com",
+    "location": "Waukesha, Wisconsin",
+    "linkedin": "linkedin.com/in/caseykerr",
+    "github": "github.com/masterprompt",
+    "portfolio": ""
+  },
+  "headline_default": "Senior Software Engineer — Full-Stack (React, Node.js, AWS)",
+  "summary_default": "Senior Software Engineer with deep full-stack expertise (React, Node.js, AWS) and a proven\ntrack record of modernizing legacy codebases, designing scalable architectures, and\nstreamlining CI/CD pipelines. Skilled in mentoring junior developers, integrating third-party\nsolutions, and leading technical teams to build both consumer-facing and enterprise\napplications. Adept at collaborating with cross-functional teams, managing agile projects, and\ninterfacing directly with stakeholders to deliver impactful, high-quality software.\n",
+  "skills": [
+    {
+      "id": "react",
+      "label": "React.js",
+      "category": "frontend",
+      "tags": [
+        "core",
+        "frontend"
+      ]
+    },
+    {
+      "id": "nextjs",
+      "label": "Next.js",
+      "category": "frontend",
+      "tags": [
+        "frontend"
+      ]
+    },
+    {
+      "id": "angular",
+      "label": "Angular / AngularJS",
+      "category": "frontend",
+      "tags": [
+        "frontend"
+      ]
+    },
+    {
+      "id": "react_native",
+      "label": "React Native",
+      "category": "frontend",
+      "tags": [
+        "frontend",
+        "mobile"
+      ]
+    },
+    {
+      "id": "javascript",
+      "label": "JavaScript",
+      "category": "frontend",
+      "tags": [
+        "core",
+        "frontend",
+        "backend"
+      ]
+    },
+    {
+      "id": "typescript",
+      "label": "TypeScript",
+      "category": "frontend",
+      "tags": [
+        "core",
+        "frontend",
+        "backend"
+      ]
+    },
+    {
+      "id": "html_css",
+      "label": "HTML / CSS / SASS / SCSS",
+      "category": "frontend",
+      "tags": [
+        "frontend"
+      ]
+    },
+    {
+      "id": "redux",
+      "label": "Redux",
+      "category": "frontend",
+      "tags": [
+        "frontend"
+      ]
+    },
+    {
+      "id": "node",
+      "label": "Node.js / Express",
+      "category": "backend",
+      "tags": [
+        "core",
+        "backend"
+      ]
+    },
+    {
+      "id": "rest_api",
+      "label": "REST API Design",
+      "category": "backend",
+      "tags": [
+        "backend"
+      ]
+    },
+    {
+      "id": "aws_lambda",
+      "label": "AWS Lambda (serverless)",
+      "category": "backend",
+      "tags": [
+        "backend",
+        "devops"
+      ]
+    },
+    {
+      "id": "csharp",
+      "label": "C# / ASP.NET",
+      "category": "backend",
+      "tags": [
+        "backend"
+      ]
+    },
+    {
+      "id": "java",
+      "label": "Java",
+      "category": "backend",
+      "tags": [
+        "backend"
+      ]
+    },
+    {
+      "id": "scala",
+      "label": "Scala / Play Framework",
+      "category": "backend",
+      "tags": [
+        "backend"
+      ]
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "category": "backend",
+      "tags": [
+        "backend"
+      ]
+    },
+    {
+      "id": "ruby",
+      "label": "Ruby",
+      "category": "backend",
+      "tags": [
+        "backend"
+      ]
+    },
+    {
+      "id": "php",
+      "label": "PHP",
+      "category": "backend",
+      "tags": [
+        "backend"
+      ]
+    },
+    {
+      "id": "perl",
+      "label": "Perl",
+      "category": "backend",
+      "tags": [
+        "backend"
+      ]
+    },
+    {
+      "id": "go",
+      "label": "Go",
+      "category": "backend",
+      "tags": [
+        "backend"
+      ]
+    },
+    {
+      "id": "vbnet",
+      "label": "VB.NET / ASP.NET",
+      "category": "backend",
+      "tags": [
+        "backend"
+      ]
+    },
+    {
+      "id": "symfony",
+      "label": "Symfony",
+      "category": "backend",
+      "tags": [
+        "backend"
+      ]
+    },
+    {
+      "id": "magento",
+      "label": "Magento",
+      "category": "backend",
+      "tags": [
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "id": "orm",
+      "label": "ORMs (Sequelize, Mongoose)",
+      "category": "backend",
+      "tags": [
+        "backend",
+        "databases"
+      ]
+    },
+    {
+      "id": "microservices",
+      "label": "Microservices",
+      "category": "backend",
+      "tags": [
+        "backend"
+      ]
+    },
+    {
+      "id": "generative_ai",
+      "label": "Generative AI",
+      "category": "ai",
+      "tags": [
+        "ai",
+        "core"
+      ]
+    },
+    {
+      "id": "llm_apps",
+      "label": "LLM Application Development",
+      "category": "ai",
+      "tags": [
+        "ai",
+        "core"
+      ]
+    },
+    {
+      "id": "ai_apis",
+      "label": "Claude / OpenAI / Gemini APIs",
+      "category": "ai",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "ai_assisted_dev",
+      "label": "AI-Assisted Development (Claude Code, Codex, Gemini)",
+      "category": "ai",
+      "tags": [
+        "ai",
+        "core"
+      ]
+    },
+    {
+      "id": "prompt_engineering",
+      "label": "Prompt Engineering",
+      "category": "ai",
+      "tags": [
+        "ai",
+        "core"
+      ]
+    },
+    {
+      "id": "ai_agents",
+      "label": "AI Agent & Skill Development",
+      "category": "ai",
+      "tags": [
+        "ai",
+        "core"
+      ]
+    },
+    {
+      "id": "llm_integration",
+      "label": "LLM Integration",
+      "category": "ai",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "alexa",
+      "label": "Alexa Skills (Voice / Conversational AI)",
+      "category": "ai",
+      "tags": [
+        "ai",
+        "backend"
+      ]
+    },
+    {
+      "id": "iot",
+      "label": "IoT / Embedded Devices",
+      "category": "ai",
+      "tags": [
+        "hardware",
+        "backend"
+      ]
+    },
+    {
+      "id": "aws",
+      "label": "AWS (EC2, S3, Lambda, CloudFormation, DynamoDB, Aurora)",
+      "category": "devops",
+      "tags": [
+        "devops",
+        "backend"
+      ]
+    },
+    {
+      "id": "azure",
+      "label": "Microsoft Azure",
+      "category": "devops",
+      "tags": [
+        "devops"
+      ]
+    },
+    {
+      "id": "gcp",
+      "label": "Google Cloud Platform",
+      "category": "devops",
+      "tags": [
+        "devops"
+      ]
+    },
+    {
+      "id": "docker",
+      "label": "Docker",
+      "category": "devops",
+      "tags": [
+        "devops"
+      ]
+    },
+    {
+      "id": "kubernetes",
+      "label": "Kubernetes",
+      "category": "devops",
+      "tags": [
+        "devops"
+      ]
+    },
+    {
+      "id": "nginx",
+      "label": "nginx",
+      "category": "devops",
+      "tags": [
+        "devops"
+      ]
+    },
+    {
+      "id": "heroku",
+      "label": "Heroku",
+      "category": "devops",
+      "tags": [
+        "devops"
+      ]
+    },
+    {
+      "id": "auth0",
+      "label": "Auth0 (identity / SSO)",
+      "category": "devops",
+      "tags": [
+        "backend",
+        "devops"
+      ]
+    },
+    {
+      "id": "jenkins",
+      "label": "Jenkins",
+      "category": "devops",
+      "tags": [
+        "devops"
+      ]
+    },
+    {
+      "id": "gitlab_ci",
+      "label": "GitLab CI",
+      "category": "devops",
+      "tags": [
+        "devops"
+      ]
+    },
+    {
+      "id": "github_actions",
+      "label": "GitHub Actions",
+      "category": "devops",
+      "tags": [
+        "devops"
+      ]
+    },
+    {
+      "id": "ci_cd",
+      "label": "CI/CD Pipelines",
+      "category": "devops",
+      "tags": [
+        "devops"
+      ]
+    },
+    {
+      "id": "postgres",
+      "label": "PostgreSQL",
+      "category": "databases",
+      "tags": [
+        "backend",
+        "databases"
+      ]
+    },
+    {
+      "id": "mysql",
+      "label": "MySQL",
+      "category": "databases",
+      "tags": [
+        "backend",
+        "databases"
+      ]
+    },
+    {
+      "id": "mssql",
+      "label": "Microsoft SQL Server",
+      "category": "databases",
+      "tags": [
+        "backend",
+        "databases"
+      ]
+    },
+    {
+      "id": "oracle",
+      "label": "Oracle",
+      "category": "databases",
+      "tags": [
+        "backend",
+        "databases"
+      ]
+    },
+    {
+      "id": "mongodb",
+      "label": "MongoDB",
+      "category": "databases",
+      "tags": [
+        "backend",
+        "databases"
+      ]
+    },
+    {
+      "id": "dynamodb",
+      "label": "DynamoDB",
+      "category": "databases",
+      "tags": [
+        "backend",
+        "databases"
+      ]
+    },
+    {
+      "id": "aurora",
+      "label": "Aurora SQL",
+      "category": "databases",
+      "tags": [
+        "backend",
+        "databases"
+      ]
+    },
+    {
+      "id": "redis",
+      "label": "Redis",
+      "category": "databases",
+      "tags": [
+        "backend",
+        "databases"
+      ]
+    },
+    {
+      "id": "elasticsearch",
+      "label": "Elasticsearch",
+      "category": "databases",
+      "tags": [
+        "backend",
+        "databases"
+      ]
+    },
+    {
+      "id": "ms_access",
+      "label": "Microsoft Access",
+      "category": "databases",
+      "tags": [
+        "databases"
+      ]
+    },
+    {
+      "id": "jest",
+      "label": "Jest",
+      "category": "testing",
+      "tags": [
+        "testing",
+        "frontend"
+      ]
+    },
+    {
+      "id": "cypress",
+      "label": "Cypress",
+      "category": "testing",
+      "tags": [
+        "testing",
+        "frontend"
+      ]
+    },
+    {
+      "id": "testing",
+      "label": "Integration Testing / TDD / BDD",
+      "category": "testing",
+      "tags": [
+        "testing"
+      ]
+    },
+    {
+      "id": "code_reviews",
+      "label": "Code Reviews",
+      "category": "testing",
+      "tags": [
+        "testing",
+        "leadership"
+      ]
+    },
+    {
+      "id": "directus",
+      "label": "Directus (headless CMS)",
+      "category": "backend",
+      "tags": [
+        "backend"
+      ]
+    },
+    {
+      "id": "wordpress",
+      "label": "WordPress",
+      "category": "frontend",
+      "tags": [
+        "frontend"
+      ]
+    },
+    {
+      "id": "salesforce",
+      "label": "Salesforce",
+      "category": "backend",
+      "tags": [
+        "backend"
+      ]
+    },
+    {
+      "id": "unity",
+      "label": "Unity",
+      "category": "gamedev",
+      "tags": [
+        "gamedev"
+      ]
+    },
+    {
+      "id": "unreal",
+      "label": "Unreal Engine",
+      "category": "gamedev",
+      "tags": [
+        "gamedev"
+      ]
+    },
+    {
+      "id": "blitzbasic",
+      "label": "Blitz3D / BlitzBasic",
+      "category": "gamedev",
+      "tags": [
+        "gamedev"
+      ]
+    },
+    {
+      "id": "mobile_games",
+      "label": "Mobile Game Publishing",
+      "category": "gamedev",
+      "tags": [
+        "gamedev",
+        "mobile"
+      ]
+    },
+    {
+      "id": "agile",
+      "label": "Agile / Scrum / Kanban",
+      "category": "leadership",
+      "tags": [
+        "leadership"
+      ]
+    },
+    {
+      "id": "mentorship",
+      "label": "Mentorship & Talent Development",
+      "category": "leadership",
+      "tags": [
+        "leadership"
+      ]
+    },
+    {
+      "id": "team_leadership",
+      "label": "Technical Team Leadership",
+      "category": "leadership",
+      "tags": [
+        "leadership"
+      ]
+    },
+    {
+      "id": "stakeholder",
+      "label": "Stakeholder Communication",
+      "category": "leadership",
+      "tags": [
+        "leadership"
+      ]
+    },
+    {
+      "id": "rslogix",
+      "label": "RSLogix",
+      "category": "hardware",
+      "tags": [
+        "hardware"
+      ]
+    },
+    {
+      "id": "allen_bradley",
+      "label": "Allen Bradley PLCs",
+      "category": "hardware",
+      "tags": [
+        "hardware"
+      ]
+    },
+    {
+      "id": "fanuc",
+      "label": "Fanuc Robotics",
+      "category": "hardware",
+      "tags": [
+        "hardware"
+      ]
+    },
+    {
+      "id": "as400",
+      "label": "AS400",
+      "category": "hardware",
+      "tags": [
+        "hardware",
+        "databases"
+      ]
+    },
+    {
+      "id": "delphi",
+      "label": "Delphi",
+      "category": "hardware",
+      "tags": [
+        "backend",
+        "hardware"
+      ]
+    },
+    {
+      "id": "plc",
+      "label": "PLC Integration",
+      "category": "hardware",
+      "tags": [
+        "hardware"
+      ]
+    },
+    {
+      "id": "git",
+      "label": "Git / GitHub",
+      "category": "tools",
+      "tags": [
+        "tools"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "id": "west_bend",
+      "company": "West Bend Mutual (Contract)",
+      "title": "Senior Full-Stack Engineer (Consultant)",
+      "start": "2026-05",
+      "end": "present",
+      "location": "",
+      "tags": [
+        "frontend",
+        "backend",
+        "ai",
+        "core"
+      ],
+      "bullets": [
+        {
+          "id": "west_bend_ai",
+          "text": "Build out the integrated AI chat experience in the customer portal frontend, interfacing directly with the AI API to deliver in-product generative-AI features.",
+          "tags": [
+            "ai",
+            "frontend",
+            "core"
+          ]
+        },
+        {
+          "id": "west_bend_fullstack",
+          "text": "Deliver full-stack features across a C# backend and React frontend as a senior engineering consultant.",
+          "tags": [
+            "frontend",
+            "backend",
+            "core"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "colliers",
+      "company": "Colliers (Contract)",
+      "title": "Senior Fullstack Software Engineer",
+      "start": "2025-03",
+      "end": "present",
+      "location": "",
+      "tags": [
+        "frontend",
+        "backend",
+        "ai",
+        "core"
+      ],
+      "bullets": [
+        {
+          "id": "colliers_ai_features",
+          "text": "Use AI heavily to accelerate feature development, with rigorous guardrails — fact-checking and human-reviewing all AI output before it ships.",
+          "tags": [
+            "ai",
+            "core"
+          ]
+        },
+        {
+          "id": "colliers_ai_review",
+          "text": "Apply AI to assist peer code review, keeping a strict human-in-the-loop process over AI-generated feedback.",
+          "tags": [
+            "ai",
+            "core"
+          ]
+        },
+        {
+          "id": "colliers_fullstack",
+          "text": "Deliver production full-stack features end to end as a senior engineer.",
+          "tags": [
+            "frontend",
+            "backend",
+            "core"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sollis_health",
+      "company": "Sollis Health",
+      "title": "Senior Fullstack Engineer",
+      "start": "2023-10",
+      "end": "2026-05",
+      "location": "",
+      "tags": [
+        "frontend",
+        "backend",
+        "mobile",
+        "ai",
+        "core"
+      ],
+      "bullets": [
+        {
+          "id": "sollis_ai",
+          "text": "Leveraged AI coding assistants (Claude Code, Codex, Gemini) to accelerate delivery, shifting focus up the stack toward code review, architecture, and prompt engineering.",
+          "tags": [
+            "ai",
+            "core"
+          ]
+        },
+        {
+          "id": "sollis_web_mobile",
+          "text": "Led development of modern web and mobile solutions using React, React Native, Node.js, C#, PHP, and Azure services.",
+          "tags": [
+            "frontend",
+            "backend",
+            "mobile",
+            "core"
+          ]
+        },
+        {
+          "id": "sollis_wp_plugins",
+          "text": "Built custom React plugins for WordPress, enabling enhanced modular functionality across the company's marketing site.",
+          "tags": [
+            "frontend"
+          ]
+        },
+        {
+          "id": "sollis_headless",
+          "text": "Played a key role in migrating the WordPress platform to a headless architecture using Directus, Formsort, and Next.js, integrating with Salesforce and Azure-hosted C# APIs.",
+          "tags": [
+            "frontend",
+            "backend",
+            "core"
+          ]
+        },
+        {
+          "id": "sollis_frontend",
+          "text": "Implemented front-end features with TypeScript, HTML, and CSS, focusing on accessibility, performance, and scalability.",
+          "tags": [
+            "frontend"
+          ]
+        },
+        {
+          "id": "sollis_collab",
+          "text": "Collaborated cross-functionally with design, product, and marketing teams to ensure a smooth content management experience and efficient developer workflow.",
+          "tags": [
+            "leadership"
+          ]
+        },
+        {
+          "id": "sollis_tests",
+          "text": "Wrote and maintained unit tests to support ongoing development and ensure stability of key components.",
+          "tags": [
+            "testing",
+            "backend"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kerrsoft",
+      "company": "Kerrsoft LLC",
+      "title": "Founder & Senior Software Engineer",
+      "start": "2022-01",
+      "end": "present",
+      "location": "Waukesha, WI",
+      "tags": [
+        "frontend",
+        "backend",
+        "leadership",
+        "core"
+      ],
+      "bullets": [
+        {
+          "id": "kerrsoft_practice",
+          "text": "Established and led a software consulting practice focused on full-stack JavaScript/TypeScript and AWS solutions.",
+          "tags": [
+            "leadership",
+            "core"
+          ]
+        },
+        {
+          "id": "kerrsoft_architect",
+          "text": "Architect, develop, and maintain software products and integrations for multiple clients, enforcing modern best practices.",
+          "tags": [
+            "frontend",
+            "backend",
+            "core"
+          ]
+        },
+        {
+          "id": "kerrsoft_mentor",
+          "text": "Mentor junior developers and provide technical guidance while acting as team lead in strategic planning sessions.",
+          "tags": [
+            "leadership"
+          ]
+        },
+        {
+          "id": "kerrsoft_pm",
+          "text": "Coordinate project management activities by breaking down complex epics into manageable user stories and organizing team resources.",
+          "tags": [
+            "leadership"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dsha_kerrsoft",
+      "company": "DSHA (via Kerrsoft LLC)",
+      "title": "Product Manager / Lead Fullstack Engineer (Part-time Consultant)",
+      "start": "2022-01",
+      "end": "present",
+      "location": "",
+      "tags": [
+        "frontend",
+        "backend",
+        "mobile",
+        "core"
+      ],
+      "bullets": [
+        {
+          "id": "dsha_platform",
+          "text": "Maintain the legacy DSHA student enrollment and course-management platform (originally architected under Tangatek Corp) while leading its replacement.",
+          "tags": [
+            "frontend",
+            "backend",
+            "core"
+          ]
+        },
+        {
+          "id": "dsha_scope",
+          "text": "Project lead for a team of 5 delivering React web and React Native mobile clients with GitLab CI across web, mobile, and serverless AWS pipelines (Express, Node, SQL Aurora).",
+          "tags": [
+            "frontend",
+            "backend",
+            "mobile",
+            "devops",
+            "core"
+          ]
+        },
+        {
+          "id": "dsha_features",
+          "text": "Implement new features using React, React Native, Aurora SQL, TypeScript, Express, AWS Lambda, Node.js, and Sequelize ORM.",
+          "tags": [
+            "frontend",
+            "backend",
+            "core"
+          ]
+        },
+        {
+          "id": "dsha_arch",
+          "text": "Oversee architectural decisions to ensure scalability and reliability in a cloud-native environment.",
+          "tags": [
+            "backend",
+            "devops"
+          ]
+        },
+        {
+          "id": "dsha_ai",
+          "text": "Architect and build the platform's replacement — the DSHA Applied Wellness Suite — primarily through AI: defining the architectural direction, establishing a shared working language with Claude, and reviewing every change the AI produces.",
+          "tags": [
+            "ai",
+            "core"
+          ]
+        },
+        {
+          "id": "dsha_lead",
+          "text": "Lead technical discussions and foster a collaborative atmosphere within the development team.",
+          "tags": [
+            "leadership"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sophos",
+      "company": "Sophos (via Kerrsoft LLC)",
+      "title": "Senior Full-Stack Engineer (Part-time Consultant)",
+      "start": "2024-09",
+      "end": "2025-02",
+      "location": "",
+      "tags": [
+        "frontend",
+        "backend",
+        "devops",
+        "core"
+      ],
+      "bullets": [
+        {
+          "id": "sophos_cicd",
+          "text": "Maintained and enhanced the company's CI/CD system in React and Node.js.",
+          "tags": [
+            "frontend",
+            "backend",
+            "devops",
+            "core"
+          ]
+        },
+        {
+          "id": "sophos_senior",
+          "text": "Operated as a senior full-stack engineer across the team's day-to-day delivery — feature development, code review, and cross-functional collaboration.",
+          "tags": [
+            "frontend",
+            "backend",
+            "core"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sightline",
+      "company": "Sightline Payment Systems (via Kerrsoft LLC)",
+      "title": "Principal UI Engineer (Part-time Consultant)",
+      "start": "2022-04",
+      "end": "2023-10",
+      "location": "",
+      "tags": [
+        "frontend",
+        "backend",
+        "core"
+      ],
+      "bullets": [
+        {
+          "id": "sightline_solo",
+          "text": "Sole engineer modernizing a vanilla-JavaScript internal application into React, building the Jenkins (bash) deployment pipeline; APIs on a Go framework.",
+          "tags": [
+            "frontend",
+            "backend",
+            "devops",
+            "core"
+          ]
+        },
+        {
+          "id": "sightline_modernize",
+          "text": "Modernized the front-end, transitioning from vanilla JavaScript to React to improve maintainability and performance.",
+          "tags": [
+            "frontend",
+            "core"
+          ]
+        },
+        {
+          "id": "sightline_apis",
+          "text": "Integrated new features via RESTful APIs built with Go and Perl, enhancing core casino administration modules.",
+          "tags": [
+            "backend"
+          ]
+        },
+        {
+          "id": "sightline_admin",
+          "text": "Maintained casino admin management pages with emphasis on security, scalability, and seamless user experience.",
+          "tags": [
+            "frontend",
+            "backend"
+          ]
+        },
+        {
+          "id": "sightline_velocity",
+          "text": "Decreased new-feature implementation time by 50% by standardizing development workflows and establishing streamlined React component structures.",
+          "tags": [
+            "frontend",
+            "core"
+          ]
+        },
+        {
+          "id": "sightline_agile",
+          "text": "Assumed technical leadership by coordinating agile ceremonies and refining sprint backlogs.",
+          "tags": [
+            "leadership"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "snapsheet",
+      "company": "Snapsheet Inc.",
+      "title": "Senior Software Engineer",
+      "start": "2022-12",
+      "end": "2023-09",
+      "location": "",
+      "tags": [
+        "frontend",
+        "backend",
+        "core"
+      ],
+      "bullets": [
+        {
+          "id": "snapsheet_sales",
+          "text": "Built React sales applications on a 7-person engineering team, backed by a Ruby API and SQL data layer.",
+          "tags": [
+            "frontend",
+            "backend",
+            "core"
+          ]
+        },
+        {
+          "id": "snapsheet_modernize",
+          "text": "Modernized outdated repositories by updating dependencies and aligning codebases with industry standards.",
+          "tags": [
+            "backend",
+            "core"
+          ]
+        },
+        {
+          "id": "snapsheet_refactor",
+          "text": "Refactored existing functionality for an optimized user experience.",
+          "tags": [
+            "frontend"
+          ]
+        },
+        {
+          "id": "snapsheet_docs",
+          "text": "Documented design processes for clearer collaboration and easier onboarding.",
+          "tags": [
+            "leadership"
+          ]
+        },
+        {
+          "id": "snapsheet_testing",
+          "text": "Introduced unit testing where lacking, significantly increasing overall test coverage.",
+          "tags": [
+            "testing",
+            "backend"
+          ]
+        },
+        {
+          "id": "snapsheet_mentor",
+          "text": "Mentored junior developers, guiding code quality and architectural decisions.",
+          "tags": [
+            "leadership"
+          ]
+        },
+        {
+          "id": "snapsheet_collab",
+          "text": "Increased pull-request review collaboration 70% by introducing internal tools that facilitated cross-team code discussions.",
+          "tags": [
+            "leadership",
+            "devops"
+          ]
+        },
+        {
+          "id": "snapsheet_scrum",
+          "text": "Acted as technical project coordinator, breaking down epics and managing scrum ceremonies to drive efficient sprint cycles.",
+          "tags": [
+            "leadership"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "experian",
+      "company": "Experian Automotive",
+      "title": "Senior Software Engineer / Team Lead",
+      "start": "2022-06",
+      "end": "2022-12",
+      "location": "",
+      "tags": [
+        "frontend",
+        "leadership",
+        "core"
+      ],
+      "bullets": [
+        {
+          "id": "experian_stack",
+          "text": "Delivered React sales applications on a team of 5, backed by Python, Ruby, and Java APIs with a Jenkins-driven Node build pipeline.",
+          "tags": [
+            "frontend",
+            "backend",
+            "core"
+          ]
+        },
+        {
+          "id": "experian_lead",
+          "text": "Led and mentored a team of React developers maintaining the company's core software offering.",
+          "tags": [
+            "frontend",
+            "leadership",
+            "core"
+          ]
+        },
+        {
+          "id": "experian_process",
+          "text": "Proposed and implemented process and tech improvements, reducing technical debt.",
+          "tags": [
+            "leadership"
+          ]
+        },
+        {
+          "id": "experian_perf",
+          "text": "Optimized the front-end for performance and scalability, aligning to modern React best practices.",
+          "tags": [
+            "frontend",
+            "core"
+          ]
+        },
+        {
+          "id": "experian_caching",
+          "text": "Reduced backend API calls by 35% through efficient frontend caching mechanisms.",
+          "tags": [
+            "frontend",
+            "core"
+          ]
+        },
+        {
+          "id": "experian_redux",
+          "text": "Leveraged Redux to centralize application state and optimize data flow.",
+          "tags": [
+            "frontend"
+          ]
+        },
+        {
+          "id": "experian_agile",
+          "text": "Provided technical team leadership by organizing design sessions and facilitating agile planning.",
+          "tags": [
+            "leadership"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "waukesha_makerspace",
+      "company": "Waukesha Makerspace Inc (501(c)(3) Nonprofit)",
+      "title": "Vice Chair & Executive Director",
+      "start": "2020-09",
+      "end": "present",
+      "location": "Waukesha, WI",
+      "tags": [
+        "leadership",
+        "hardware",
+        "core"
+      ],
+      "bullets": [
+        {
+          "id": "wmi_found",
+          "text": "Founded and built a 501(c)(3) nonprofit makerspace from the ground up, establishing its mission, governance, and operational structure.",
+          "tags": [
+            "leadership",
+            "core"
+          ]
+        },
+        {
+          "id": "wmi_lead",
+          "text": "Held the Executive Director role continuously since the nonprofit's founding; served as Chairman of the Board (2021 – June 2025) and as Vice Chair (June 2025 – present), driving daily operations, board governance, membership growth, and long-term planning.",
+          "tags": [
+            "leadership",
+            "core"
+          ]
+        },
+        {
+          "id": "wmi_initiatives",
+          "text": "Led facility expansion, technology infrastructure build-out, membership program design, and community engagement initiatives.",
+          "tags": [
+            "leadership",
+            "hardware"
+          ]
+        },
+        {
+          "id": "wmi_funding",
+          "text": "Secured nonprofit status, established sustainable funding streams, and developed partnerships with local organizations and schools.",
+          "tags": [
+            "leadership"
+          ]
+        },
+        {
+          "id": "wmi_ops",
+          "text": "Run nonprofit operations end-to-end — organize and chair board meetings, facilitate committees, manage finances, and steward overall governance.",
+          "tags": [
+            "leadership",
+            "core"
+          ]
+        },
+        {
+          "id": "wmi_events",
+          "text": "Represented the makerspace at public events such as Maker Faire, growing visibility, membership, and community impact.",
+          "tags": [
+            "leadership"
+          ]
+        },
+        {
+          "id": "wmi_ai_class",
+          "text": "Designed and taught 'Practical AI: Getting More Out of ChatGPT, Claude & Friends,' a 90-minute hands-on class on effective prompting and working with AI tools.",
+          "tags": [
+            "ai",
+            "leadership",
+            "core"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "teals",
+      "company": "Microsoft TEALS — Muskego High School",
+      "title": "Volunteer Teaching Assistant (Python / Computer Science)",
+      "start": "2019-05",
+      "end": "2020-03",
+      "location": "Muskego, WI",
+      "tags": [
+        "leadership"
+      ],
+      "bullets": [
+        {
+          "id": "teals_volunteer",
+          "text": "Served as volunteer teaching assistant for the Python course in Muskego High School's Computer Science program (Microsoft TEALS — Technology Education And Literacy in Schools), supporting students with concepts, debugging, and project work.",
+          "tags": [
+            "leadership"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "northwestern_mutual",
+      "company": "Northwestern Mutual",
+      "title": "Senior Software Engineer / Team Lead",
+      "start": "2018-10",
+      "end": "2022-04",
+      "location": "",
+      "tags": [
+        "frontend",
+        "backend",
+        "devops",
+        "core"
+      ],
+      "bullets": [
+        {
+          "id": "nm_underwriting",
+          "text": "Built a React underwriting platform on a team of 8; backend ran on Node/Express, containerized with Docker and Kubernetes behind nginx, integrating SQL and LDAP.",
+          "tags": [
+            "frontend",
+            "backend",
+            "devops",
+            "core"
+          ]
+        },
+        {
+          "id": "nm_process",
+          "text": "Owned and evangelized efficient development processes and practices, boosting team productivity.",
+          "tags": [
+            "leadership",
+            "core"
+          ]
+        },
+        {
+          "id": "nm_fullstack",
+          "text": "Implemented features on the front end with React and on the back end on AWS (Node.js, Lambda).",
+          "tags": [
+            "frontend",
+            "backend",
+            "core"
+          ]
+        },
+        {
+          "id": "nm_refactor",
+          "text": "Refactored existing functionality for performance optimizations and better user experiences.",
+          "tags": [
+            "frontend",
+            "backend"
+          ]
+        },
+        {
+          "id": "nm_cicd",
+          "text": "Built a CI/CD pipeline using GitLab, automating test, build, and deployment flows.",
+          "tags": [
+            "devops",
+            "core"
+          ]
+        },
+        {
+          "id": "nm_mentor",
+          "text": "Documented design processes and mentored junior developers, ensuring sustainable knowledge transfer.",
+          "tags": [
+            "leadership"
+          ]
+        },
+        {
+          "id": "nm_lead",
+          "text": "Acted as technical team lead, steering code reviews and orchestrating architecture planning sessions.",
+          "tags": [
+            "leadership"
+          ]
+        },
+        {
+          "id": "nm_pm",
+          "text": "Broke down epics into detailed user stories and coordinated sprint planning.",
+          "tags": [
+            "leadership"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tangatek",
+      "company": "Tangatek Corp",
+      "title": "Founder & Lead Consultant",
+      "start": "2013-01",
+      "end": "2022-01",
+      "location": "",
+      "tags": [
+        "frontend",
+        "backend",
+        "leadership",
+        "core"
+      ],
+      "bullets": [
+        {
+          "id": "tangatek_b2b",
+          "text": "Led and managed B2B consulting projects across e-commerce, gaming, SaaS, and enterprise settings.",
+          "tags": [
+            "leadership",
+            "core"
+          ]
+        },
+        {
+          "id": "tangatek_build",
+          "text": "Designed and developed UIs, back-end services, and APIs, integrating third-party solutions per client needs.",
+          "tags": [
+            "frontend",
+            "backend",
+            "core"
+          ]
+        },
+        {
+          "id": "tangatek_team",
+          "text": "Managed a cross-functional team of two engineers, a UX designer, and a project manager.",
+          "tags": [
+            "leadership"
+          ]
+        },
+        {
+          "id": "tangatek_delivery",
+          "text": "Coordinated development teams and client relationships, ensuring timely, high-quality deliveries.",
+          "tags": [
+            "leadership"
+          ]
+        },
+        {
+          "id": "tangatek_strategy",
+          "text": "Provided strategic technical leadership and mentoring while running agile ceremonies and epic breakdown.",
+          "tags": [
+            "leadership"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data_recognition",
+      "company": "Data Recognition Corp (via Tangatek Corp)",
+      "title": "Systems Architect Consultant",
+      "start": "2021-06",
+      "end": "2022-02",
+      "location": "",
+      "tags": [
+        "backend",
+        "leadership",
+        "core"
+      ],
+      "bullets": [
+        {
+          "id": "drc_decisions",
+          "text": "Led technical decisions dispersed across multiple teams.",
+          "tags": [
+            "backend",
+            "leadership",
+            "core"
+          ]
+        },
+        {
+          "id": "drc_agile",
+          "text": "Employed Agile methodologies for sprints, backlog management, and cross-team collaboration.",
+          "tags": [
+            "leadership"
+          ]
+        },
+        {
+          "id": "drc_process",
+          "text": "Designed and documented new processes to standardize best practices.",
+          "tags": [
+            "leadership"
+          ]
+        },
+        {
+          "id": "drc_redux",
+          "text": "Integrated Redux and leveraged TypeScript to streamline front-end state management.",
+          "tags": [
+            "frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nm_digital_innovation",
+      "company": "Northwestern Mutual — Digital Innovation & Research (via Tangatek Corp)",
+      "title": "Senior Software Engineer",
+      "start": "2017-03",
+      "end": "2017-09",
+      "location": "",
+      "tags": [
+        "frontend",
+        "mobile",
+        "ai",
+        "core"
+      ],
+      "bullets": [
+        {
+          "id": "nmd_alexa",
+          "text": "Designed and built Amazon Alexa voice skills and IoT prototypes as sole developer (Node, Alexa Skills Kit, AWS Lambda/DynamoDB/S3).",
+          "tags": [
+            "ai",
+            "backend",
+            "core"
+          ]
+        },
+        {
+          "id": "nmd_ml_hackathon",
+          "text": "Built a working machine-learning bot prototype in two days at an internal ML competition (team of 6; Angular and Node/Express on Azure, MSSQL).",
+          "tags": [
+            "ai",
+            "frontend",
+            "core"
+          ]
+        },
+        {
+          "id": "nmd_field_agents",
+          "text": "Led a team of 7 building a React Native (iOS/Android) application for field agents, backed by Node/Express services and Mongo, Oracle, and LDAP data sources.",
+          "tags": [
+            "mobile",
+            "frontend",
+            "backend",
+            "leadership",
+            "core"
+          ]
+        },
+        {
+          "id": "nmd_innovation",
+          "text": "Contributed to the Digital Innovation and Research team, designing and prototyping new ideas with existing and emerging technologies.",
+          "tags": [
+            "frontend",
+            "core"
+          ]
+        },
+        {
+          "id": "nmd_poc",
+          "text": "Transformed experimental concepts into demonstrable proofs of concept through creative solution architecture.",
+          "tags": [
+            "frontend",
+            "backend"
+          ]
+        },
+        {
+          "id": "nmd_lead",
+          "text": "Provided technical leadership and mentorship while coordinating agile ceremonies.",
+          "tags": [
+            "leadership"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "oncourse_learning",
+      "company": "OnCourse Learning (via Tangatek Corp)",
+      "title": "Senior Frontend Engineer / Team Lead",
+      "start": "2016-04",
+      "end": "2017-04",
+      "location": "",
+      "tags": [
+        "frontend",
+        "backend",
+        "devops"
+      ],
+      "bullets": [
+        {
+          "id": "oncourse_platform",
+          "text": "Architected a new microservices platform coordinating 10 developers across 3 remote teams (Angular; Node/Express, Symfony, Auth0; AWS Beanstalk/EC2/SQS/SNS/S3; DynamoDB, MongoDB, Salesforce).",
+          "tags": [
+            "backend",
+            "devops",
+            "leadership",
+            "core"
+          ]
+        },
+        {
+          "id": "oncourse_sso",
+          "text": "Led a 3-person team building a centralized single-sign-on portal (Angular, AWS Beanstalk, Symfony API, DynamoDB).",
+          "tags": [
+            "frontend",
+            "backend",
+            "core"
+          ]
+        },
+        {
+          "id": "oncourse_provisioner",
+          "text": "Served as AWS and Bitbucket access provisioner, authoring security policies and enforcing Git-Flow across the organization.",
+          "tags": [
+            "devops",
+            "leadership"
+          ]
+        },
+        {
+          "id": "oncourse_angular",
+          "text": "Modernized applications using AngularJS, expanding platform compatibility.",
+          "tags": [
+            "frontend",
+            "core"
+          ]
+        },
+        {
+          "id": "oncourse_magento",
+          "text": "Optimized a Magento-based e-commerce site (PHP, Java), focusing on performance and payment workflows.",
+          "tags": [
+            "backend",
+            "frontend"
+          ]
+        },
+        {
+          "id": "oncourse_lead",
+          "text": "Served as technical lead, guiding design sessions and mentoring junior developers.",
+          "tags": [
+            "leadership"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ringlead",
+      "company": "Ringlead Inc. (via Tangatek Corp)",
+      "title": "Senior Fullstack Engineer",
+      "start": "2013-07",
+      "end": "2016-04",
+      "location": "",
+      "tags": [
+        "frontend",
+        "backend",
+        "devops",
+        "databases"
+      ],
+      "bullets": [
+        {
+          "id": "ringlead_attorneypeople",
+          "text": "Built AttorneyPeople.com, a recruiting platform, on a team of 4 (Angular front end; Scala/Java Play Framework API; PostgreSQL, Elasticsearch, and Redis on Heroku).",
+          "tags": [
+            "frontend",
+            "backend",
+            "databases",
+            "core"
+          ]
+        },
+        {
+          "id": "ringlead_dq",
+          "text": "Developed a data-deduplication platform and a Chrome-extension list-building tool (Angular; C# APIs on Azure; MSSQL with Salesforce, Marketo, and MS CRM integrations).",
+          "tags": [
+            "frontend",
+            "backend",
+            "databases"
+          ]
+        },
+        {
+          "id": "ringlead_proto",
+          "text": "Created UI prototypes that evolved into production SaaS/DaaS applications.",
+          "tags": [
+            "frontend",
+            "core"
+          ]
+        },
+        {
+          "id": "ringlead_cloud",
+          "text": "Migrated localized services to cloud infrastructure, enabling multi-tenant solutions.",
+          "tags": [
+            "backend",
+            "devops"
+          ]
+        },
+        {
+          "id": "ringlead_ma",
+          "text": "Provided technical assistance during major business transactions (sale to Leopard Solutions; acquisition by ZoomInfo).",
+          "tags": [
+            "leadership"
+          ]
+        },
+        {
+          "id": "ringlead_coach",
+          "text": "Coached junior team members on advanced design techniques and agile planning.",
+          "tags": [
+            "leadership"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tasc",
+      "company": "TASC",
+      "title": "Senior Software Engineer / Team Lead",
+      "start": "2017-10",
+      "end": "2018-10",
+      "location": "",
+      "tags": [
+        "frontend",
+        "backend",
+        "devops",
+        "core"
+      ],
+      "bullets": [
+        {
+          "id": "tasc_benefits",
+          "text": "Built a benefits-administration platform on a 9-person scrum team using Angular and serverless Node (AWS Lambda, DynamoDB, S3, EC2, API Gateway).",
+          "tags": [
+            "frontend",
+            "backend",
+            "devops",
+            "core"
+          ]
+        },
+        {
+          "id": "tasc_proto",
+          "text": "Designed UI prototypes in collaboration with Business Analysts and Product Owners to improve UX.",
+          "tags": [
+            "frontend"
+          ]
+        },
+        {
+          "id": "tasc_cloud",
+          "text": "Enhanced SaaS cloud services using AWS and microservices, increasing reliability and scalability.",
+          "tags": [
+            "backend",
+            "devops",
+            "core"
+          ]
+        },
+        {
+          "id": "tasc_cicd",
+          "text": "Optimized CI/CD pipelines using Jenkins and led mentoring for junior developers and interns.",
+          "tags": [
+            "devops",
+            "leadership"
+          ]
+        },
+        {
+          "id": "tasc_agile",
+          "text": "Facilitated Agile/Scrum adoption across teams and coordinated scrum ceremonies.",
+          "tags": [
+            "leadership"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "broadlook",
+      "company": "Broadlook Technologies",
+      "title": "Mobile Applications Developer",
+      "start": "2009-06",
+      "end": "2011-04",
+      "location": "",
+      "tags": [
+        "mobile",
+        "backend",
+        "core"
+      ],
+      "bullets": [
+        {
+          "id": "broadlook_mobile",
+          "text": "Created cross-platform mobile applications for BlackBerry, Windows Mobile, Palm Pre, and iOS, leveraging existing desktop technologies.",
+          "tags": [
+            "mobile",
+            "core"
+          ]
+        },
+        {
+          "id": "broadlook_crmshield",
+          "text": "Built CRMShield, a CRM data-normalization utility (PHP/MySQL on Linux), alongside the Contact Capture mobile clients.",
+          "tags": [
+            "backend",
+            "databases"
+          ]
+        },
+        {
+          "id": "broadlook_apis",
+          "text": "Developed interfaces for desktop and cloud APIs, enabling seamless synchronization and data sharing.",
+          "tags": [
+            "backend"
+          ]
+        },
+        {
+          "id": "broadlook_db",
+          "text": "Maintained databases and generated custom queries to support marketing insights.",
+          "tags": [
+            "databases"
+          ]
+        },
+        {
+          "id": "broadlook_ux",
+          "text": "Refactored user experiences for efficiency and ease of use.",
+          "tags": [
+            "frontend"
+          ]
+        },
+        {
+          "id": "broadlook_mentor",
+          "text": "Acted as technical lead, mentoring junior developers during project implementations.",
+          "tags": [
+            "leadership"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "johnson_controls",
+      "company": "Johnson Controls Inc",
+      "title": "IT Technical Analyst",
+      "start": "2006-10",
+      "end": "2009-06",
+      "location": "",
+      "tags": [
+        "frontend",
+        "backend",
+        "devops"
+      ],
+      "bullets": [
+        {
+          "id": "jci_webapps",
+          "text": "Collaborated with stakeholders to design and build internal web apps for streamlined account requests.",
+          "tags": [
+            "frontend",
+            "backend",
+            "core"
+          ]
+        },
+        {
+          "id": "jci_dotnet",
+          "text": "Developed VB.NET and ASP.NET applications integrating with Active Directory to improve provisioning workflows.",
+          "tags": [
+            "backend"
+          ]
+        },
+        {
+          "id": "jci_scripts",
+          "text": "Created scripts to aid data migrations and reduce repetitive Active Directory group creation.",
+          "tags": [
+            "devops"
+          ]
+        },
+        {
+          "id": "jci_automation",
+          "text": "Automated tasks for higher departmental efficiency, including daily data validations.",
+          "tags": [
+            "devops"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "endboss_games",
+      "company": "Endboss Games",
+      "title": "Game Developer (Contract)",
+      "start": "2004-06",
+      "end": "2016-12",
+      "location": "",
+      "tags": [
+        "gamedev",
+        "mobile",
+        "core"
+      ],
+      "bullets": [
+        {
+          "id": "endboss_engagement",
+          "text": "Long-running game-development engagement (2004–2016), ranging from light part-time consulting to a full-time, exclusive contract from April 2011 to July 2013.",
+          "tags": [
+            "gamedev",
+            "core"
+          ]
+        },
+        {
+          "id": "endboss_titles",
+          "text": "Shipped 4 published game titles (and 30+ prototypes) with a core team of 2 developers, 1 designer, and 7 artists.",
+          "tags": [
+            "gamedev"
+          ]
+        },
+        {
+          "id": "endboss_stack",
+          "text": "Built games in Unity, Unreal Engine, and Blitz3D, targeting iOS, Android, Windows, Mac, and WebGL.",
+          "tags": [
+            "gamedev",
+            "mobile"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "signicast",
+      "company": "Signicast Corporation",
+      "title": "Manufacturing Support Analyst",
+      "start": "2003-10",
+      "end": "2006-10",
+      "location": "",
+      "tags": [
+        "hardware",
+        "databases",
+        "core"
+      ],
+      "bullets": [
+        {
+          "id": "signicast_db",
+          "text": "Designed Access front ends and C-based SQL back ends for plant automation.",
+          "tags": [
+            "databases",
+            "hardware",
+            "core"
+          ]
+        },
+        {
+          "id": "signicast_network",
+          "text": "Programmed and integrated networked devices across five plants (Allen Bradley, RSView, AS400), maintaining real-time data integrity for thousands of in-process products.",
+          "tags": [
+            "hardware",
+            "databases",
+            "core"
+          ]
+        },
+        {
+          "id": "signicast_automation",
+          "text": "Automated five assembly lines, reducing labor from roughly 30 operators to 4 across multiple departments.",
+          "tags": [
+            "hardware",
+            "core"
+          ]
+        },
+        {
+          "id": "signicast_plc",
+          "text": "Interfaced PLCs (Fanuc Robotics, RSLogix) with back-end systems for real-time control.",
+          "tags": [
+            "hardware"
+          ]
+        },
+        {
+          "id": "signicast_repair",
+          "text": "Resolved database errors caused by mechanical failures and deployed new modules for plant machinery.",
+          "tags": [
+            "hardware",
+            "databases"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inet_pc",
+      "company": "INET PC",
+      "title": "Onsite Technician",
+      "start": "2002-11",
+      "end": "2003-11",
+      "location": "",
+      "tags": [
+        "hardware"
+      ],
+      "bullets": [
+        {
+          "id": "inet_build",
+          "text": "Built and installed custom computer systems at client sites, handling on-premise configuration and troubleshooting.",
+          "tags": [
+            "hardware"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ckw_solutions",
+      "company": "CKW Solutions",
+      "title": "Owner",
+      "start": "2001-01",
+      "end": "2002-11",
+      "location": "",
+      "tags": [
+        "hardware",
+        "leadership",
+        "core"
+      ],
+      "bullets": [
+        {
+          "id": "ckw_build",
+          "text": "Founded and ran a small business building custom computers and configuring custom network solutions for local businesses.",
+          "tags": [
+            "hardware",
+            "leadership",
+            "core"
+          ]
+        },
+        {
+          "id": "ckw_services",
+          "text": "Delivered end-to-end computer services — hardware, networking, and everything in between — for business clients.",
+          "tags": [
+            "hardware"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ge_medical",
+      "company": "GE Medical Systems",
+      "title": "Advanced Engineering Technician",
+      "start": "2000-10",
+      "end": "2002-10",
+      "location": "",
+      "tags": [
+        "hardware",
+        "devops"
+      ],
+      "bullets": [
+        {
+          "id": "ge_mri",
+          "text": "Installed, calibrated, and maintained MRI scanners and subsystems.",
+          "tags": [
+            "hardware",
+            "core"
+          ]
+        },
+        {
+          "id": "ge_validation",
+          "text": "Performed engineering system validations across X-Ray, PET, and MRI platforms.",
+          "tags": [
+            "hardware",
+            "testing"
+          ]
+        },
+        {
+          "id": "ge_o2device",
+          "text": "Developed a small networked oxygen-detection device on an embedded Linux (Red Hat) board.",
+          "tags": [
+            "hardware"
+          ]
+        },
+        {
+          "id": "ge_scripts",
+          "text": "Created automated scripts (Bash, Perl on Linux) to streamline testing for MRI and PET scanners.",
+          "tags": [
+            "hardware",
+            "devops"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "apple_industrial",
+      "company": "Apple Industrial Machine Service",
+      "title": "Technician",
+      "start": "1997-04",
+      "end": "2000-10",
+      "location": "",
+      "tags": [
+        "hardware"
+      ],
+      "bullets": [
+        {
+          "id": "apple_machines",
+          "text": "Designed and built automated machines for various industrial processes (100+ machines).",
+          "tags": [
+            "hardware",
+            "core"
+          ]
+        },
+        {
+          "id": "apple_plc",
+          "text": "Programmed PLCs for automated machinery using Allen Bradley RSLogix, Fanuc, and Mitsubishi controllers.",
+          "tags": [
+            "hardware"
+          ]
+        },
+        {
+          "id": "apple_home",
+          "text": "Developed home and industrial automation applications, including a project for the South Dakota DMV.",
+          "tags": [
+            "hardware"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "perkins",
+      "company": "Perkins Family Restaurant",
+      "title": "Short Order Cook",
+      "start": "1997-07",
+      "end": "1998-06",
+      "location": "Brookfield, WI",
+      "tags": [
+        "early"
+      ],
+      "bullets": [
+        {
+          "id": "perkins_cook",
+          "text": "Cooked the line as a short-order cook, held concurrently with the Apple Industrial Machine Service role.",
+          "tags": [
+            "early"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "culvers_watertown",
+      "company": "Culver's of Watertown",
+      "title": "Short Order Cook",
+      "start": "1997-02",
+      "end": "1997-07",
+      "location": "Watertown, WI",
+      "tags": [
+        "early"
+      ],
+      "bullets": [
+        {
+          "id": "culvers_watertown_cook",
+          "text": "Worked as a short-order cook through the spring and into the summer after high school.",
+          "tags": [
+            "early"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "polymath",
+      "company": "Polymath Inc",
+      "title": "Computer & Network Technician (School Co-op)",
+      "start": "1996-04",
+      "end": "1996-10",
+      "location": "Oconomowoc, WI",
+      "tags": [
+        "hardware",
+        "early"
+      ],
+      "bullets": [
+        {
+          "id": "polymath_build",
+          "text": "Assembled and configured personal computers and deployed them on-site into client businesses.",
+          "tags": [
+            "hardware",
+            "early"
+          ]
+        },
+        {
+          "id": "polymath_support",
+          "text": "Troubleshot hardware failures and client networks across DOS, Windows 3.x, and Windows 95 environments.",
+          "tags": [
+            "hardware",
+            "early"
+          ]
+        },
+        {
+          "id": "polymath_stack",
+          "text": "Worked with DOS, FoxPro, Novell NetWare, and Windows 3.x/95 — a school-arranged co-op and first technology role.",
+          "tags": [
+            "hardware",
+            "early"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taco_bell",
+      "company": "Taco Bell",
+      "title": "Cook",
+      "start": "1996-03",
+      "end": "1997-03",
+      "location": "Oconomowoc, WI",
+      "tags": [
+        "early"
+      ],
+      "bullets": [
+        {
+          "id": "taco_bell_cook",
+          "text": "Worked as a cook across junior and senior years of high school.",
+          "tags": [
+            "early"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "culvers_oconomowoc",
+      "company": "Culver's of Oconomowoc",
+      "title": "Short Order Cook",
+      "start": "1995-08",
+      "end": "1996-05",
+      "location": "Oconomowoc, WI",
+      "tags": [
+        "early"
+      ],
+      "bullets": [
+        {
+          "id": "culvers_oconomowoc_cook",
+          "text": "Worked as a short-order cook throughout junior year of high school.",
+          "tags": [
+            "early"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cozy_nook",
+      "company": "Cozy Nook Restaurant",
+      "title": "Busboy / Dishwasher",
+      "start": "1994-07",
+      "end": "1994-11",
+      "location": "Helenville, WI",
+      "tags": [
+        "early"
+      ],
+      "bullets": [
+        {
+          "id": "cozy_nook_work",
+          "text": "Worked as a busboy and dishwasher during the summer and fall of 1994 (sophomore year).",
+          "tags": [
+            "early"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "judys",
+      "company": "Judy's Restaurant",
+      "title": "Short Order Cook",
+      "start": "1994-05",
+      "end": "1994-09",
+      "location": "Watertown, WI",
+      "tags": [
+        "early"
+      ],
+      "bullets": [
+        {
+          "id": "judys_cook",
+          "text": "Cooked the line as a short-order cook at a seasonal (summer-only) car-hop restaurant the summer after freshman year.",
+          "tags": [
+            "early"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "paper_route",
+      "company": "Milwaukee Journal / Sentinel",
+      "title": "Newspaper Carrier (Paper Route)",
+      "start": "1988-09",
+      "end": "1989-03",
+      "location": "",
+      "tags": [
+        "early"
+      ],
+      "bullets": [
+        {
+          "id": "paper_route_work",
+          "text": "Delivered newspapers on a fall/winter paper route in fourth grade — first job.",
+          "tags": [
+            "early"
+          ]
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "alfred_agent",
+      "name": "Alfred — Personal AI Assistant",
+      "url": "",
+      "tags": [
+        "ai",
+        "backend",
+        "core"
+      ],
+      "summary": "A deployed, always-on agentic LLM assistant running 24/7 on self-hosted homelab hardware.\n",
+      "bullets": [
+        {
+          "text": "Designed and built an agentic AI assistant that autonomously handles research, email (Gmail), and task/workflow automation across Trello and Discord.",
+          "tags": [
+            "ai",
+            "core"
+          ]
+        },
+        {
+          "text": "Architected the agent around a structured prompt system (soul/boot/heartbeat) on Gemini 2.5 Flash / GPT-4o, self-hosted on a Mac Mini M4.",
+          "tags": [
+            "ai",
+            "backend"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "governance_scribe",
+      "name": "Governance Scribe — AI Meeting Secretary",
+      "url": "",
+      "tags": [
+        "ai",
+        "core"
+      ],
+      "summary": "An LLM-powered pipeline that turns raw meeting transcripts into board-ready minutes, action items, and agendas — in active use for nonprofit governance.\n",
+      "bullets": [
+        {
+          "text": "Engineered a Claude-driven workflow (prompt design + templating) converting Zoom transcripts into structured minutes and tracked action items.",
+          "tags": [
+            "ai",
+            "core"
+          ]
+        },
+        {
+          "text": "In active use (v2.3) with automated PDF generation via pandoc/LaTeX.",
+          "tags": [
+            "ai"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "keymaster",
+      "name": "Keymaster — Identity & SSO Hub",
+      "url": "",
+      "tags": [
+        "backend",
+        "core"
+      ],
+      "summary": "A centralized OAuth 2.0 / SSO and API-key management hub serving as the security backbone for a multi-service application ecosystem.\n",
+      "bullets": [
+        {
+          "text": "Built a serverless identity hub (Hono on AWS Lambda, MySQL/Drizzle, JWT rotation) providing OAuth SSO and API-key validation across the ecosystem's services.",
+          "tags": [
+            "backend",
+            "devops",
+            "core"
+          ]
+        },
+        {
+          "text": "Designed a federated, no-password-storage auth model in a large TypeScript monorepo.",
+          "tags": [
+            "backend"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "atlas",
+      "name": "Atlas — Inventory Management Platform",
+      "url": "",
+      "tags": [
+        "frontend",
+        "backend"
+      ],
+      "summary": "A polished full-stack inventory platform for tools, equipment, and materials with hierarchical locations, tagging, and search.\n",
+      "bullets": [
+        {
+          "text": "Built a Next.js 15 / TypeScript / Drizzle application (70+ source files) with hierarchical data models and a bot-consumable search API.",
+          "tags": [
+            "frontend",
+            "backend",
+            "core"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mechanical_butterfly",
+      "name": "Mechanical Butterfly Studios",
+      "url": "",
+      "tags": [
+        "gamedev"
+      ],
+      "summary": "Indie game studio engagement as UI Engineer / Designer.\n",
+      "bullets": [
+        {
+          "text": "Enhanced a BlitzBasic video game, adding new features and refining gameplay.",
+          "tags": [
+            "gamedev"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "themgoods",
+      "name": "ThemGoods Inc.",
+      "url": "",
+      "tags": [
+        "gamedev",
+        "mobile"
+      ],
+      "summary": "Brand engagement as Gameplay Engineer.\n",
+      "bullets": [
+        {
+          "text": "Developed a rollerblading mobile game to promote in-house merchandise and increase brand visibility.",
+          "tags": [
+            "gamedev",
+            "mobile"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "voyage_virtual",
+      "name": "Voyage Virtual Media",
+      "url": "",
+      "tags": [
+        "hardware"
+      ],
+      "summary": "VR media platform engagement as VR Consultant.\n",
+      "bullets": [
+        {
+          "text": "Provided architectural consulting for a VR media platform, focusing on scalability.",
+          "tags": [
+            "hardware"
+          ]
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Waukesha County Technical College (WCTC)",
+      "degree": "GED",
+      "field": "",
+      "year": ""
+    },
+    {
+      "institution": "Waukesha County Technical College (WCTC)",
+      "degree": "Coursework",
+      "field": "Computer Engineering",
+      "year": "1998–1999"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "AWS Certified Cloud Practitioner",
+      "issuer": "Amazon Web Services",
+      "year": "2018",
+      "tags": [
+        "devops",
+        "backend"
+      ]
+    },
+    {
+      "name": "Certificate of Advanced Microsoft SQL",
+      "issuer": "Horizon",
+      "year": "2008",
+      "tags": [
+        "databases",
+        "backend"
+      ]
+    }
+  ],
+  "ai_highlights": [
+    "Designed, built, and deployed \"Alfred,\" an always-on agentic AI assistant (LLM + tool use across Gmail, Trello, and Discord) running on self-hosted infrastructure.",
+    "Building an in-product AI chat experience into a customer portal frontend (React), integrating directly with the AI/LLM API.",
+    "Daily driver of AI coding assistants (Claude Code, Codex, Gemini) — using them to move up the stack into reviewer, architect, and prompt-engineering roles rather than line-by-line coding.",
+    "Use AI for both feature development and peer code review with rigorous guardrails — fact-checking and human-reviewing all AI output rather than trusting it blindly.",
+    "Build and maintain custom LLM-powered AI agents and reusable skills (generative-AI tooling).",
+    "Designed and taught \"Practical AI: Getting More Out of ChatGPT, Claude & Friends,\" a hands-on class at the Waukesha Makerspace.",
+    "Architecting and building the DSHA Applied Wellness Suite primarily through AI — setting the architectural direction and reviewing the AI's output — alongside AI-assisted delivery across numerous personal projects.",
+    "Built a working machine-learning bot prototype in two days at Northwestern Mutual's internal ML competition (team of 6).",
+    "Designed and developed Amazon Alexa voice skills and IoT prototypes (Node, Alexa Skills Kit, AWS Lambda)."
+  ],
+  "_sync": {
+    "sourceFile": "content/resume.yaml",
+    "sourceRepo": "github.com/masterprompt/resumatic (private)",
+    "generatedAt": "2026-05-27T13:17:42.874Z",
+    "generatedBy": "scripts/sync-portfolio.js",
+    "sanitization": [
+      "dropped: meta.phone",
+      "dropped: meta.twitter",
+      "dropped: meta.facebook"
+    ]
+  }
+}

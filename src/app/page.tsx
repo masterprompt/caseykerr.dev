@@ -1,12 +1,15 @@
+import { SkillsSection } from "@/components/sections/SkillsSection";
 import { Terminal } from "@/components/terminal/Terminal";
 
-// Placeholder Sections per CONTEXT.md. Narrative content lands in #07/#08.
-const SECTIONS = [
+// Sections rendered below the Terminal hero. Custom-component sections opt
+// into their own renderer; the rest use the placeholder until the matching
+// content slice lands (#07 About+Now, #08 Projects+Contact).
+const SECTIONS: { id: string; title: string; Component?: () => React.ReactNode }[] = [
   { id: "about", title: "About" },
   { id: "now", title: "Now" },
   { id: "work", title: "Work" },
   { id: "projects", title: "Projects" },
-  { id: "skills", title: "Skills" },
+  { id: "skills", title: "Skills", Component: SkillsSection },
   { id: "contact", title: "Contact" },
 ];
 
@@ -14,12 +17,16 @@ export default function Home() {
   return (
     <>
       <Terminal />
-      {SECTIONS.map((s) => (
-        <section key={s.id} id={s.id} className="placeholder-section">
-          <h2>{s.title}</h2>
-          <p>Coming soon.</p>
-        </section>
-      ))}
+      {SECTIONS.map((s) =>
+        s.Component ? (
+          <s.Component key={s.id} />
+        ) : (
+          <section key={s.id} id={s.id} className="placeholder-section">
+            <h2>{s.title}</h2>
+            <p>Coming soon.</p>
+          </section>
+        ),
+      )}
     </>
   );
 }
