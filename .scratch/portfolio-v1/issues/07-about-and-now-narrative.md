@@ -21,12 +21,20 @@ Casey writes the prose. An agent picking this up should request the draft text f
 
 ## Acceptance criteria
 
-- [ ] About section narrative (2-3 paragraphs) in `src/components/sections/About.tsx`
-- [ ] Now section narrative in `src/components/sections/Now.tsx` with visible `Last updated:` date
-- [ ] `/now` route resolves to the Now section content
-- [ ] Both sections styled to be readable within the CRT theme (review against #12)
-- [ ] Site submitted to nownownow.com directory (or noted as a follow-up in the closing PR)
-- [ ] No invented biographical claims (everything traceable to Casey's draft or `resume.json`)
+- [x] About section narrative (4 paragraphs: positioning, origins, career arc, off-the-clock) in `src/components/sections/AboutSection.tsx`
+- [x] Now section narrative in `src/components/sections/NowSection.tsx` with visible `Last updated:` date
+- [x] `/now` route resolves to the Now section content (real standalone page, not a redirect — better for nownownow.com indexing)
+- [x] Both sections styled to be readable within the CRT theme (full-viewport-width per the updated `feedback-full-width-content` rule; the scanline overlay only sits on `.terminal::after` so prose isn't striped)
+- [ ] Site submitted to nownownow.com directory *(manual follow-up for Casey once the site is fully built and deployed)*
+- [x] No invented biographical claims — every fact traced to either Casey's input in conversation or the synced resume data
+
+## Voice / privacy rules surfaced during this slice (saved as memories)
+
+- No em dashes in prose (`feedback-no-em-dashes`)
+- No current client names in publicly-indexed content (`feedback-no-client-names-in-portfolio`)
+- No unreleased project names — names can be sniped (`feedback-no-unreleased-project-names`)
+- All content sections full-viewport-width, including prose (`feedback-full-width-content` updated to remove the prose exception)
+- External links open in a new tab (`feedback-external-links-new-tab`)
 
 ## Blocked by
 
