@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 
 import {
   AUTO_DEMO,
+  commandNotFoundMessage,
   findCommand,
   listedCommands,
   type CommandLine,
@@ -109,7 +110,7 @@ export function Terminal() {
       setLines((prev) => [
         ...prev,
         { kind: "echo", text: cmd },
-        { kind: "error", text: `command not found: ${name}` },
+        { kind: "error", text: commandNotFoundMessage(name) },
       ]);
       return;
     }
@@ -126,6 +127,16 @@ export function Terminal() {
       { kind: "echo", text: cmd },
       ...(result.lines ?? []),
     ]);
+
+    // Schedule any delayed lines (e.g. vim's "wake up" message, rm's faux
+    // deletion scroll). Each entry fires once after delayMs.
+    if (result.delayedLines) {
+      for (const { delayMs, lines: delayed } of result.delayedLines) {
+        setTimeout(() => {
+          setLines((prev) => [...prev, ...delayed]);
+        }, delayMs);
+      }
+    }
 
     if (result.scrollTo) {
       document
@@ -196,21 +207,39 @@ export function Terminal() {
       }}
       aria-label="Terminal hero"
     >
-      {lines.map((line, i) => (
-        <div
-          key={i}
-          className={
-            line.kind === "error"
-              ? "terminal-line terminal-line--error"
-              : "terminal-line"
-          }
-        >
-          {line.kind === "echo" && (
-            <span className="terminal-prompt">{PROMPT}</span>
-          )}
-          {line.text}
-        </div>
-      ))}
+      {lines.map((line, i) => {
+        if (line.kind === "image") {
+          return (
+            <div key={i} className="terminal-line">
+              {/* eslint-disable-next-line @next/next/no-img-element --
+                  next/image would be ceremony here: tiny easter-egg PNG,
+                  below the fold, images.unoptimized: true is already set
+                  (static export). Plain <img> keeps the in-flow layout
+                  predictable inside the terminal. */}
+              <img
+                src={line.src}
+                alt={line.alt}
+                className={line.className}
+              />
+            </div>
+          );
+        }
+        return (
+          <div
+            key={i}
+            className={
+              line.kind === "error"
+                ? "terminal-line terminal-line--error"
+                : "terminal-line"
+            }
+          >
+            {line.kind === "echo" && (
+              <span className="terminal-prompt">{PROMPT}</span>
+            )}
+            {line.text}
+          </div>
+        );
+      })}
 
       {phase === "demo" && (
         <div className="terminal-line">

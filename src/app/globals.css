@@ -96,6 +96,25 @@ body {
   caret-color: var(--terminal-accent);
 }
 
+/* Hidden-command output: `dance` shows the bitmoji bouncing briefly (#11). */
+.terminal-dance {
+  display: block;
+  width: 160px;
+  height: auto;
+  margin: 0.5rem 0;
+  animation: terminal-dance-bounce 0.5s ease-in-out 3;
+}
+
+@keyframes terminal-dance-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 /* Mobile-only "tap to continue" cue (per #03 mobile fallback). */
 .terminal-mobile-continue {
   display: inline-block;

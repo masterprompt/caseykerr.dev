@@ -24,14 +24,21 @@ All hidden commands documented in `src/components/terminal/commands.ts` with a `
 
 ## Acceptance criteria
 
-- [ ] All five hidden commands implemented
-- [ ] None appear in `help` output
-- [ ] Tab completion does not suggest any of them
-- [ ] `dance` renders the bitmoji asset inline (verify `public/bitmoji-thats-all.png` ships)
-- [ ] Custom command-not-found rotates through ≥ 3 messages
-- [ ] Hidden commands have `hidden: true` flag in `commands.ts`
-- [ ] Manual spot-check: `sudo apt-get install joy` returns the expected snark
-- [ ] No accessibility regression (commands still work via screen reader for completeness)
+- [x] All five hidden commands implemented (`sudo`, `dance`, `coffee`, `vim`, `rm`)
+- [x] None appear in `help` output (`listedCommands()` filters `hidden: true`)
+- [x] Tab completion does not suggest any of them (same filter)
+- [x] `dance` renders the bitmoji asset inline (uses `/bitmoji-thats-all.png` from public/)
+- [x] Custom command-not-found rotates through ≥ 3 messages (5 in the pool)
+- [x] Hidden commands have `hidden: true` flag in `commands.ts`
+- [x] Manual spot-check: `sudo apt-get install joy` returns the expected snark (args ignored)
+- [x] No accessibility regression (image has alt text; delayed lines preserve normal text rendering)
+
+## Implementation notes
+
+- `CommandLine` extended with an `image` kind to support `dance`'s bitmoji.
+- `CommandResult` extended with `delayedLines: { delayMs, lines }[]` so `vim` (3s wake-up) and `rm` (12-step ~2s deletion scroll) can stream output without bespoke effect code in the component.
+- `commandNotFoundMessage(name)` exported from `commands.ts` keeps the rotating-message pool in the registry file.
+- `rm` matches the bare command name; args are ignored, so `rm`, `rm -rf /`, and `rm anyfile.txt` all trigger the joke. Intentional — slightly funnier than requiring exact "-rf /" string match.
 
 ## Blocked by
 
