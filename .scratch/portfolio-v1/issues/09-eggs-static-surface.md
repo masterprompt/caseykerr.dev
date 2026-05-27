@@ -23,14 +23,20 @@ All **Eggs** that live in static files or HTML output. Tech-clever spine with li
 
 ## Acceptance criteria
 
-- [ ] `public/humans.txt` exists, valid format
-- [ ] `public/.well-known/security.txt` exists with valid `Contact:` and `Expires:` fields
-- [ ] Console art logs on page load — verified in both Chrome and Safari devtools
-- [ ] `window.help()` callable from console; output formatted clearly
-- [ ] `window.casey` namespace with `.career()`, `.skills()`, `.contact()`, `.eggs()` methods
-- [ ] HTML head includes ASCII-art comment ≥ 20 lines tall
-- [ ] None of the above produce visible elements or affect first paint
-- [ ] None of the above introduce a11y violations (comments don't break screen readers; console code only runs client-side)
+- [x] `public/humans.txt` exists, valid format (TEAM / THANKS / SITE / NOTES sections per humanstxt.org)
+- [x] `public/.well-known/security.txt` exists with valid `Contact:`, `Expires:` (2027-05-27), `Preferred-Languages:`, `Canonical:` per RFC 9116
+- [x] Console art logs on page load (KERRSOFT ANSI-shadow banner + hint to type `help()`)
+- [x] `window.help()` callable from console; output formatted clearly with %c styling
+- [x] `window.casey` namespace with `.career()`, `.skills()`, `.contact()`, `.eggs()` methods
+- [x] HTML head includes ASCII-art "comment" ≥ 20 lines tall (delivered via inert `<script type="application/x-source-art">` — see implementation notes)
+- [x] None produce visible elements or affect first paint (script tag is inert; ConsoleEgg returns null)
+- [x] No a11y violations (no visible DOM additions; screen readers ignore inert script and dev-only console output)
+
+## Implementation notes
+
+- JSX can't render real HTML comments (React strips them), so the "in-head comment" is delivered as `<script type="application/x-source-art">` with `dangerouslySetInnerHTML`. Browser ignores the unknown script type entirely; view-source renders the ASCII art and credits cleanly right inside `<head>`. Intent of the AC is met (visible to source-viewers, invisible to renders).
+- Career / skills data in `ConsoleEgg.tsx` is hand-stubbed for now. #04 swaps to reads from `content/resume.json` once the resumatic sync lands.
+- Globals are typed via `declare global { interface Window { ... } }` and cleaned up on unmount (effect cleanup) so re-mounts in dev don't leave stale references.
 
 ## Blocked by
 

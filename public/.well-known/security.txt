@@ -1,0 +1,8 @@
+# Security contact information for caseykerr.dev, per RFC 9116.
+# If you've found a security issue with this site (or with anything I built
+# linked from it), please reach out.
+
+Contact: mailto:me@caseykerr.com
+Expires: 2027-05-27T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://caseykerr.dev/.well-known/security.txt
