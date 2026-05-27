@@ -19,15 +19,19 @@ Respect the architecture in [ADR-0001](../../../docs/adr/0001-terminal-hero-with
 
 ## Acceptance criteria
 
-- [ ] Terminal hero component at `src/components/terminal/Terminal.tsx`
-- [ ] CRT theme tokens defined in `globals.css`
-- [ ] Auto-demo plays `whoami` on page load with typewriter timing (~600ms)
-- [ ] Live REPL prompt is keyboard-focused after auto-demo on desktop
-- [ ] Typing `about` + Enter smooth-scrolls to a placeholder section anchored at `#about`
-- [ ] Placeholder About section is `<h2>About</h2><p>Coming soon.</p>` — narrative is #7
-- [ ] Unknown commands print `command not found: <name>`
-- [ ] Vocabulary from `CONTEXT.md` used in code (Terminal hero, Auto-demo, Live REPL, Command)
-- [ ] Deploys via existing workflow; site updates on push
+- [x] Terminal hero component at `src/components/terminal/Terminal.tsx`
+- [x] CRT theme tokens defined in `globals.css` (`--terminal-bg`, `--terminal-fg`, `--terminal-accent`, `--terminal-font`)
+- [x] Auto-demo plays `whoami` on page load with typewriter timing (~500ms in practice; close to 600ms target)
+- [x] Live REPL prompt is keyboard-focused after auto-demo on desktop
+- [x] Typing `about` + Enter smooth-scrolls to a placeholder section anchored at `#about`
+- [x] Placeholder About section is `<h2>About</h2><p>Coming soon.</p>` — narrative is #7
+- [x] Unknown commands print `command not found: <name>`
+- [x] Vocabulary from `CONTEXT.md` used in code (Terminal hero, Auto-demo, Live REPL, Command)
+- [ ] Deploys via existing workflow; site updates on push *(pending push)*
+
+## Verified
+
+Casey verified locally on `npm run dev`: typewriter animation, focus handoff to live REPL, `about` smooth-scroll, and unknown-command error all behave as expected.
 
 ## Blocked by
 

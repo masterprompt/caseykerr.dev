@@ -3,6 +3,14 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* CRT Terminal hero theme tokens.
+   * Vocabulary per CONTEXT.md; consumed by later slices (#03 REPL polish,
+   * #07/#08 prose styling, #12 scanlines/bloom). */
+  --terminal-bg: #0a0a0a;
+  --terminal-fg: #39ff14;
+  --terminal-accent: #ffb000;
+  --terminal-font: var(--font-geist-mono), "Courier New", ui-monospace, monospace;
 }
 
 @theme inline {
@@ -23,4 +31,82 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+ * Terminal hero
+ * Visual frame for the Auto-demo and Live REPL phases (CONTEXT.md).
+ * Scanlines, bloom, prefers-reduced-motion handling arrive in #12.
+ * ──────────────────────────────────────────────────────────────────── */
+.terminal {
+  background: var(--terminal-bg);
+  color: var(--terminal-fg);
+  font-family: var(--terminal-font);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+  cursor: text;
+}
+
+.terminal-line {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.terminal-prompt {
+  color: var(--terminal-accent);
+  user-select: none;
+}
+
+.terminal-line--error {
+  color: var(--terminal-accent);
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 1.05em;
+  background: var(--terminal-accent);
+  vertical-align: text-bottom;
+  margin-left: 2px;
+  animation: terminal-blink 1s steps(2, start) infinite;
+}
+
+@keyframes terminal-blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+.terminal-input-line {
+  display: flex;
+  align-items: baseline;
+}
+
+.terminal-input {
+  background: transparent;
+  border: 0;
+  outline: none;
+  color: inherit;
+  font: inherit;
+  flex: 1 1 auto;
+  min-width: 1ch;
+  padding: 0;
+  caret-color: var(--terminal-accent);
+}
+
+/* Placeholder Section styling — narrative arrives in #07 / #08. */
+.placeholder-section {
+  background: var(--terminal-bg);
+  color: var(--terminal-fg);
+  font-family: var(--terminal-font);
+  padding: 4rem 1.5rem;
+  min-height: 50vh;
+}
+
+.placeholder-section h2 {
+  color: var(--terminal-accent);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
