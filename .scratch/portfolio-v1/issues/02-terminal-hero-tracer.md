@@ -27,7 +27,7 @@ Respect the architecture in [ADR-0001](../../../docs/adr/0001-terminal-hero-with
 - [x] Placeholder About section is `<h2>About</h2><p>Coming soon.</p>` — narrative is #7
 - [x] Unknown commands print `command not found: <name>`
 - [x] Vocabulary from `CONTEXT.md` used in code (Terminal hero, Auto-demo, Live REPL, Command)
-- [ ] Deploys via existing workflow; site updates on push *(pending push)*
+- [x] Deploys via existing workflow; site updates on push (pushed 2026-05-26)
 
 ## Verified
 
