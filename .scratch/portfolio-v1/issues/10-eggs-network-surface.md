@@ -23,13 +23,24 @@ Recommend option 1 for this slice. Document it as an egg in `humans.txt` (#9).
 
 ## Acceptance criteria
 
-- [ ] `GET /teapot` returns HTTP 418 with ASCII teapot
-- [ ] All Worker responses include a custom personality header
-- [ ] `curl -A "curl/8.0" <worker-url>/` returns ANSI-rendered terminal (color codes work in a real shell)
-- [ ] `curl -A "Mozilla/5.0..." <worker-url>/` returns the normal JSON/text response
-- [ ] No ANSI leakage into browser-rendered HTML
-- [ ] If using `terminal.caseykerr.dev`: DNS configured, documented in humans.txt
-- [ ] Tested in a real shell (iTerm2, macOS Terminal)
+- [x] `GET /teapot` returns HTTP 418 with ASCII teapot
+- [x] All Worker responses include a custom personality header (`X-Made-By: hand`)
+- [x] `curl <worker-url>/` returns ANSI-rendered terminal (verified via `cat -v` showing `^[[32m`/`^[[33m` color escapes; renders as green/amber in a real shell)
+- [x] Mozilla-UA hits to root return the standard JSON 404; no ANSI leaks into browser-rendered HTML
+- [ ] terminal.caseykerr.dev DNS — *deferred*. Workers.dev URL stays the canonical curl entrypoint; documented in `public/humans.txt`. Moving DNS to Cloudflare just for this egg felt like the wrong trade.
+- [x] Auto-deploy via GitHub Actions: `.github/workflows/deploy.yml` in the worker repo deploys on push to master (Node 22 + Wrangler 4 + cloudflare/wrangler-action@v3)
+
+## Implementation notes
+
+- Worker handles three routes: `POST /ask`, `GET /teapot`, and `GET /` (only when UA contains `curl|wget|httpie`). All other paths return JSON 404.
+- ANSI rendering uses the same color palette as the in-browser CRT theme: bright green for prompts and ASCII art, amber for accents, dim for body text.
+- Em-dash audit: caught and fixed one stale em dash in the home-page auto-demo (`Casey Kerr — senior full-stack engineer`) during this slice.
+
+## Auto-deploy gotchas (recorded so future-Casey doesn't re-debug)
+
+1. Repo defaults to `master` not `main`; workflow now triggers on both.
+2. Workflow needs Node 22 because `wrangler@^4` requires it. Node 20 caused silent downgrade to `wrangler@3.90` which predates `wrangler.jsonc` support.
+3. GitHub Actions secrets vs variables tabs are distinct surfaces; `${{ secrets.X }}` only reads from the Secrets tab.
 
 ## Blocked by
 
