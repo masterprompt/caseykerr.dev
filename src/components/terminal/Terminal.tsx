@@ -143,6 +143,13 @@ export function Terminal() {
         .getElementById(result.scrollTo)
         ?.scrollIntoView({ behavior: "smooth", block: "start" });
     }
+
+    // Kick off async continuation if present (e.g. `ask` streaming an answer
+    // back from the Worker). Fire-and-forget: the handler updates lines on
+    // its own schedule via setLines.
+    if (result.async) {
+      void result.async(setLines);
+    }
   }
 
   function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {

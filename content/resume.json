@@ -2402,7 +2402,7 @@
   "_sync": {
     "sourceFile": "content/resume.yaml",
     "sourceRepo": "github.com/masterprompt/resumatic (private)",
-    "generatedAt": "2026-05-27T13:17:42.874Z",
+    "generatedAt": "2026-05-28T13:49:05.015Z",
     "generatedBy": "scripts/sync-portfolio.js",
     "sanitization": [
       "dropped: meta.phone",

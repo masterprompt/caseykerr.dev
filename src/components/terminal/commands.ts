@@ -13,6 +13,10 @@ export type CommandLine =
   | { kind: "error"; text: string }
   | { kind: "image"; src: string; alt: string; className?: string };
 
+export type AsyncCommandUpdater = (
+  fn: (prev: CommandLine[]) => CommandLine[],
+) => void;
+
 export type CommandResult = {
   /** Lines to append immediately after the echo. */
   lines?: CommandLine[];
@@ -22,6 +26,12 @@ export type CommandResult = {
   scrollTo?: string;
   /** Wipe visible lines (history retained). */
   clear?: boolean;
+  /**
+   * Optional async continuation. Sync `lines` are committed first, then this
+   * runs and can update lines progressively via the updater. Used by `ask`
+   * (network request + typewriter on the answer).
+   */
+  async?: (updater: AsyncCommandUpdater) => Promise<void>;
 };
 
 export type CommandDef = {
@@ -68,6 +78,77 @@ const clearCommand: CommandDef = {
   name: "clear",
   description: "Clear the terminal output",
   run: () => ({ clear: true }),
+};
+
+// ── `ask` command (#05) ──────────────────────────────────────────────────
+
+const ASK_WORKER_URL =
+  process.env.NEXT_PUBLIC_ASK_WORKER_URL ??
+  "https://caseykerr-dev-worker.caseykerr.workers.dev";
+
+const ASK_TYPEWRITER_MS = 12;
+const ASK_PENDING_TEXT = "…";
+
+const askCommand: CommandDef = {
+  name: "ask",
+  description: "Ask the AI assistant about Casey (e.g. `ask what aws experience do you have`)",
+  run: (args) => {
+    const question = args.join(" ").trim();
+    if (!question) {
+      return {
+        lines: [
+          {
+            kind: "error",
+            text: "usage: ask <your question>   e.g. ask what's your favorite stack",
+          },
+        ],
+      };
+    }
+
+    return {
+      // Emit a placeholder line synchronously; the async continuation will
+      // replace its contents as the answer streams in (typewriter style).
+      lines: [{ kind: "output", text: ASK_PENDING_TEXT }],
+      async: async (updater) => {
+        let answer: string;
+        let isError = false;
+
+        try {
+          const res = await fetch(`${ASK_WORKER_URL}/ask`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ question }),
+          });
+          const data = (await res.json()) as {
+            answer?: string;
+            error?: string;
+          };
+          if (data.answer) {
+            answer = data.answer;
+          } else {
+            answer = `error: ${data.error ?? "unknown response shape"}`;
+            isError = true;
+          }
+        } catch {
+          answer =
+            "Couldn't reach the AI. Could be a network blip; try again, or email me at me@caseykerr.com.";
+          isError = true;
+        }
+
+        // Reset the placeholder to empty so the typewriter starts clean.
+        const kind: CommandLine["kind"] = isError ? "error" : "output";
+        updater((prev) => replaceLastWith(prev, { kind, text: "" }));
+
+        // Typewriter the answer in, one character at a time.
+        for (let i = 1; i <= answer.length; i++) {
+          await sleep(ASK_TYPEWRITER_MS);
+          updater((prev) =>
+            replaceLastWith(prev, { kind, text: answer.slice(0, i) }),
+          );
+        }
+      },
+    };
+  },
 };
 
 // ── Hidden commands (#11) ────────────────────────────────────────────────
@@ -195,6 +276,7 @@ const rmCommand: CommandDef = {
 
 export const COMMANDS: CommandDef[] = [
   ...sectionCommands,
+  askCommand,
   helpCommand,
   clearCommand,
   // hidden (#11)
@@ -262,4 +344,18 @@ export const AUTO_DEMO: {
 
 function randomFrom<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function replaceLastWith(
+  prev: CommandLine[],
+  next: CommandLine,
+): CommandLine[] {
+  if (prev.length === 0) return prev;
+  const out = prev.slice();
+  out[out.length - 1] = next;
+  return out;
 }
