@@ -47,3 +47,7 @@
 
     Build notes for the curious are in the repo's docs/adr/ folder:
         github.com/masterprompt/caseykerr.dev
+
+    There are easter eggs at the network layer too. Try:
+        curl https://caseykerr-dev-worker.caseykerr.workers.dev/
+        curl https://caseykerr-dev-worker.caseykerr.workers.dev/teapot

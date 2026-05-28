@@ -322,7 +322,7 @@ export const AUTO_DEMO: {
   {
     command: "whoami",
     response: () => [
-      { kind: "output", text: "Casey Kerr — senior full-stack engineer" },
+      { kind: "output", text: "Casey Kerr, senior full-stack engineer" },
     ],
   },
   {
