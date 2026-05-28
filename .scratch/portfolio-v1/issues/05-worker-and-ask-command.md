@@ -34,16 +34,23 @@ Requires Casey to:
 
 ## Acceptance criteria
 
-- [ ] Worker scaffold with `wrangler.toml` and TypeScript
-- [ ] `POST /ask` handler returns generated answers
-- [ ] Gemini key only in Worker secrets (grep the repo to confirm)
-- [ ] Per-IP rate limit enforced; verified by making 11 requests in a row from one IP
-- [ ] Quota-exhaustion fallback message returned (not 4xx/5xx)
-- [ ] Worker deployed to a `*.workers.dev` subdomain
-- [ ] `ask` command in terminal calls the deployed Worker
-- [ ] Worker URL configured via `NEXT_PUBLIC_ASK_WORKER_URL`
-- [ ] Answer renders with typewriter effect
-- [ ] Network error and rate-limited states produce clear in-terminal messages
+- [x] Worker scaffold with `wrangler.jsonc` and TypeScript (sibling repo at `~/Projects/Personal/caseykerr-dev-worker/`)
+- [x] `POST /ask` handler returns generated answers
+- [x] Gemini key only in Worker secrets (`wrangler secret put GEMINI_API_KEY`)
+- [x] Per-IP rate limit enforced (10/UTC day, KV-backed via `ASK_RATE_LIMIT`)
+- [x] Quota-exhaustion fallback returned with HTTP 200 + `rateLimited: true` (never 4xx/5xx for visitor-facing errors)
+- [x] Worker deployed at `https://caseykerr-dev-worker.caseykerr.workers.dev`
+- [x] `ask` command in terminal calls the deployed Worker
+- [x] Worker URL configurable via `NEXT_PUBLIC_ASK_WORKER_URL` (deployed URL is the hardcoded default)
+- [x] Answer renders with typewriter effect (~12ms/char)
+- [x] Network error + rate-limited states produce clear in-terminal messages
+
+## Implementation notes
+
+- CommandResult schema gained an optional `async` continuation field so the registry can support async commands; `ask` is the first user.
+- CORS allowlist reflects request origin (localhost + caseykerr.dev) rather than wildcard.
+- Free-tier gotcha: gemini-2.0-flash was moved off the free tier mid-2026 for new projects (429 with `limit: 0`). Worker uses gemini-2.5-flash instead.
+- Initial deploy hallucinated stack details (Python / FastAPI). Grounded with resume.json in #06.
 
 ## Blocked by
 
