@@ -33,15 +33,27 @@ Resume PDF sync: either extend resumatic's `sync:portfolio` (#4) to also copy th
 
 ## Acceptance criteria
 
-- [ ] Projects section: ≥ 4 Endboss titles, each with embed + screenshot + external link
-- [ ] All embeds use `youtube-nocookie.com` and `loading="lazy"`
-- [ ] Makerspace card with photo and link
-- [ ] Kerrsoft consulting card or sub-list with selected highlights
-- [ ] Contact section: email, LinkedIn, GitHub, resume download
-- [ ] Resume PDF in `public/casey-kerr-resume.pdf` (sync mechanism documented)
-- [ ] `resume` command in terminal works (download or scroll-to-contact, pick during slice)
-- [ ] Lighthouse first paint not regressed by ≥ 10% vs #2 baseline
+### Projects (pending — awaiting Casey's resumatic update)
+
+- [ ] Projects section: featured items rendered from `resume.projects` filtered to `public: true`
+- [ ] Each featured item: name, description, link, optional media (YouTube `nocookie` embed or thumbnail)
+- [ ] If any media: `loading="lazy"` on embeds
+- [ ] Casey decides which projects to surface in resumatic (`public: true` flag) before this can land
+
+### Contact (done)
+
+- [x] Contact section: email, LinkedIn, GitHub
+- [x] Layout: 3-card grid with dashed amber borders; hover fills border + faint tint; full-clickable area
+- [x] All external links open in new tab per `feedback-external-links-new-tab`
+- [x] No resume download — Casey explicitly chose contact-only; a one-line note invites email for the resume
+- [x] GoatCounter privacy disclosure deliberately NOT in Contact (it's in humans.txt; no legal requirement since GoatCounter sets no cookies)
+
+## Implementation notes
+
+- Skills section opportunistically reworked during the same session: was a `auto-fit` column grid with ragged heights; now a list of horizontal rows (category label left, amber-tinted pills right). Each row predictable height, fills viewport width. Better scanability for recruiters.
+- Contact cards stretch evenly via `repeat(auto-fit, minmax(280px, 1fr))`; stack on viewports under 280px wide × 3 (mobile portrait).
 
 ## Blocked by
 
 - #2 (Terminal hero tracer bullet)
+- Projects half: Casey's update to resumatic's projects array (add `public: true`, URLs, descriptions, optional media)

@@ -33,7 +33,6 @@ const CATEGORY_LABELS: Record<string, string> = {
 };
 
 export function SkillsSection() {
-  // Group by category, preserving the source order within each group.
   const groups = new Map<string, typeof resume.skills>();
   for (const skill of resume.skills) {
     const list = groups.get(skill.category) ?? [];
@@ -49,15 +48,19 @@ export function SkillsSection() {
   return (
     <section id="skills" className="skills-section">
       <h2>Skills</h2>
-      <div className="skills-grid">
+      <div className="skills-rows">
         {ordered.map((category) => (
-          <div key={category} className="skills-group">
-            <h3>{CATEGORY_LABELS[category] ?? category}</h3>
-            <ul>
+          <div key={category} className="skills-row">
+            <h3 className="skills-row-key">
+              {CATEGORY_LABELS[category] ?? category}
+            </h3>
+            <div className="skills-row-pills">
               {groups.get(category)!.map((skill) => (
-                <li key={skill.id}>{skill.label}</li>
+                <span key={skill.id} className="skills-pill">
+                  {skill.label}
+                </span>
               ))}
-            </ul>
+            </div>
           </div>
         ))}
       </div>
