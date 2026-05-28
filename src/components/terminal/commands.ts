@@ -58,7 +58,34 @@ const sectionCommands: CommandDef[] = SECTIONS.map((s) => ({
   run: () => ({ scrollTo: s.id }),
 }));
 
+// ── Info commands ────────────────────────────────────────────────────────
+
+const whoamiCommand: CommandDef = {
+  name: "whoami",
+  description: "About Casey in one line",
+  run: () => ({
+    lines: [
+      { kind: "output", text: "Casey Kerr, senior full-stack engineer" },
+    ],
+  }),
+};
+
+const lsCommand: CommandDef = {
+  name: "ls",
+  description: "List site sections",
+  run: () => ({
+    lines: [
+      {
+        kind: "output",
+        text: SECTIONS.map((s) => s.id).join("  "),
+      },
+    ],
+  }),
+};
+
 // ── Built-in commands ────────────────────────────────────────────────────
+
+const HELP_NAME_COLUMN_WIDTH = 12;
 
 const helpCommand: CommandDef = {
   name: "help",
@@ -68,7 +95,9 @@ const helpCommand: CommandDef = {
       { kind: "output", text: "Available commands:" },
       ...listedCommands().map((c) => ({
         kind: "output" as const,
-        text: `  ${c.name.padEnd(10)}  ${c.description}`,
+        // Padded name column + thin separator + description gives a
+        // clear visual gutter regardless of font kerning quirks.
+        text: `  ${c.name.padEnd(HELP_NAME_COLUMN_WIDTH)}│  ${c.description}`,
       })),
     ],
   }),
@@ -277,6 +306,8 @@ const rmCommand: CommandDef = {
 export const COMMANDS: CommandDef[] = [
   ...sectionCommands,
   askCommand,
+  whoamiCommand,
+  lsCommand,
   helpCommand,
   clearCommand,
   // hidden (#11)
@@ -312,33 +343,12 @@ export function commandNotFoundMessage(name: string): string {
 // ── Auto-demo (#03) ──────────────────────────────────────────────────────
 
 /**
- * Auto-demo plays these in sequence on page load. The `help` step calls the
- * real help handler so the demo stays in sync as later slices add commands.
+ * Commands the auto-demo types out on page load. Each one is dispatched
+ * through the real command registry (see Terminal.tsx), so a visitor
+ * typing any of these strings gets the same output the demo just showed.
+ * No fake responses, no commands that exist only in the demo.
  */
-export const AUTO_DEMO: {
-  command: string;
-  response: () => CommandLine[];
-}[] = [
-  {
-    command: "whoami",
-    response: () => [
-      { kind: "output", text: "Casey Kerr, senior full-stack engineer" },
-    ],
-  },
-  {
-    command: "ls projects/",
-    response: () => [
-      {
-        kind: "output",
-        text: "endboss-games/  waukesha-makerspace/  kerrsoft/  resumatic/",
-      },
-    ],
-  },
-  {
-    command: "help",
-    response: () => helpCommand.run([]).lines ?? [],
-  },
-];
+export const AUTO_DEMO_COMMANDS: string[] = ["whoami", "ls", "help"];
 
 // ── helpers ──────────────────────────────────────────────────────────────
 

@@ -1,7 +1,9 @@
+import { SectionHeader } from "./SectionHeader";
+
 export function NowSection() {
   return (
     <section id="now" className="now-section">
-      <h2>Now</h2>
+      <SectionHeader title="Now" />
       <p className="now-meta">Last updated: 2026-05-27</p>
       <p className="now-intro">Right now I&apos;m:</p>
       <ul className="now-list">

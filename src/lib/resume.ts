@@ -62,7 +62,48 @@ export type ExperienceEntry = {
   bullets?: Bullet[];
 };
 
-// Project / education / certifications / ai_highlights aren't rendered yet;
+export type MediaItem = {
+  type: "demo" | "youtube" | "repo" | (string & {});
+  url: string;
+  caption?: string;
+  /**
+   * Set false for media URLs that aren't publicly accessible (private repos,
+   * draft demos, etc.). The portfolio filters these out and won't link them.
+   * Defaults to true (omitting the flag = visible).
+   */
+  public?: boolean;
+};
+
+export type ProjectStatus =
+  | "shipped"
+  | "active"
+  | "archived"
+  | "scaffold"
+  | (string & {});
+
+export type ProjectEntry = {
+  id: string;
+  name: string;
+  codename?: string;
+  status?: ProjectStatus;
+  tier?: string | number;
+  start?: string;
+  end?: string;
+  public?: boolean;
+  url?: string;
+  description?: string;
+  summary?: string;
+  bullets?: { id?: string; text: string; tags?: string[] }[];
+  /** Skill IDs that reference Resume.skills (resolved to labels at render time). */
+  skills?: string[];
+  /** Free-form specific tech names (e.g. "Gemini 2.5 Flash", "AWS Cognito"). */
+  tech?: string[];
+  /** Category-level tags (e.g. ["ai", "backend", "core"]). */
+  tags?: string[];
+  media?: MediaItem[];
+};
+
+// Education / certifications / ai_highlights aren't rendered yet;
 // kept loose until a section actually consumes them.
 export type Resume = {
   meta: ResumeMeta;
@@ -70,7 +111,7 @@ export type Resume = {
   summary_default?: string;
   skills: Skill[];
   experience: ExperienceEntry[];
-  projects?: unknown[];
+  projects?: ProjectEntry[];
   education?: unknown[];
   certifications?: unknown[];
   ai_highlights?: unknown[];

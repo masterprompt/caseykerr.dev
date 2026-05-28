@@ -51,6 +51,13 @@ body {
   cursor: text;
   position: relative; /* anchor for the ::after scanline overlay */
   text-shadow: var(--terminal-bloom);
+  /* Disable OpenType features that can break monospace alignment.
+   * Geist Mono ships with kerning + contextual alternates enabled by
+   * default via next/font; both can subtly vary character widths and
+   * misalign columns in monospace-formatted output like `help`. */
+  font-feature-settings: "calt" 0, "kern" 0, "liga" 0;
+  font-variant-ligatures: none;
+  font-kerning: none;
 }
 
 /* Scanlines + subtle flicker — overlay sits above content via ::after but
@@ -187,6 +194,50 @@ body {
   outline-offset: 2px;
 }
 
+/* Section header: title on the left, back-to-top link on the right. */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  color: var(--terminal-accent);
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.section-back-to-top {
+  background: transparent;
+  border: none;
+  color: var(--terminal-accent);
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.15rem 0.4rem;
+  cursor: pointer;
+  text-decoration: underline;
+  border-radius: 2px;
+  opacity: 0.75;
+  transition: opacity 0.15s ease;
+}
+
+.section-back-to-top:hover {
+  opacity: 1;
+}
+
+.section-back-to-top:focus-visible {
+  opacity: 1;
+  outline: 1px solid var(--terminal-accent);
+  outline-offset: 2px;
+}
+
+/* Now section's header has a meta date directly below — tighten the gap. */
+.now-section .section-header {
+  margin-bottom: 0.5rem;
+}
+
 /* Placeholder Section styling — narrative arrives in #07 / #08. */
 .placeholder-section {
   background: var(--terminal-bg);
@@ -305,6 +356,164 @@ body {
 .now-back-nav a {
   color: var(--terminal-accent);
   text-decoration: underline;
+}
+
+/* Projects section — grid of media-backed projects from resume.json (#08). */
+.projects-section {
+  background: var(--terminal-bg);
+  color: var(--terminal-fg);
+  font-family: var(--terminal-font);
+  padding: 4rem 1.5rem;
+}
+
+.projects-section h2 {
+  color: var(--terminal-accent);
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  align-items: start; /* uniform collapsed height; expanded cards push down */
+}
+
+.project-card {
+  border: 1px dashed rgba(255, 176, 0, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.project-card-toggle {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  list-style: none;
+  transition: background-color 0.15s ease;
+}
+
+.project-card-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.project-card-toggle:hover {
+  background-color: rgba(255, 176, 0, 0.04);
+}
+
+.project-card-toggle:focus-visible {
+  outline: 2px solid var(--terminal-accent);
+  outline-offset: -2px;
+}
+
+.project-card-caret {
+  color: var(--terminal-accent);
+  flex-shrink: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  width: 1rem;
+  text-align: center;
+  transition: transform 0.15s ease;
+}
+
+.project-card[open] .project-card-caret {
+  transform: rotate(90deg);
+}
+
+.project-card-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0; /* enables text-overflow on .project-card-description */
+}
+
+.project-card-name {
+  color: var(--terminal-accent);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.project-card-description {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-top: 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.project-card[open] .project-card-description {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+.project-card-details {
+  padding: 0 1.5rem 1.25rem 3.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.project-card-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.project-card-section-label {
+  color: var(--terminal-accent);
+  font-size: 0.75rem;
+  opacity: 0.75;
+}
+
+.project-card-section-label::before {
+  content: "> ";
+  color: var(--terminal-fg);
+  opacity: 0.5;
+}
+
+.project-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.project-card-tag {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  background: rgba(255, 176, 0, 0.06);
+  border: 1px solid rgba(255, 176, 0, 0.25);
+  border-radius: 3px;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--terminal-fg);
+  white-space: nowrap;
+}
+
+.project-card-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.project-card-link {
+  color: var(--terminal-accent);
+  text-decoration: underline;
+  font-size: 0.85rem;
+}
+
+.project-card-link::before {
+  content: "→ ";
+  color: var(--terminal-fg);
+  opacity: 0.6;
+  text-decoration: none;
 }
 
 /* Contact section — grid of channel cards + GoatCounter disclosure (#08). */

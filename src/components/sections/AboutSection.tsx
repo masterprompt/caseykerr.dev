@@ -1,7 +1,9 @@
+import { SectionHeader } from "./SectionHeader";
+
 export function AboutSection() {
   return (
     <section id="about" className="about-section">
-      <h2>About</h2>
+      <SectionHeader title="About" />
       <div className="about-prose">
         <p>
           I&apos;m Casey Kerr, a senior full-stack engineer who builds with AI

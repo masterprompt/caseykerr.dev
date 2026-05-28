@@ -1,7 +1,9 @@
+import { SectionHeader } from "./SectionHeader";
+
 export function ContactSection() {
   return (
     <section id="contact" className="contact-section">
-      <h2>Contact</h2>
+      <SectionHeader title="Contact" />
       <div className="contact-grid">
         <a href="mailto:me@caseykerr.com" className="contact-card">
           <div className="contact-card-key">Email</div>

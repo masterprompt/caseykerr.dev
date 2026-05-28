@@ -2205,11 +2205,39 @@
     {
       "id": "alfred_agent",
       "name": "Alfred — Personal AI Assistant",
+      "codename": "Alfred",
       "url": "",
+      "tier": 1,
+      "status": "active",
+      "start": "2026-04",
+      "end": "present",
       "tags": [
         "ai",
         "backend",
         "core"
+      ],
+      "skills": [
+        "generative_ai",
+        "llm_apps",
+        "ai_apis",
+        "ai_agents",
+        "prompt_engineering",
+        "llm_integration"
+      ],
+      "tech": [
+        "Gemini 2.5 Flash",
+        "GPT-4o",
+        "Gmail API",
+        "Trello API",
+        "Discord API"
+      ],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/masterprompt/alfred-agent",
+          "caption": "Source / config repo",
+          "public": false
+        }
       ],
       "summary": "A deployed, always-on agentic LLM assistant running 24/7 on self-hosted homelab hardware.\n",
       "bullets": [
@@ -2232,11 +2260,28 @@
     {
       "id": "governance_scribe",
       "name": "Governance Scribe — AI Meeting Secretary",
+      "codename": "Governance Scribe",
       "url": "",
+      "tier": 1,
+      "status": "shipped",
+      "start": "2025-12",
+      "end": "present",
       "tags": [
         "ai",
         "core"
       ],
+      "skills": [
+        "generative_ai",
+        "llm_apps",
+        "ai_apis",
+        "prompt_engineering"
+      ],
+      "tech": [
+        "Zoom transcripts",
+        "pandoc",
+        "LaTeX"
+      ],
+      "media": [],
       "summary": "An LLM-powered pipeline that turns raw meeting transcripts into board-ready minutes, action items, and agendas — in active use for nonprofit governance.\n",
       "bullets": [
         {
@@ -2257,11 +2302,32 @@
     {
       "id": "keymaster",
       "name": "Keymaster — Identity & SSO Hub",
+      "codename": "Keymaster",
       "url": "",
+      "tier": 1,
+      "status": "active",
+      "start": "2025-12",
+      "end": "present",
       "tags": [
         "backend",
         "core"
       ],
+      "skills": [
+        "node",
+        "typescript",
+        "aws_lambda",
+        "aws",
+        "mysql",
+        "microservices",
+        "rest_api"
+      ],
+      "tech": [
+        "Hono",
+        "Drizzle",
+        "JWT",
+        "OAuth 2.0"
+      ],
+      "media": [],
       "summary": "A centralized OAuth 2.0 / SSO and API-key management hub serving as the security backbone for a multi-service application ecosystem.\n",
       "bullets": [
         {
@@ -2283,11 +2349,31 @@
     {
       "id": "atlas",
       "name": "Atlas — Inventory Management Platform",
+      "codename": "Atlas",
       "url": "",
+      "tier": 1,
+      "status": "shipped",
+      "start": "2025-07",
+      "end": "present",
       "tags": [
         "frontend",
-        "backend"
+        "backend",
+        "core"
       ],
+      "skills": [
+        "nextjs",
+        "react",
+        "typescript",
+        "mysql",
+        "rest_api"
+      ],
+      "tech": [
+        "Drizzle",
+        "Material UI",
+        "NextAuth",
+        "AWS S3"
+      ],
+      "media": [],
       "summary": "A polished full-stack inventory platform for tools, equipment, and materials with hierarchical locations, tagging, and search.\n",
       "bullets": [
         {
@@ -2301,16 +2387,522 @@
       ]
     },
     {
-      "id": "mechanical_butterfly",
-      "name": "Mechanical Butterfly Studios",
+      "id": "jarvis_app",
+      "name": "Jarvis — Personal Dashboard & Kanban",
+      "codename": "Jarvis",
+      "url": "https://jarvis.caseykerr.dev",
+      "tier": 1,
+      "status": "shipped",
+      "start": "2026-02",
+      "end": "present",
+      "tags": [
+        "frontend",
+        "backend",
+        "core"
+      ],
+      "skills": [
+        "nextjs",
+        "react",
+        "typescript",
+        "mysql",
+        "aws"
+      ],
+      "tech": [
+        "AWS Cognito"
+      ],
+      "media": [
+        {
+          "type": "demo",
+          "url": "https://jarvis.caseykerr.dev",
+          "caption": "Live application"
+        }
+      ],
+      "summary": "A shipped, live personal dashboard and kanban board built on Next.js 16 with AWS Cognito authentication — daily-driver tooling deployed under the caseykerr.dev domain.\n",
+      "bullets": [
+        {
+          "text": "Designed and shipped a Next.js 16 / TypeScript / MySQL personal dashboard with AWS Cognito auth, deployed and in active daily use.",
+          "tags": [
+            "frontend",
+            "backend",
+            "core"
+          ]
+        },
+        {
+          "text": "Serves as both a productivity tool and a live engineering portfolio piece under the caseykerr.dev domain.",
+          "tags": [
+            "frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guildhall",
+      "name": "Guildhall — Membership Management Platform",
+      "codename": "Guildhall",
       "url": "",
+      "tier": 1,
+      "status": "active",
+      "start": "2026-01",
+      "end": "present",
+      "tags": [
+        "backend",
+        "frontend",
+        "core"
+      ],
+      "skills": [
+        "node",
+        "typescript",
+        "mysql",
+        "microservices",
+        "rest_api"
+      ],
+      "tech": [
+        "Fastify",
+        "Drizzle"
+      ],
+      "media": [],
+      "summary": "A comprehensive modular-monolith membership management platform — members, events, email, invoicing — designed to replace Wild Apricot for a nonprofit ecosystem.\n",
+      "bullets": [
+        {
+          "text": "Architected a Fastify / MySQL / Drizzle ORM modular monolith spanning member management, event registration, email, and invoicing — multi-service design with shared identity via Keymaster OAuth.",
+          "tags": [
+            "backend",
+            "core"
+          ]
+        },
+        {
+          "text": "Led four-phase design (architecture, domain model, integration contracts, rollout) ahead of implementation.",
+          "tags": [
+            "backend",
+            "leadership"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "apricot_event_planter",
+      "name": "Apricot Event Planter — AI-Powered Event Creation CLI",
+      "codename": "Apricot Event Planter",
+      "url": "",
+      "tier": 2,
+      "status": "active",
+      "start": "2025-12",
+      "end": "present",
+      "tags": [
+        "ai",
+        "backend"
+      ],
+      "skills": [
+        "node",
+        "typescript",
+        "ai_apis",
+        "llm_integration"
+      ],
+      "tech": [
+        "Commander.js",
+        "Wild Apricot"
+      ],
+      "media": [],
+      "summary": "A command-line tool that uses the Claude API to draft and publish Wild Apricot events from natural-language prompts — paired companion to the apricot-harvester sync utility.\n",
+      "bullets": [
+        {
+          "text": "Built a TypeScript CLI (Commander.js) that drives the Claude API to generate event copy, dates, and pricing, then publishes to Wild Apricot via REST.",
+          "tags": [
+            "ai",
+            "backend",
+            "core"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "echo_chamber",
+      "name": "Echo Chamber — AI-Assisted Memoir Pipeline",
+      "codename": "Echo Chamber",
+      "url": "",
+      "tier": 2,
+      "status": "active",
+      "start": "2025-12",
+      "end": "present",
+      "tags": [
+        "ai"
+      ],
+      "skills": [
+        "generative_ai",
+        "llm_apps",
+        "ai_apis",
+        "prompt_engineering"
+      ],
+      "tech": [
+        "audio transcription"
+      ],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/masterprompt/echo-chamber",
+          "caption": "Public source repo",
+          "public": false
+        }
+      ],
+      "summary": "A personal memoir and life-lessons project built around an AI-assisted workflow: audio → transcription → analysis → thematic organization.\n",
+      "bullets": [
+        {
+          "text": "Designed a multi-stage AI pipeline that converts long-form audio reflections into structured, themed prose ready for human review.",
+          "tags": [
+            "ai"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parallax_rpg",
+      "name": "Parallax RPG — Async-Correspondence RPG Platform",
+      "codename": "Parallax RPG",
+      "url": "",
+      "tier": 2,
+      "status": "active",
+      "start": "2025-12",
+      "end": "present",
+      "tags": [
+        "backend",
+        "frontend"
+      ],
+      "skills": [
+        "node",
+        "typescript",
+        "mysql",
+        "rest_api",
+        "generative_ai",
+        "llm_apps"
+      ],
+      "tech": [
+        "Hono",
+        "Drizzle"
+      ],
+      "media": [],
+      "summary": "An asynchronous correspondence-style RPG platform inspired by play-by-mail games — private turns, asymmetric information, AI-assisted narrative synthesis, slow play.\n",
+      "bullets": [
+        {
+          "text": "Architected a Hono API + MySQL modular platform supporting private turn submission, GM-only views, and AI-generated narrative recaps.",
+          "tags": [
+            "backend",
+            "core"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "character_forge",
+      "name": "Character Forge — TTRPG Character Creation Platform",
+      "codename": "Character Forge",
+      "url": "",
+      "tier": 2,
+      "status": "active",
+      "start": "2025-12",
+      "end": "present",
+      "tags": [
+        "frontend",
+        "backend"
+      ],
+      "skills": [
+        "react",
+        "typescript",
+        "node",
+        "mysql",
+        "auth0"
+      ],
+      "tech": [
+        "Vite",
+        "Express",
+        "monorepo"
+      ],
+      "media": [],
+      "summary": "A configurable TTRPG character creation platform with full lifecycle management (create, level, manage characters across game systems) and a package-based extensibility model.\n",
+      "bullets": [
+        {
+          "text": "Designed a monorepo platform (React Vite frontend, Node/Express API, MySQL, Auth0) with pluggable game-system packages for procedural character generation.",
+          "tags": [
+            "frontend",
+            "backend",
+            "core"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "silver_ball",
+      "name": "Silver Ball — VR Pinball Cabinet",
+      "codename": "Silver Ball",
+      "url": "",
+      "tier": 2,
+      "status": "scaffold",
+      "start": "2026-01",
+      "end": "present",
+      "tags": [
+        "hardware"
+      ],
+      "skills": [
+        "iot"
+      ],
+      "tech": [
+        "ESP32",
+        "BLE",
+        "Arduino",
+        "Meta Quest",
+        "Pinball FX VR",
+        "ESP32-BLE-Gamepad"
+      ],
+      "media": [],
+      "summary": "A VR pinball cabinet design combining Meta Quest hardware with physical pinball controls and haptic feedback driven by an ESP32 bridge.\n",
+      "bullets": [
+        {
+          "text": "Designed a hybrid VR/hardware build: ESP32/BLE controller + physical flipper buttons + haptic feedback bridging Pinball FX VR on Meta Quest 2/3.",
+          "tags": [
+            "hardware",
+            "core"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crowd_eye",
+      "name": "Crowd Eye — Privacy-First Foot Traffic Counter",
+      "codename": "Crowd Eye",
+      "url": "",
+      "tier": 2,
+      "status": "scaffold",
+      "start": "2026-05",
+      "end": "present",
+      "tags": [
+        "ai",
+        "hardware"
+      ],
+      "skills": [
+        "generative_ai",
+        "iot",
+        "python"
+      ],
+      "tech": [
+        "face detection",
+        "embedding vectors",
+        "edge compute"
+      ],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/masterprompt/crowd-eye",
+          "caption": "Public source repo",
+          "public": false
+        }
+      ],
+      "summary": "A privacy-first foot-traffic counter for conference and craft-fair booths — edge face detection + embedding vectors, no cloud, no image storage.\n",
+      "bullets": [
+        {
+          "text": "Designed an edge-compute traffic counter using face detection and embedding vectors entirely on-device, with a built-in display and no cloud dependency.",
+          "tags": [
+            "ai",
+            "hardware",
+            "core"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "presence_spotter",
+      "name": "Presence Spotter — Facial Recognition Presence System",
+      "codename": "Presence Spotter",
+      "url": "",
+      "tier": 2,
+      "status": "active",
+      "start": "2025-12",
+      "end": "present",
+      "tags": [
+        "ai",
+        "backend",
+        "hardware"
+      ],
+      "skills": [
+        "python",
+        "node",
+        "docker",
+        "mysql",
+        "redis",
+        "generative_ai"
+      ],
+      "tech": [
+        "CompreFace",
+        "Ubiquiti cameras"
+      ],
+      "media": [],
+      "summary": "A real-time facial-recognition presence monitoring system pairing Ubiquiti cameras with CompreFace and Redis to track who is currently in a physical space.\n",
+      "bullets": [
+        {
+          "text": "Designed a CompreFace + Python + Node + MySQL + Redis stack running in Docker to ingest Ubiquiti camera feeds and surface real-time presence data.",
+          "tags": [
+            "ai",
+            "backend",
+            "hardware"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mug_shot",
+      "name": "Mug Shot — Facial Recognition Admin UI",
+      "codename": "Mug Shot",
+      "url": "",
+      "tier": 2,
+      "status": "active",
+      "start": "2025-12",
+      "end": "present",
+      "tags": [
+        "frontend",
+        "ai"
+      ],
+      "skills": [
+        "nextjs",
+        "react",
+        "typescript",
+        "mysql"
+      ],
+      "tech": [
+        "Drizzle",
+        "Material UI"
+      ],
+      "media": [],
+      "summary": "An admin web interface for reviewing facial-recognition enrollments — surfaces unknown faces detected by Presence Spotter and lets admins assign them to known members.\n",
+      "bullets": [
+        {
+          "text": "Built a Next.js 15 + Material UI + Drizzle ORM admin tool for triaging unknown-face detections and binding them to member records.",
+          "tags": [
+            "frontend",
+            "ai"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "caseykerr_dev",
+      "name": "caseykerr.dev — Personal Portfolio Site",
+      "codename": "caseykerr.dev",
+      "url": "https://caseykerr.dev",
+      "tier": 2,
+      "status": "active",
+      "start": "2026-01",
+      "end": "present",
+      "tags": [
+        "frontend"
+      ],
+      "skills": [
+        "nextjs",
+        "react",
+        "typescript",
+        "html_css"
+      ],
+      "tech": [
+        "Tailwind",
+        "GitHub Pages"
+      ],
+      "media": [
+        {
+          "type": "demo",
+          "url": "https://caseykerr.dev",
+          "caption": "Live site"
+        },
+        {
+          "type": "repo",
+          "url": "https://github.com/masterprompt/caseykerr.dev",
+          "caption": "Public source repo"
+        }
+      ],
+      "summary": "A Next.js 16 personal portfolio site deployed to GitHub Pages, surfacing project work and writing under caseykerr.dev.\n",
+      "bullets": [
+        {
+          "text": "Built a Next.js 16 / TypeScript / Tailwind portfolio site deployed via GitHub Pages, with structured project content sourced from resumatic.",
+          "tags": [
+            "frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dsha_wellness_suite",
+      "name": "DSHA Applied Wellness Suite — School Wellness Platform",
+      "codename": "Applied Wellness Suite",
+      "url": "",
+      "tier": 2,
+      "status": "active",
+      "start": "2025-12",
+      "end": "present",
+      "tags": [
+        "frontend",
+        "backend",
+        "mobile",
+        "ai",
+        "core"
+      ],
+      "skills": [
+        "react",
+        "react_native",
+        "typescript",
+        "mysql",
+        "node",
+        "rest_api",
+        "ai_assisted_dev"
+      ],
+      "tech": [
+        "Hono",
+        "Vite",
+        "Expo",
+        "Drizzle",
+        "monorepo"
+      ],
+      "media": [],
+      "summary": "A multi-app monorepo (Hono API, React web client, Expo mobile client, MySQL/Drizzle) replacing a legacy DSHA student enrollment and course-management platform — built primarily through AI with human-reviewed architecture and code.\n",
+      "bullets": [
+        {
+          "text": "Architected a Hono / Vite-React / Expo / MySQL / Drizzle monorepo replacing a legacy enrollment platform, driving the build primarily through AI with human-reviewed output.",
+          "tags": [
+            "ai",
+            "backend",
+            "frontend",
+            "mobile",
+            "core"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "playtown",
+      "name": "Playtown — Avatar Framework Prototype",
+      "codename": "Playtown",
+      "url": "",
+      "tier": 3,
+      "status": "archived",
       "tags": [
         "gamedev"
       ],
-      "summary": "Indie game studio engagement as UI Engineer / Designer.\n",
+      "skills": [],
+      "tech": [
+        "avatar framework",
+        "Mii-style customization"
+      ],
+      "media": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=TXcrnc7Reto",
+          "caption": "Gameplay demo"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=6wmQ0bKEJAs",
+          "caption": "Avatar customization demo"
+        }
+      ],
+      "summary": "A proof-of-concept avatar framework intended as the shared foundation for other titles — similar in spirit to Nintendo's Mii system.\n",
       "bullets": [
         {
-          "text": "Enhanced a BlitzBasic video game, adding new features and refining gameplay.",
+          "text": "Built an avatar creation and customization framework as the basis for a multi-title game lineup, with showcase demos exploring the design space.",
           "tags": [
             "gamedev"
           ]
@@ -2318,17 +2910,47 @@
       ]
     },
     {
-      "id": "themgoods",
-      "name": "ThemGoods Inc.",
+      "id": "chicken_escape",
+      "name": "Chicken Escape — 3D Puzzle/Tile Mobile Game",
+      "codename": "Chicken Escape",
       "url": "",
+      "tier": 3,
+      "status": "archived",
       "tags": [
         "gamedev",
         "mobile"
       ],
-      "summary": "Brand engagement as Gameplay Engineer.\n",
+      "skills": [
+        "unity",
+        "mobile_games"
+      ],
+      "tech": [
+        "iOS"
+      ],
+      "media": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=i7-mwtckm34",
+          "caption": "Gameplay"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=cb6Bn__GeMw"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=g07RzE9EG6E"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=XIYskeiI7qA",
+          "caption": "Advanced board layouts"
+        }
+      ],
+      "summary": "A 3D puzzle/tile game published on the iPhone App Store (later delisted; no longer maintained).\n",
       "bullets": [
         {
-          "text": "Developed a rollerblading mobile game to promote in-house merchandise and increase brand visibility.",
+          "text": "Published a 3D puzzle/tile game on iOS as part of a 2-developer + 1-designer + 7-artist Endboss Games team.",
           "tags": [
             "gamedev",
             "mobile"
@@ -2337,19 +2959,1083 @@
       ]
     },
     {
-      "id": "voyage_virtual",
-      "name": "Voyage Virtual Media",
+      "id": "chicken_rescue",
+      "name": "Chicken Rescue — 3D Platformer/Puzzle Mobile Game",
+      "codename": "Chicken Rescue",
       "url": "",
+      "tier": 3,
+      "status": "archived",
+      "tags": [
+        "gamedev",
+        "mobile"
+      ],
+      "skills": [
+        "unity",
+        "mobile_games"
+      ],
+      "tech": [
+        "iOS"
+      ],
+      "media": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=bXrpqs2yg0I",
+          "caption": "Gameplay"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=nr7CJJxKu2Y"
+        }
+      ],
+      "summary": "A 3D platformer/puzzle game published on the iPhone App Store, built atop assets from Chicken Escape (later delisted; no longer maintained).\n",
+      "bullets": [
+        {
+          "text": "Published a follow-up 3D platformer/puzzle title on iOS, reusing assets from Chicken Escape to accelerate development.",
+          "tags": [
+            "gamedev",
+            "mobile"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "colortron",
+      "name": "Colortron — Grid Tower-Defense Shooter Prototype",
+      "codename": "Colortron",
+      "url": "",
+      "tier": 3,
+      "status": "archived",
+      "tags": [
+        "gamedev"
+      ],
+      "skills": [],
+      "tech": [],
+      "media": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=Ddw3ztAeuFI",
+          "caption": "Gameplay demo"
+        }
+      ],
+      "summary": "A Tron-style grid-based tower defense shoot-'em-up prototype exploring hybrid genre mechanics.\n",
+      "bullets": [
+        {
+          "text": "Prototyped a Tron-influenced grid tower-defense/shooter hybrid as a design exploration.",
+          "tags": [
+            "gamedev"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dead_squared",
+      "name": "Dead Squared — Rogue-Like First-Person Shooter (Alpha)",
+      "codename": "Dead Squared",
+      "url": "",
+      "tier": 3,
+      "status": "archived",
+      "tags": [
+        "gamedev"
+      ],
+      "skills": [
+        "unity"
+      ],
+      "tech": [
+        "Steam Greenlight"
+      ],
+      "media": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=-5Tj9b3pSMk",
+          "caption": "Gameplay"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=x2Oa6mUe77w"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=mR3bR6nle9I"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=0CEnWdQHZaE"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=4HETXX6Kj-g"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=IOx6LDie-wQ"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=67daUyN8gzI"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=f3co09Pijzw"
+        }
+      ],
+      "summary": "A rogue-like first-person shooter that reached Steam Greenlight; project ended when community demand for multiplayer outgrew the team's scope.\n",
+      "bullets": [
+        {
+          "text": "Built an alpha rogue-like FPS, Steam-greenlit; designed for single-player but shelved when community pressure for multiplayer exceeded team capacity.",
+          "tags": [
+            "gamedev"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "valo",
+      "name": "Valo — Branded Skating Mobile Game",
+      "codename": "Valo",
+      "url": "",
+      "tier": 3,
+      "status": "archived",
+      "tags": [
+        "gamedev",
+        "mobile"
+      ],
+      "skills": [
+        "unity",
+        "mobile_games"
+      ],
+      "tech": [
+        "iOS"
+      ],
+      "media": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=BJt-xojHP-s",
+          "caption": "Release trailer"
+        }
+      ],
+      "summary": "A Tony Hawk-style rollerblading mobile game published on iOS for the Valo product line under ThemGoods Inc. (later delisted; no longer maintained).\n",
+      "bullets": [
+        {
+          "text": "Shipped a branded mobile skating game for ThemGoods Inc.'s Valo rollerblade product line, published on the iPhone App Store.",
+          "tags": [
+            "gamedev",
+            "mobile"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "droopy_blocks",
+      "name": "Droopy Blocks — Published Puzzle Game (Mechanical Butterfly Studios)",
+      "codename": "Droopy Blocks",
+      "url": "",
+      "tier": 3,
+      "status": "archived",
+      "tags": [
+        "gamedev"
+      ],
+      "skills": [
+        "blitzbasic"
+      ],
+      "tech": [],
+      "media": [],
+      "summary": "A published puzzle game built in BlitzBasic for Mechanical Butterfly Studios; Endboss Games handled engineering enhancements and gameplay refinements.\n",
+      "bullets": [
+        {
+          "text": "Contributed engineering enhancements and gameplay refinements to a published BlitzBasic title for Mechanical Butterfly Studios.",
+          "tags": [
+            "gamedev"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "project_lantern",
+      "name": "Project Lantern — 2D Top-Down Adventure Game",
+      "codename": "Project Lantern",
+      "url": "",
+      "tier": 3,
+      "status": "scaffold",
+      "start": "2026-05",
+      "end": "present",
+      "tags": [
+        "gamedev"
+      ],
+      "skills": [
+        "unity",
+        "csharp"
+      ],
+      "tech": [
+        "Cinemachine"
+      ],
+      "media": [],
+      "summary": "A 2D top-down adventure game prototype (codename \"Project Lantern\"; eventual title \"The Lore of Hope\") in Unity 6 — SNES-era aesthetic with modern controls.\n",
+      "bullets": [
+        {
+          "text": "Prototyping a 2D top-down adventure game in Unity 6 with Cinemachine, targeting an SNES-era aesthetic and modern control feel.",
+          "tags": [
+            "gamedev"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tinkerverse",
+      "name": "Tinkerverse — Voxel Sandbox Multiplayer Game",
+      "codename": "Tinkerverse",
+      "url": "",
+      "tier": 3,
+      "status": "scaffold",
+      "start": "2025-12",
+      "end": "present",
+      "tags": [
+        "gamedev",
+        "backend"
+      ],
+      "skills": [
+        "unity",
+        "csharp",
+        "node",
+        "postgres"
+      ],
+      "tech": [
+        "Fish-Networking",
+        "Cassandra"
+      ],
+      "media": [],
+      "summary": "A voxel-based sandbox multiplayer game design (Minecraft / No Man's Sky-inspired) on Unity 2022 LTS with Fish-Networking and a Node/Postgres/Cassandra backend.\n",
+      "bullets": [
+        {
+          "text": "Designed a voxel sandbox MMO architecture (Unity 2022 LTS, Fish-Networking, Node API, PostgreSQL + Cassandra) through to implementation-ready state.",
+          "tags": [
+            "gamedev",
+            "backend"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gridiron",
+      "name": "GridIron — Tactical Tabletop Football Wargame",
+      "codename": "GridIron",
+      "url": "",
+      "tier": 3,
+      "status": "scaffold",
+      "start": "2025-12",
+      "end": "present",
+      "tags": [
+        "gamedev"
+      ],
+      "skills": [],
+      "tech": [
+        "tabletop wargame rules"
+      ],
+      "media": [],
+      "summary": "A tactical tabletop miniature wargame design (11-on-11 football on a grid) — physical game design and rules documentation project.\n",
+      "bullets": [
+        {
+          "text": "Designed an 11-on-11 tactical tabletop wargame on a grid, with markdown-based rules documentation as the source of truth.",
+          "tags": [
+            "gamedev"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hitchhikers_guide_prop",
+      "name": "Hitchhiker's Guide Prop — Working Book Replica",
+      "codename": "Hitchhiker's Guide Prop",
+      "url": "",
+      "tier": 3,
+      "status": "scaffold",
+      "start": "2026-05",
+      "end": "present",
       "tags": [
         "hardware"
       ],
-      "summary": "VR media platform engagement as VR Consultant.\n",
+      "skills": [
+        "iot"
+      ],
+      "tech": [
+        "3D printing",
+        "embedded electronics"
+      ],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/masterprompt/hitchhikers-guide-prop",
+          "caption": "Public source repo"
+        }
+      ],
+      "summary": "A working replica of the Hitchhiker's Guide to the Galaxy clamshell book prop from the 2005 film — animated screen + electronics in a 3D-printed shell.\n",
+      "bullets": [
+        {
+          "text": "Designing a functional HHGTTG book prop replica combining 3D printing, embedded electronics, and screen animation.",
+          "tags": [
+            "hardware"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chromablast",
+      "name": "Chromablast — Arduino LED Arcade Game",
+      "codename": "Chromablast",
+      "url": "",
+      "tier": 3,
+      "status": "scaffold",
+      "start": "2025-12",
+      "end": "present",
+      "tags": [
+        "hardware"
+      ],
+      "skills": [
+        "iot"
+      ],
+      "tech": [
+        "Arduino",
+        "FastLED",
+        "WS2812B addressable LEDs"
+      ],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/WaukeshaMakerspace/chromablast",
+          "caption": "Public source repo"
+        }
+      ],
+      "summary": "An Arduino-based arcade game using addressable LEDs and buttons — a color-matching shooter built for the Waukesha Makerspace.\n",
+      "bullets": [
+        {
+          "text": "Designed an Arduino + FastLED arcade game (color-matching shooter) using addressable LED strips and physical buttons.",
+          "tags": [
+            "hardware"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "companion_cube",
+      "name": "Companion Cube — LED Cube Lighting Project",
+      "codename": "Companion Cube",
+      "url": "",
+      "tier": 3,
+      "status": "archived",
+      "start": "2023-03",
+      "end": "2023-06",
+      "tags": [
+        "hardware"
+      ],
+      "skills": [
+        "iot"
+      ],
+      "tech": [
+        "Arduino",
+        "addressable LEDs"
+      ],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/masterprompt/companion-cube",
+          "caption": "Public source repo"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=VLxy2Mu8sOk",
+          "caption": "Lighting test"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=tV0XnShgpWo",
+          "caption": "Final lighting demonstration"
+        }
+      ],
+      "summary": "An LED cube hardware project with addressable-LED pattern control.\n",
+      "bullets": [
+        {
+          "text": "Built an addressable-LED cube with programmable pattern control on Arduino.",
+          "tags": [
+            "hardware"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "makercade_marquee",
+      "name": "Makercade Marquee — Arduino LED Cabinet Marquee",
+      "codename": "Makercade Marquee",
+      "url": "",
+      "tier": 3,
+      "status": "scaffold",
+      "start": "2025-10",
+      "end": "present",
+      "tags": [
+        "hardware"
+      ],
+      "skills": [
+        "iot"
+      ],
+      "tech": [
+        "Arduino",
+        "WS2812B"
+      ],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/WaukeshaMakerspace/makercade-marquee",
+          "caption": "Public source repo"
+        }
+      ],
+      "summary": "An Arduino-controlled WS2812B LED marquee for the Waukesha Makerspace's retro arcade cabinet, with potentiometer + button mode controls.\n",
+      "bullets": [
+        {
+          "text": "Built an Arduino + WS2812B LED marquee with mode-switching controls for a retro arcade cabinet.",
+          "tags": [
+            "hardware"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "administration_cabinet_arduino",
+      "name": "Administration Cabinet — Arduino Hardware Project",
+      "codename": "Administration Cabinet Arduino",
+      "url": "",
+      "tier": 3,
+      "status": "scaffold",
+      "start": "2025-11",
+      "end": "present",
+      "tags": [
+        "hardware"
+      ],
+      "skills": [
+        "iot"
+      ],
+      "tech": [
+        "Arduino"
+      ],
+      "media": [],
+      "summary": "An Arduino project supporting the Waukesha Makerspace administration cabinet.\n",
+      "bullets": [
+        {
+          "text": "Prototyping Arduino-based hardware to support physical-access workflows in the makerspace administration cabinet.",
+          "tags": [
+            "hardware"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "access_harvester",
+      "name": "Access Harvester — UniFi Access Sync Tool",
+      "codename": "Access Harvester",
+      "url": "",
+      "tier": 3,
+      "status": "active",
+      "start": "2025-11",
+      "end": "present",
+      "tags": [
+        "backend",
+        "devops"
+      ],
+      "skills": [
+        "node",
+        "typescript",
+        "mysql",
+        "rest_api",
+        "docker"
+      ],
+      "tech": [
+        "Fastify",
+        "UniFi Access",
+        "Swagger"
+      ],
+      "media": [],
+      "summary": "A Node.js sync tool that harvests user/group data from UniFi Access into MySQL, with a Fastify REST API and Swagger documentation.\n",
+      "bullets": [
+        {
+          "text": "Built a Node/TypeScript/Fastify sync utility ingesting UniFi Access data into MySQL with a documented REST API.",
+          "tags": [
+            "backend",
+            "devops"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "access_steward",
+      "name": "Access Steward — Membership-to-Access Sync Service",
+      "codename": "Access Steward",
+      "url": "",
+      "tier": 3,
+      "status": "active",
+      "start": "2025-12",
+      "end": "present",
+      "tags": [
+        "backend",
+        "devops"
+      ],
+      "skills": [
+        "node",
+        "typescript",
+        "mysql",
+        "docker"
+      ],
+      "tech": [
+        "UniFi Access"
+      ],
+      "media": [],
+      "summary": "A containerized Node.js service that keeps the membership database in sync with UniFi Access — provisions and deactivates user access automatically.\n",
+      "bullets": [
+        {
+          "text": "Built a Dockerized Node/TypeScript service that reconciles membership records with UniFi Access, creating and deactivating user access on changes.",
+          "tags": [
+            "backend",
+            "devops"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "apricot_harvester",
+      "name": "Apricot Harvester — Wild Apricot Sync Utility",
+      "codename": "Apricot Harvester",
+      "url": "",
+      "tier": 3,
+      "status": "active",
+      "start": "2025-11",
+      "end": "present",
+      "tags": [
+        "backend"
+      ],
+      "skills": [
+        "node",
+        "typescript",
+        "mysql",
+        "docker"
+      ],
+      "tech": [
+        "Drizzle",
+        "Wild Apricot"
+      ],
+      "media": [],
+      "summary": "A scheduled Node.js utility that syncs member data from Wild Apricot into MySQL.\n",
+      "bullets": [
+        {
+          "text": "Built a Node/TypeScript/Drizzle/Docker scheduled sync utility ingesting Wild Apricot member data into MySQL.",
+          "tags": [
+            "backend"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "attendance_loom",
+      "name": "Attendance Loom — Attendance Reconciliation Service",
+      "codename": "Attendance Loom",
+      "url": "",
+      "tier": 3,
+      "status": "active",
+      "start": "2026-01",
+      "end": "present",
+      "tags": [
+        "backend"
+      ],
+      "skills": [
+        "node",
+        "typescript",
+        "mysql",
+        "docker",
+        "rest_api"
+      ],
+      "tech": [
+        "Fastify",
+        "Drizzle"
+      ],
+      "media": [],
+      "summary": "A data-processing service that weaves door-access events and membership records into consolidated attendance data.\n",
+      "bullets": [
+        {
+          "text": "Built a Node/TypeScript/Fastify/MySQL/Drizzle service joining access events with membership data into authoritative attendance records.",
+          "tags": [
+            "backend"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sync_sentinel",
+      "name": "Sync Sentinel — Membership/Access Diff Engine",
+      "codename": "Sync Sentinel",
+      "url": "",
+      "tier": 3,
+      "status": "active",
+      "start": "2026-01",
+      "end": "present",
+      "tags": [
+        "backend"
+      ],
+      "skills": [
+        "node",
+        "typescript",
+        "mysql",
+        "docker"
+      ],
+      "tech": [
+        "diff engine"
+      ],
+      "media": [],
+      "summary": "A `git diff`-style comparison engine for membership and access systems — compares data sources and produces actionable reconciliation lists.\n",
+      "bullets": [
+        {
+          "text": "Built a Node/TypeScript/MySQL/Docker comparison engine that diffs membership and access data sources and outputs reconciliation actions.",
+          "tags": [
+            "backend"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "makers_calendar",
+      "name": "Makers Calendar — Streamlined Event Management System",
+      "codename": "Makers Calendar",
+      "url": "",
+      "tier": 3,
+      "status": "active",
+      "start": "2026-01",
+      "end": "present",
+      "tags": [
+        "frontend",
+        "backend"
+      ],
+      "skills": [
+        "react",
+        "node",
+        "typescript",
+        "mysql"
+      ],
+      "tech": [
+        "Vite",
+        "Hono",
+        "Drizzle"
+      ],
+      "media": [],
+      "summary": "A streamlined event-management system replacing Wild Apricot's event complexity — member + public registration, codes, reminders.\n",
+      "bullets": [
+        {
+          "text": "Built a React/Vite SPA + Hono API + MySQL/Drizzle event-management platform with Keymaster-authenticated registration flows.",
+          "tags": [
+            "frontend",
+            "backend"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wmi_website",
+      "name": "Waukesha Makerspace Website — Public Marketing Site",
+      "codename": "Waukesha Makerspace Website",
+      "url": "",
+      "tier": 3,
+      "status": "shipped",
+      "start": "2024-12",
+      "end": "2025-01",
+      "tags": [
+        "frontend"
+      ],
+      "skills": [
+        "react",
+        "typescript",
+        "html_css"
+      ],
+      "tech": [
+        "Vite"
+      ],
+      "media": [],
+      "summary": "The public marketing website for Waukesha Makerspace.\n",
+      "bullets": [
+        {
+          "text": "Built and shipped the public Waukesha Makerspace marketing site in React/Vite/TypeScript.",
+          "tags": [
+            "frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wmi_floor_layout",
+      "name": "Makerspace Floor Layout Tool — Interactive Floor Plan Editor",
+      "codename": "Floor Layout Tool",
+      "url": "",
+      "tier": 3,
+      "status": "shipped",
+      "start": "2024-11",
+      "end": "2024-11",
+      "tags": [
+        "frontend"
+      ],
+      "skills": [
+        "react"
+      ],
+      "tech": [
+        "Vite",
+        "GitHub Pages"
+      ],
+      "media": [],
+      "summary": "An interactive floor-plan layout tool for the Waukesha Makerspace, deployed to GitHub Pages.\n",
+      "bullets": [
+        {
+          "text": "Built a React/Vite interactive floor-plan editor and deployed it to GitHub Pages for use by makerspace planners.",
+          "tags": [
+            "frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "makerspace_launchpad_blog",
+      "name": "Makerspace Launchpad — Blog on Starting Community Makerspaces",
+      "codename": "Makerspace Launchpad",
+      "url": "",
+      "tier": 3,
+      "status": "active",
+      "start": "2025-12",
+      "end": "present",
+      "tags": [
+        "leadership"
+      ],
+      "skills": [],
+      "tech": [
+        "Ghost CMS",
+        "Markdown"
+      ],
+      "media": [],
+      "summary": "A content repository for a blog about starting and running community makerspaces — source of truth that publishes to a Ghost CMS.\n",
+      "bullets": [
+        {
+          "text": "Author and maintain a markdown-sourced blog on community makerspace operations, published via Ghost.",
+          "tags": [
+            "leadership"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wmi_utilities",
+      "name": "Waukesha Makerspace Utilities — Internal Tooling Monorepo",
+      "codename": "WMI Utilities",
+      "url": "",
+      "tier": 3,
+      "status": "active",
+      "start": "2025-08",
+      "end": "present",
+      "tags": [
+        "backend",
+        "frontend",
+        "devops"
+      ],
+      "skills": [
+        "react",
+        "node",
+        "typescript"
+      ],
+      "tech": [
+        "Vite",
+        "Express",
+        "pnpm monorepo",
+        "Wild Apricot",
+        "UniFi"
+      ],
+      "media": [],
+      "summary": "A pnpm monorepo of internal Wild Apricot + UniFi integration tools — Express API, React SPA, and CLI scripts.\n",
+      "bullets": [
+        {
+          "text": "Maintain a pnpm monorepo of Node/React/TypeScript internal tools integrating Wild Apricot and UniFi Access workflows.",
+          "tags": [
+            "backend",
+            "frontend",
+            "devops"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "react_api_service_layer",
+      "name": "react-api-service-layer — React API Abstraction (npm)",
+      "codename": "react-api-service-layer",
+      "url": "",
+      "tier": 3,
+      "status": "shipped",
+      "start": "2024-05",
+      "end": "2024-05",
+      "tags": [
+        "frontend"
+      ],
+      "skills": [
+        "react",
+        "typescript"
+      ],
+      "tech": [
+        "npm"
+      ],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/masterprompt/react-api-service-layer",
+          "caption": "Public source repo"
+        }
+      ],
+      "summary": "An npm-published React utility providing an ApiService abstraction for defining service classes around HTTP APIs.\n",
+      "bullets": [
+        {
+          "text": "Authored and published a React/TypeScript npm package providing a service-class abstraction over HTTP APIs.",
+          "tags": [
+            "frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "react_compose_provider",
+      "name": "react-compose-provider — React Provider Composition (npm)",
+      "codename": "react-compose-provider",
+      "url": "",
+      "tier": 3,
+      "status": "shipped",
+      "start": "2024-03",
+      "end": "present",
+      "tags": [
+        "frontend"
+      ],
+      "skills": [
+        "react",
+        "typescript"
+      ],
+      "tech": [
+        "npm"
+      ],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/masterprompt/react-compose-provider",
+          "caption": "Public source repo"
+        }
+      ],
+      "summary": "An npm package for composing multiple React providers into a single wrapper component.\n",
+      "bullets": [
+        {
+          "text": "Authored and published a React/TypeScript npm package that composes nested provider components into a single declaration.",
+          "tags": [
+            "frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "react_controller_context",
+      "name": "react-controller-context — Context+Provider Generator (npm)",
+      "codename": "react-controller-context",
+      "url": "",
+      "tier": 3,
+      "status": "shipped",
+      "start": "2024-03",
+      "end": "present",
+      "tags": [
+        "frontend"
+      ],
+      "skills": [
+        "react",
+        "typescript"
+      ],
+      "tech": [
+        "npm"
+      ],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/masterprompt/react-controller-context",
+          "caption": "Public source repo"
+        }
+      ],
+      "summary": "An npm package generating React Context + Provider pairs from controller hooks via a `createContextBundle` helper.\n",
+      "bullets": [
+        {
+          "text": "Authored and maintain a React 18/19 + TypeScript npm package that generates context/provider bundles from controller hooks.",
+          "tags": [
+            "frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "contact_capture",
+      "name": "Contact Capture — Cross-Platform Contact-Info Utility",
+      "codename": "Contact Capture",
+      "url": "",
+      "tier": 3,
+      "status": "archived",
+      "tags": [
+        "mobile",
+        "backend"
+      ],
+      "skills": [
+        "php",
+        "mysql"
+      ],
+      "tech": [
+        "BlackBerry",
+        "Windows Mobile",
+        "Palm Pre",
+        "iOS"
+      ],
+      "media": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=uGbkx1cEN4s",
+          "caption": "Product demo"
+        }
+      ],
+      "summary": "A cross-platform contact-capturing utility that pulled contact information from clipboards, web pages, and other sources — released across multiple Broadlook platforms.\n",
+      "bullets": [
+        {
+          "text": "Built cross-platform Contact Capture mobile/desktop clients (BlackBerry, Windows Mobile, Palm Pre, iOS) with desktop and cloud API sync at Broadlook Technologies.",
+          "tags": [
+            "mobile",
+            "backend"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "voyage_virtual",
+      "name": "Voyage Virtual Media — VR Media Platform Consulting",
+      "codename": "Voyage Virtual Media",
+      "url": "",
+      "tier": 3,
+      "status": "archived",
+      "tags": [
+        "hardware"
+      ],
+      "skills": [],
+      "tech": [
+        "VR"
+      ],
+      "media": [],
+      "summary": "Architectural consulting engagement for a VR media platform.\n",
       "bullets": [
         {
           "text": "Provided architectural consulting for a VR media platform, focusing on scalability.",
           "tags": [
             "hardware"
           ]
+        }
+      ]
+    },
+    {
+      "id": "resumatic",
+      "name": "Resumatic — YAML-Driven Resume Management System",
+      "codename": "Resumatic",
+      "url": "",
+      "tier": 3,
+      "status": "active",
+      "start": "2026-05",
+      "end": "present",
+      "tags": [
+        "tools"
+      ],
+      "skills": [
+        "node",
+        "javascript"
+      ],
+      "tech": [
+        "YAML",
+        "md-to-pdf"
+      ],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/masterprompt/resumatic",
+          "caption": "Public source repo",
+          "public": false
+        }
+      ],
+      "summary": "A personal resume management system: one canonical YAML source of truth + variant configs that render to Markdown and PDF via md-to-pdf.\n",
+      "bullets": [
+        {
+          "text": "Built a Node ESM resume build pipeline that renders multiple audience-targeted variants from a single YAML source, with consistent tag-based filtering.",
+          "tags": [
+            "tools"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kerr_home_lab",
+      "name": "Kerr Home Lab — Multi-Site Homelab Infrastructure",
+      "codename": "Kerr Home Lab",
+      "url": "",
+      "tier": 3,
+      "status": "active",
+      "start": "2025-12",
+      "end": "present",
+      "tags": [
+        "devops",
+        "hardware"
+      ],
+      "skills": [
+        "docker"
+      ],
+      "tech": [
+        "Twingate",
+        "homelab"
+      ],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/masterprompt/kerr-home-lab",
+          "caption": "Public configuration repo",
+          "public": false
+        }
+      ],
+      "summary": "Documentation and configuration for a multi-site homelab — network infrastructure, services, and hosts at two physical locations linked via Twingate.\n",
+      "bullets": [
+        {
+          "text": "Designed and operate a multi-site homelab connecting two physical locations via Twingate, hosting personal services and tooling.",
+          "tags": [
+            "devops",
+            "hardware"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "the_chronoverse",
+      "name": "The Chronoverse — Hard Sci-Fi Horror Book Series",
+      "codename": "The Chronoverse",
+      "url": "",
+      "tier": 3,
+      "status": "active",
+      "start": "2026-04",
+      "end": "present",
+      "tags": [],
+      "skills": [],
+      "tech": [
+        "writing",
+        "worldbuilding"
+      ],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/masterprompt/the-chronoverse",
+          "caption": "Public manuscript repo",
+          "public": false
+        }
+      ],
+      "summary": "A hard science-fiction horror book series set in the Sol system circa 2130, opening with \"The Chronos Incident\" — a prion outbreak spreading through a station network.\n",
+      "bullets": [
+        {
+          "text": "Authoring a hard sci-fi horror book series with worldbuilding bible and Book 1 manuscript ('The Chronos Incident') in progress.",
+          "tags": []
         }
       ]
     }
@@ -2402,7 +4088,7 @@
   "_sync": {
     "sourceFile": "content/resume.yaml",
     "sourceRepo": "github.com/masterprompt/resumatic (private)",
-    "generatedAt": "2026-05-28T13:49:05.015Z",
+    "generatedAt": "2026-05-28T18:21:18.777Z",
     "generatedBy": "scripts/sync-portfolio.js",
     "sanitization": [
       "dropped: meta.phone",

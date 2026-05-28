@@ -1,9 +1,15 @@
 "use client";
 
-import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from "react";
 
 import {
-  AUTO_DEMO,
+  AUTO_DEMO_COMMANDS,
   commandNotFoundMessage,
   findCommand,
   listedCommands,
@@ -36,6 +42,11 @@ const TYPE_MS = 70;
 const POST_TYPE_PAUSE_MS = 150;
 const INTER_STEP_PAUSE_MS = 300;
 
+// Output typewriter (response lines). Fast enough that multi-line outputs
+// (e.g. `help` listing ~10 commands) finish in ~1-2s, but still reads as typed.
+const OUTPUT_TYPE_MS = 5;
+const INTER_LINE_PAUSE_MS = 40;
+
 export function Terminal() {
   const [phase, setPhase] = useState<"demo" | "live">("demo");
   const [demoText, setDemoText] = useState("");
@@ -52,27 +63,123 @@ export function Terminal() {
   );
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Auto-demo walks AUTO_DEMO sequentially: type each Command, pause,
-  // commit echo + response to lines, pause, advance. Then hand off to
-  // the Live REPL.
+  /**
+   * Append response lines with a typewriter effect (one character at a time
+   * per line, with a small pause between lines). Image lines render
+   * instantly. Used by `executeCommand`; the `ask` command's async path
+   * skips this because it has its own typewriter for the streamed answer.
+   */
+  const typewriteLines = useCallback(
+    async (lines: CommandLine[]): Promise<void> => {
+      for (const line of lines) {
+        if (line.kind === "image") {
+          setLines((prev) => [...prev, line]);
+          continue;
+        }
+        const fullText = line.text;
+        setLines((prev) => [...prev, { ...line, text: "" }]);
+        for (let i = 1; i <= fullText.length; i++) {
+          await sleep(OUTPUT_TYPE_MS);
+          setLines((prev) => {
+            if (prev.length === 0) return prev;
+            const out = prev.slice();
+            const last = out[out.length - 1];
+            if (last && last.kind !== "image") {
+              out[out.length - 1] = { ...line, text: fullText.slice(0, i) };
+            }
+            return out;
+          });
+        }
+        if (INTER_LINE_PAUSE_MS > 0) {
+          await sleep(INTER_LINE_PAUSE_MS);
+        }
+      }
+    },
+    [],
+  );
+
+  /**
+   * Dispatch a command string through the registry. Used by both the live
+   * REPL (`runCommand`) and the auto-demo, so what the demo shows is what
+   * the visitor would get if they typed the same string. Response lines
+   * type out via `typewriteLines`; the echo line is added instantly.
+   */
+  const executeCommand = useCallback(
+    async (cmd: string): Promise<void> => {
+      const [name, ...args] = cmd.split(/\s+/);
+      const command = findCommand(name);
+
+      // Echo the command immediately (the user / auto-demo already saw it typed).
+      setLines((prev) => [...prev, { kind: "echo", text: cmd }]);
+
+      if (!command) {
+        await typewriteLines([
+          { kind: "error", text: commandNotFoundMessage(name) },
+        ]);
+        return;
+      }
+
+      const result = command.run(args);
+
+      if (result.clear) {
+        setLines([]);
+        return;
+      }
+
+      // For commands with an async continuation (e.g. `ask`), result.lines is
+      // a placeholder the continuation will overwrite. Add instantly so its
+      // own typewriter can take over without racing the universal one.
+      if (result.async) {
+        if (result.lines?.length) {
+          setLines((prev) => [...prev, ...result.lines!]);
+        }
+      } else if (result.lines?.length) {
+        await typewriteLines(result.lines);
+      }
+
+      // Schedule any delayed lines (e.g. vim's "wake up" message, rm's faux
+      // deletion scroll). Each entry fires once after delayMs.
+      if (result.delayedLines) {
+        for (const { delayMs, lines: delayed } of result.delayedLines) {
+          setTimeout(() => {
+            setLines((prev) => [...prev, ...delayed]);
+          }, delayMs);
+        }
+      }
+
+      if (result.scrollTo) {
+        document
+          .getElementById(result.scrollTo)
+          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      // Kick off async continuation if present (e.g. `ask` streaming an answer
+      // back from the Worker). Fire-and-forget: the handler updates lines on
+      // its own schedule via setLines.
+      if (result.async) {
+        void result.async(setLines);
+      }
+    },
+    [typewriteLines],
+  );
+
+  // Auto-demo walks AUTO_DEMO_COMMANDS sequentially: type each command at the
+  // typewriter cadence, then dispatch it through the real registry so the
+  // demo's output matches what a visitor would see typing the same string.
   useEffect(() => {
     let cancelled = false;
 
     async function runAutoDemo() {
-      for (const step of AUTO_DEMO) {
-        for (let i = 1; i <= step.command.length; i++) {
+      for (const command of AUTO_DEMO_COMMANDS) {
+        for (let i = 1; i <= command.length; i++) {
           if (cancelled) return;
           await sleep(TYPE_MS);
-          setDemoText(step.command.slice(0, i));
+          setDemoText(command.slice(0, i));
         }
         if (cancelled) return;
         await sleep(POST_TYPE_PAUSE_MS);
-        setLines((prev) => [
-          ...prev,
-          { kind: "echo", text: step.command },
-          ...step.response(),
-        ]);
         setDemoText("");
+        await executeCommand(command);
         if (cancelled) return;
         await sleep(INTER_STEP_PAUSE_MS);
       }
@@ -84,7 +191,7 @@ export function Terminal() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [executeCommand]);
 
   // Focus the input as soon as we reach the Live REPL phase (desktop only).
   useEffect(() => {
@@ -103,53 +210,7 @@ export function Terminal() {
     setHistoryIndex(-1);
     setDraft("");
 
-    const [name, ...args] = cmd.split(/\s+/);
-    const command = findCommand(name);
-
-    if (!command) {
-      setLines((prev) => [
-        ...prev,
-        { kind: "echo", text: cmd },
-        { kind: "error", text: commandNotFoundMessage(name) },
-      ]);
-      return;
-    }
-
-    const result = command.run(args);
-
-    if (result.clear) {
-      setLines([]);
-      return;
-    }
-
-    setLines((prev) => [
-      ...prev,
-      { kind: "echo", text: cmd },
-      ...(result.lines ?? []),
-    ]);
-
-    // Schedule any delayed lines (e.g. vim's "wake up" message, rm's faux
-    // deletion scroll). Each entry fires once after delayMs.
-    if (result.delayedLines) {
-      for (const { delayMs, lines: delayed } of result.delayedLines) {
-        setTimeout(() => {
-          setLines((prev) => [...prev, ...delayed]);
-        }, delayMs);
-      }
-    }
-
-    if (result.scrollTo) {
-      document
-        .getElementById(result.scrollTo)
-        ?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-
-    // Kick off async continuation if present (e.g. `ask` streaming an answer
-    // back from the Worker). Fire-and-forget: the handler updates lines on
-    // its own schedule via setLines.
-    if (result.async) {
-      void result.async(setLines);
-    }
+    void executeCommand(cmd);
   }
 
   function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {

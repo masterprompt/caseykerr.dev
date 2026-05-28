@@ -1,5 +1,7 @@
 import { resume } from "@/lib/resume";
 
+import { SectionHeader } from "./SectionHeader";
+
 // Canonical display order for known categories. Unknown categories (added
 // to resumatic later) trail at the end in insertion order.
 const CATEGORY_ORDER: string[] = [
@@ -47,7 +49,7 @@ export function SkillsSection() {
 
   return (
     <section id="skills" className="skills-section">
-      <h2>Skills</h2>
+      <SectionHeader title="Skills" />
       <div className="skills-rows">
         {ordered.map((category) => (
           <div key={category} className="skills-row">
