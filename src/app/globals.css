@@ -492,6 +492,12 @@ body::after {
   gap: 0.75rem;
 }
 
+.project-card-summary {
+  margin: 0;
+  line-height: 1.55;
+  opacity: 0.9;
+}
+
 .project-card-section {
   display: flex;
   flex-direction: column;

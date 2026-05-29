@@ -10,24 +10,14 @@ import { SectionHeader } from "./SectionHeader";
  * project IDs in display order. Edit it to feature/unfeature projects or to
  * reorder them. Anything not in that list does not render here.
  *
- * Safety nets layered on top of the explicit list:
- *   1. HIDDEN_PROJECT_IDS — names we never publish (pre-launch products)
- *      stay hidden even if listed in featured-projects.json by accident.
- *   2. Public-media check — a featured project with no publicly-visible
- *      media items (i.e. nothing marked `visibility: "private"` in the
- *      portfolio data feed) is skipped, so a card never renders with
- *      zero clickable links.
+ * Private media (`visibility: "private"`) is filtered out at render time:
+ * the project card still renders (with name, description, skills, tech),
+ * but the "links" section is suppressed if no public media remains. A card
+ * with zero clickable links is fine — skills and tech still tell the story.
  *
  * Build-time `console.warn` flags IDs that aren't found in the data feed,
  * which usually means a typo or a stale ID.
  */
-
-// Per `feedback-no-unreleased-project-names`: never name these on the
-// publicly-indexed portfolio, even if they end up in featured-projects.json.
-const HIDDEN_PROJECT_IDS = new Set<string>([
-  "parallax_rpg",
-  "the_chronoverse",
-]);
 
 // Skill ID → display label, built once from the resume's skills array.
 const SKILL_LABEL_BY_ID = new Map(
@@ -53,25 +43,13 @@ function isPublicMedia(m: MediaItem): boolean {
   );
 }
 
-function hasAnyPublicMedia(p: ProjectEntry): boolean {
-  if (!Array.isArray(p.media)) return false;
-  return p.media.some(isPublicMedia);
-}
-
 function resolveOrderedProjects(): ProjectEntry[] {
   const out: ProjectEntry[] = [];
   for (const id of featuredIds as string[]) {
-    if (HIDDEN_PROJECT_IDS.has(id)) continue;
     const p = PROJECT_BY_ID.get(id);
     if (!p) {
       console.warn(
         `featured-projects.json: unknown project id "${id}" (not present in casey-kerr-portfolio.json)`,
-      );
-      continue;
-    }
-    if (!hasAnyPublicMedia(p)) {
-      console.warn(
-        `featured-projects.json: "${id}" has no public media; skipping`,
       );
       continue;
     }
@@ -123,8 +101,14 @@ export function ProjectsSection() {
           const { name, description } = splitName(p.name);
           const visibleMedia = (p.media ?? []).filter(isPublicMedia);
           const linkLabels = buildLinkLabels(visibleMedia);
-          const skillLabels = resolveSkillLabels(p.skills);
-          const techLabels = p.tech ?? [];
+          // Combine resolved master-skill labels with free-form tech entries
+          // into a single list, preserving order and dropping duplicates.
+          const skillLabels = Array.from(
+            new Set([
+              ...resolveSkillLabels(p.skills),
+              ...(p.tech ?? []),
+            ]),
+          );
 
           return (
             <details key={p.id} className="project-card">
@@ -142,23 +126,14 @@ export function ProjectsSection() {
                 </span>
               </summary>
               <div className="project-card-details">
+                {p.summary && (
+                  <p className="project-card-summary">{p.summary.trim()}</p>
+                )}
                 {skillLabels.length > 0 && (
                   <div className="project-card-section">
                     <div className="project-card-section-label">skills</div>
                     <div className="project-card-tags">
                       {skillLabels.map((label) => (
-                        <span key={label} className="project-card-tag">
-                          {label}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-                {techLabels.length > 0 && (
-                  <div className="project-card-section">
-                    <div className="project-card-section-label">tech</div>
-                    <div className="project-card-tags">
-                      {techLabels.map((label) => (
                         <span key={label} className="project-card-tag">
                           {label}
                         </span>

@@ -40,15 +40,6 @@
       ]
     },
     {
-      "id": "react_native",
-      "label": "React Native",
-      "category": "frontend",
-      "tags": [
-        "frontend",
-        "mobile"
-      ]
-    },
-    {
       "id": "javascript",
       "label": "JavaScript",
       "category": "frontend",
@@ -217,6 +208,93 @@
       ]
     },
     {
+      "id": "ldap",
+      "label": "LDAP / Active Directory",
+      "category": "backend",
+      "tags": [
+        "backend"
+      ]
+    },
+    {
+      "id": "formsort",
+      "label": "Formsort",
+      "category": "backend",
+      "tags": [
+        "backend"
+      ]
+    },
+    {
+      "id": "marketo",
+      "label": "Marketo",
+      "category": "backend",
+      "tags": [
+        "backend"
+      ]
+    },
+    {
+      "id": "ms_crm",
+      "label": "Microsoft Dynamics CRM",
+      "category": "backend",
+      "tags": [
+        "backend"
+      ]
+    },
+    {
+      "id": "c_cpp",
+      "label": "C / C++",
+      "category": "backend",
+      "tags": [
+        "backend",
+        "hardware",
+        "early"
+      ]
+    },
+    {
+      "id": "delphi",
+      "label": "Delphi",
+      "category": "backend",
+      "tags": [
+        "backend",
+        "hardware"
+      ]
+    },
+    {
+      "id": "as400",
+      "label": "AS400",
+      "category": "backend",
+      "tags": [
+        "backend",
+        "hardware",
+        "databases"
+      ]
+    },
+    {
+      "id": "chrome_ext",
+      "label": "Chrome Extensions",
+      "category": "frontend",
+      "tags": [
+        "frontend"
+      ]
+    },
+    {
+      "id": "react_native",
+      "label": "React Native",
+      "category": "mobile",
+      "tags": [
+        "frontend",
+        "mobile"
+      ]
+    },
+    {
+      "id": "legacy_mobile",
+      "label": "Legacy Mobile Platforms (BlackBerry, Windows Mobile, Palm Pre)",
+      "category": "mobile",
+      "tags": [
+        "mobile",
+        "early"
+      ]
+    },
+    {
       "id": "generative_ai",
       "label": "Generative AI",
       "category": "ai",
@@ -287,17 +365,16 @@
       ]
     },
     {
-      "id": "iot",
-      "label": "IoT / Embedded Devices",
+      "id": "ml",
+      "label": "Machine Learning",
       "category": "ai",
       "tags": [
-        "hardware",
-        "backend"
+        "ai"
       ]
     },
     {
       "id": "aws",
-      "label": "AWS (EC2, S3, Lambda, CloudFormation, DynamoDB, Aurora)",
+      "label": "AWS (EC2, S3, Lambda, API Gateway, CloudFormation, DynamoDB, Aurora, Beanstalk, SQS, SNS)",
       "category": "devops",
       "tags": [
         "devops",
@@ -394,6 +471,41 @@
       ]
     },
     {
+      "id": "linux",
+      "label": "Linux / Unix",
+      "category": "devops",
+      "tags": [
+        "devops"
+      ]
+    },
+    {
+      "id": "bash",
+      "label": "Bash / Shell Scripting",
+      "category": "devops",
+      "tags": [
+        "devops",
+        "tools"
+      ]
+    },
+    {
+      "id": "novell",
+      "label": "Novell NetWare",
+      "category": "devops",
+      "tags": [
+        "devops",
+        "early"
+      ]
+    },
+    {
+      "id": "legacy_windows",
+      "label": "DOS / Windows 3.x / Windows 95",
+      "category": "devops",
+      "tags": [
+        "devops",
+        "early"
+      ]
+    },
+    {
       "id": "postgres",
       "label": "PostgreSQL",
       "category": "databases",
@@ -483,6 +595,15 @@
       ]
     },
     {
+      "id": "foxpro",
+      "label": "FoxPro",
+      "category": "databases",
+      "tags": [
+        "databases",
+        "early"
+      ]
+    },
+    {
       "id": "jest",
       "label": "Jest",
       "category": "testing",
@@ -506,15 +627,6 @@
       "category": "testing",
       "tags": [
         "testing"
-      ]
-    },
-    {
-      "id": "code_reviews",
-      "label": "Code Reviews",
-      "category": "testing",
-      "tags": [
-        "testing",
-        "leadership"
       ]
     },
     {
@@ -607,6 +719,24 @@
       ]
     },
     {
+      "id": "code_reviews",
+      "label": "Code Reviews",
+      "category": "leadership",
+      "tags": [
+        "testing",
+        "leadership"
+      ]
+    },
+    {
+      "id": "iot",
+      "label": "IoT / Embedded Devices",
+      "category": "hardware",
+      "tags": [
+        "hardware",
+        "backend"
+      ]
+    },
+    {
       "id": "rslogix",
       "label": "RSLogix",
       "category": "hardware",
@@ -631,24 +761,6 @@
       ]
     },
     {
-      "id": "as400",
-      "label": "AS400",
-      "category": "hardware",
-      "tags": [
-        "hardware",
-        "databases"
-      ]
-    },
-    {
-      "id": "delphi",
-      "label": "Delphi",
-      "category": "hardware",
-      "tags": [
-        "backend",
-        "hardware"
-      ]
-    },
-    {
       "id": "plc",
       "label": "PLC Integration",
       "category": "hardware",
@@ -657,8 +769,33 @@
       ]
     },
     {
+      "id": "rsview",
+      "label": "RSView (HMI / SCADA)",
+      "category": "hardware",
+      "tags": [
+        "hardware"
+      ]
+    },
+    {
+      "id": "mitsubishi",
+      "label": "Mitsubishi PLCs",
+      "category": "hardware",
+      "tags": [
+        "hardware"
+      ]
+    },
+    {
+      "id": "medical_imaging",
+      "label": "Medical Imaging Systems (MRI, X-Ray, PET)",
+      "category": "hardware",
+      "tags": [
+        "hardware",
+        "early"
+      ]
+    },
+    {
       "id": "git",
-      "label": "Git / GitHub",
+      "label": "Git / GitHub / GitLab / Bitbucket",
       "category": "tools",
       "tags": [
         "tools"
