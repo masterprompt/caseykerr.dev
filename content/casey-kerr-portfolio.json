@@ -2,13 +2,10 @@
   "meta": {
     "name": "Casey Kerr",
     "email": "me@caseykerr.com",
-    "phone": "414-573-2877",
     "location": "Waukesha, Wisconsin",
     "linkedin": "linkedin.com/in/caseykerr",
     "github": "github.com/masterprompt",
-    "portfolio": "",
-    "twitter": "@Casey_Kerr",
-    "facebook": "facebook.com/case.t.kerr"
+    "twitter": "@Casey_Kerr"
   },
   "variant": {
     "id": "portfolio",
@@ -3963,9 +3960,9 @@
     },
     {
       "id": "react_compose_provider",
-      "name": "react-compose-provider — React Provider Composition (npm)",
-      "codename": "react-compose-provider",
-      "url": "",
+      "name": "React Compose Provider — Published npm Package",
+      "codename": "React Compose Provider",
+      "url": "https://www.npmjs.com/package/react-compose-provider",
       "tier": 3,
       "status": "shipped",
       "start": "2024-03",
@@ -3988,10 +3985,10 @@
           "visibility": "public"
         }
       ],
-      "summary": "An npm package for composing multiple React providers into a single wrapper component.\n",
+      "summary": "Easily build a single Provider out of many!\n",
       "bullets": [
         {
-          "text": "Authored and published a React/TypeScript npm package that composes nested provider components into a single declaration.",
+          "text": "Built and shipped a published npm package that lets React developers build a single Provider out of many.",
           "tags": [
             "frontend"
           ]
@@ -4000,9 +3997,9 @@
     },
     {
       "id": "react_controller_context",
-      "name": "react-controller-context — Context+Provider Generator (npm)",
-      "codename": "react-controller-context",
-      "url": "",
+      "name": "React Controller Context — Published npm Package",
+      "codename": "React Controller Context",
+      "url": "https://www.npmjs.com/package/react-controller-context",
       "tier": 3,
       "status": "shipped",
       "start": "2024-03",
@@ -4025,10 +4022,10 @@
           "visibility": "public"
         }
       ],
-      "summary": "An npm package generating React Context + Provider pairs from controller hooks via a `createContextBundle` helper.\n",
+      "summary": "Easily expose business logic to React components. Generate a provider and context effortlessly, simplifying access to controller hooks for streamlined development.\n",
       "bullets": [
         {
-          "text": "Authored and maintain a React 18/19 + TypeScript npm package that generates context/provider bundles from controller hooks.",
+          "text": "Built and maintain a published npm package that lets React developers expose business logic to components — generating provider/context pairs effortlessly via a `createContextBundle` helper.",
           "tags": [
             "frontend"
           ]

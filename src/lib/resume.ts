@@ -1,16 +1,16 @@
 /**
- * Typed loader for the sanitized resume.json synced from resumatic
- * (see docs/adr/0002). Run `npm run sync:portfolio` in the resumatic
- * repo to refresh `content/resume.json`.
+ * Typed loader for casey-kerr-portfolio.json, the structured data feed
+ * synced from resumatic (see docs/adr/0002). The file is produced by the
+ * `portfolio` variant: in the resumatic repo, run `npm run build:portfolio`
+ * and copy `output/portfolio/casey-kerr-portfolio.json` into this repo's
+ * `content/` directory.
  *
  * Validation is intentionally light — minimum-required-shape check that
  * fails the build with an actionable message if the JSON is missing,
- * malformed, or shape-shifted in a breaking way. Full schema rigor (zod
- * et al.) is deferred until a downstream consumer (#06 grounding, future
- * Experience section) actually needs it.
+ * malformed, or shape-shifted in a breaking way.
  */
 
-import rawData from "../../content/resume.json";
+import rawData from "../../content/casey-kerr-portfolio.json";
 
 // ── Types ───────────────────────────────────────────────────────────────
 
@@ -38,15 +38,16 @@ export type Skill = {
 
 export type ResumeMeta = {
   name: string;
-  email: string;
-  location: string;
+  email?: string;
+  location?: string;
   linkedin?: string;
   github?: string;
   portfolio?: string;
+  twitter?: string;
 };
 
 export type Bullet = {
-  id: string;
+  id?: string;
   text: string;
   tags?: string[];
 };
@@ -67,11 +68,11 @@ export type MediaItem = {
   url: string;
   caption?: string;
   /**
-   * Set false for media URLs that aren't publicly accessible (private repos,
-   * draft demos, etc.). The portfolio filters these out and won't link them.
-   * Defaults to true (omitting the flag = visible).
+   * Set "private" for media URLs that aren't publicly accessible (private
+   * repos, draft demos, etc.). The portfolio filters these out and won't
+   * link them. Omitting the field means public/visible.
    */
-  public?: boolean;
+  visibility?: "public" | "private" | (string & {});
 };
 
 export type ProjectStatus =
@@ -89,7 +90,6 @@ export type ProjectEntry = {
   tier?: string | number;
   start?: string;
   end?: string;
-  public?: boolean;
   url?: string;
   description?: string;
   summary?: string;
@@ -107,21 +107,15 @@ export type ProjectEntry = {
 // kept loose until a section actually consumes them.
 export type Resume = {
   meta: ResumeMeta;
-  headline_default?: string;
-  summary_default?: string;
+  variant?: { id: string; label: string };
+  headline?: string;
+  summary?: string;
   skills: Skill[];
   experience: ExperienceEntry[];
   projects?: ProjectEntry[];
   education?: unknown[];
   certifications?: unknown[];
   ai_highlights?: unknown[];
-  _sync?: {
-    sourceFile: string;
-    sourceRepo: string;
-    generatedAt: string;
-    generatedBy: string;
-    sanitization: string[];
-  };
 };
 
 // ── Validation ──────────────────────────────────────────────────────────
@@ -129,18 +123,18 @@ export type Resume = {
 function validateResume(data: unknown): asserts data is Resume {
   if (!data || typeof data !== "object") {
     throw new Error(
-      "resume.json is missing or empty. Run `npm run sync:portfolio` in the resumatic repo to regenerate it.",
+      "casey-kerr-portfolio.json is missing or empty. In the resumatic repo, run `npm run build:portfolio` and copy output/portfolio/casey-kerr-portfolio.json to this repo's content/ directory.",
     );
   }
   const r = data as Record<string, unknown>;
   if (!r.meta || typeof r.meta !== "object") {
-    throw new Error("resume.json: `meta` is missing or invalid.");
+    throw new Error("casey-kerr-portfolio.json: `meta` is missing or invalid.");
   }
   if (!Array.isArray(r.skills)) {
-    throw new Error("resume.json: `skills` must be an array.");
+    throw new Error("casey-kerr-portfolio.json: `skills` must be an array.");
   }
   if (!Array.isArray(r.experience)) {
-    throw new Error("resume.json: `experience` must be an array.");
+    throw new Error("casey-kerr-portfolio.json: `experience` must be an array.");
   }
 }
 

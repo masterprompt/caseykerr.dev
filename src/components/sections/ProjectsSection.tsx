@@ -13,11 +13,12 @@ import { SectionHeader } from "./SectionHeader";
  * Safety nets layered on top of the explicit list:
  *   1. HIDDEN_PROJECT_IDS — names we never publish (pre-launch products)
  *      stay hidden even if listed in featured-projects.json by accident.
- *   2. Public-media check — a featured project with no publicly-reachable
- *      media items (after resumatic's repo-reachability probe) is skipped,
- *      so a repo flipping to private doesn't leave a card with no links.
+ *   2. Public-media check — a featured project with no publicly-visible
+ *      media items (i.e. nothing marked `visibility: "private"` in the
+ *      portfolio data feed) is skipped, so a card never renders with
+ *      zero clickable links.
  *
- * Build-time `console.warn` flags IDs that aren't found in resume.json,
+ * Build-time `console.warn` flags IDs that aren't found in the data feed,
  * which usually means a typo or a stale ID.
  */
 
@@ -48,7 +49,7 @@ function splitName(fullName: string): { name: string; description: string } {
 
 function isPublicMedia(m: MediaItem): boolean {
   return (
-    typeof m.url === "string" && m.url.length > 0 && m.public !== false
+    typeof m.url === "string" && m.url.length > 0 && m.visibility !== "private"
   );
 }
 
@@ -64,7 +65,7 @@ function resolveOrderedProjects(): ProjectEntry[] {
     const p = PROJECT_BY_ID.get(id);
     if (!p) {
       console.warn(
-        `featured-projects.json: unknown project id "${id}" (not present in resume.json)`,
+        `featured-projects.json: unknown project id "${id}" (not present in casey-kerr-portfolio.json)`,
       );
       continue;
     }
