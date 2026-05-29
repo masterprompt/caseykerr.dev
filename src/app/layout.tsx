@@ -110,7 +110,6 @@ const PERSON_LD = {
     "https://linkedin.com/in/caseykerr",
     "https://github.com/masterprompt",
     "https://twitter.com/Casey_Kerr",
-    "https://caseykerr.com",
     "https://waukeshamakerspace.org",
   ],
 };

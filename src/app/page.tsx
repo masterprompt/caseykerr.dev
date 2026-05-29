@@ -22,6 +22,12 @@ const SECTIONS: { id: string; title: string; Component?: () => React.ReactNode }
 export default function Home() {
   return (
     <>
+      {/* Visually-hidden page H1. The terminal hero is the visual headline,
+          but crawlers and screen readers need a real <h1>; without one, the
+          page jumps straight to <h2>s for About / Now / Work / etc. */}
+      <h1 className="sr-only">
+        Casey Kerr · Senior Full-Stack &amp; AI Engineer · Kerrsoft
+      </h1>
       <Terminal />
       {SECTIONS.map((s) =>
         s.Component ? (
