@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Casey Kerr",
+  title: "Casey Kerr · Senior Full-Stack & AI Engineer",
   description: "Complexity embedded in simplicity.",
   icons: {
     icon: "/kerrsoft-logo.png",

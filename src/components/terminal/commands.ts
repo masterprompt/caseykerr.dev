@@ -65,7 +65,10 @@ const whoamiCommand: CommandDef = {
   description: "About Casey in one line",
   run: () => ({
     lines: [
-      { kind: "output", text: "Casey Kerr, senior full-stack engineer" },
+      {
+        kind: "output",
+        text: "Casey Kerr · senior full-stack & AI engineer · Kerrsoft, Waukesha Makerspace",
+      },
     ],
   }),
 };

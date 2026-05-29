@@ -1,0 +1,26 @@
+[
+  {
+    "label": "active",
+    "ids": [
+      "kerrsoft",
+      "waukesha_makerspace",
+      "dsha_kerrsoft"
+    ]
+  },
+  {
+    "label": "recent",
+    "ids": [
+      "sollis_health",
+      "sophos",
+      "snapsheet",
+      "northwestern_mutual"
+    ]
+  },
+  {
+    "label": "earlier",
+    "ids": [
+      "tangatek",
+      "signicast"
+    ]
+  }
+]

@@ -306,6 +306,69 @@ body::after {
   margin-bottom: 2rem;
 }
 
+/* Work section — scannable selected-work panel grouped by recency.
+ * No dates by design; LinkedIn carries the full chronology. */
+.work-section {
+  background: var(--terminal-bg);
+  color: var(--terminal-fg);
+  font-family: var(--terminal-font);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  padding: 4rem 1.5rem;
+}
+
+.work-section h2 {
+  color: var(--terminal-accent);
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.work-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.work-group-label {
+  color: var(--terminal-accent);
+  font-size: 0.85rem;
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+  opacity: 0.85;
+}
+
+.work-group-label::before {
+  content: "> ";
+  color: var(--terminal-fg);
+  opacity: 0.6;
+}
+
+.work-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.work-item {
+  padding: 0.25rem 0;
+}
+
+.work-item-company {
+  color: var(--terminal-accent);
+}
+
+.work-item-sep {
+  opacity: 0.5;
+}
+
+.work-item-title {
+  opacity: 0.85;
+}
+
 .about-prose p + p {
   margin-top: 1.5rem;
 }
