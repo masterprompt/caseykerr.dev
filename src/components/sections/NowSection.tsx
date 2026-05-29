@@ -4,7 +4,9 @@ export function NowSection() {
   return (
     <section id="now" className="now-section">
       <SectionHeader title="Now" />
-      <p className="now-meta">Last updated: 2026-05-27</p>
+      <p className="now-meta">
+        Last updated: <time dateTime="2026-05-27">2026-05-27</time>
+      </p>
       <p className="now-intro">Right now I&apos;m:</p>
       <ul className="now-list">
         <li>

@@ -285,6 +285,17 @@ export function Terminal() {
       }}
       aria-label="Terminal hero"
     >
+      {/* No-JS / crawler fallback. The interactive terminal needs JS to
+          render anything meaningful; without this, the above-the-fold
+          static HTML is content-free. Hidden from JS-enabled browsers. */}
+      <noscript>
+        <div className="terminal-line">
+          Casey Kerr. Senior Full-Stack &amp; AI Engineer based in Waukesha,
+          Wisconsin. Founder of Kerrsoft (consulting) and the Waukesha
+          Makerspace. React, Node, AWS, AI integration. Scroll down for
+          About, Now, Work, Projects, Skills, and Contact.
+        </div>
+      </noscript>
       {lines.map((line, i) => {
         if (line.kind === "image") {
           return (
