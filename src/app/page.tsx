@@ -1,6 +1,6 @@
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ContactSection } from "@/components/sections/ContactSection";
-import { NowSection } from "@/components/sections/NowSection";
+import { NowTeaser } from "@/components/sections/NowTeaser";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { SectionHeader } from "@/components/sections/SectionHeader";
 import { SkillsSection } from "@/components/sections/SkillsSection";
@@ -10,9 +10,13 @@ import { Terminal } from "@/components/terminal/Terminal";
 // Sections rendered below the Terminal hero. Custom-component sections opt
 // into their own renderer; the rest use the placeholder until the matching
 // content slice lands.
+//
+// The homepage Now slot uses NowTeaser (short snapshot + link to /now),
+// not the full NowSection — /now is the canonical home for that content,
+// and duplicating it on / would split search authority between the two.
 const SECTIONS: { id: string; title: string; Component?: () => React.ReactNode }[] = [
   { id: "about", title: "About", Component: AboutSection },
-  { id: "now", title: "Now", Component: NowSection },
+  { id: "now", title: "Now", Component: NowTeaser },
   { id: "work", title: "Work", Component: WorkSection },
   { id: "projects", title: "Projects", Component: ProjectsSection },
   { id: "skills", title: "Skills", Component: SkillsSection },
