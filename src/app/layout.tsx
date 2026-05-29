@@ -55,10 +55,10 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/kerrsoft-logo.png",
-        width: 512,
-        height: 512,
-        alt: "Kerrsoft logo",
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "CRT terminal screen showing: $ whoami / Casey Kerr / Senior Full-Stack & AI Engineer / Founder, Kerrsoft",
       },
     ],
     firstName: "Casey",
@@ -66,14 +66,11 @@ export const metadata: Metadata = {
     username: "masterprompt",
   },
   twitter: {
-    // `summary` (small square thumbnail) until a proper 1200×630 OG image
-    // ships; the existing kerrsoft-logo is square and crops poorly in
-    // `summary_large_image` cards.
-    card: "summary",
+    card: "summary_large_image",
     title: "Casey Kerr · Senior Full-Stack & AI Engineer · Kerrsoft",
     description: SITE_DESCRIPTION,
     creator: "@Casey_Kerr",
-    images: ["/kerrsoft-logo.png"],
+    images: ["/og-image.png"],
   },
   icons: {
     icon: "/kerrsoft-logo.png",

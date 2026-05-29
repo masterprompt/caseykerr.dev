@@ -21,14 +21,21 @@ export const metadata: Metadata = {
     description: NOW_DESCRIPTION,
     siteName: "caseykerr.dev",
     locale: "en_US",
-    images: [{ url: "/kerrsoft-logo.png", alt: "Kerrsoft logo" }],
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "CRT terminal screen showing: $ whoami / Casey Kerr / Senior Full-Stack & AI Engineer / Founder, Kerrsoft",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Now · Casey Kerr",
     description: NOW_DESCRIPTION,
     creator: "@Casey_Kerr",
-    images: ["/kerrsoft-logo.png"],
+    images: ["/og-image.png"],
   },
 };
 
