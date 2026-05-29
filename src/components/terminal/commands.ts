@@ -95,9 +95,9 @@ const helpCommand: CommandDef = {
       { kind: "output", text: "Available commands:" },
       ...listedCommands().map((c) => ({
         kind: "output" as const,
-        // Padded name column + thin separator + description gives a
-        // clear visual gutter regardless of font kerning quirks.
-        text: `  ${c.name.padEnd(HELP_NAME_COLUMN_WIDTH)}│  ${c.description}`,
+        // Padded name column + wide whitespace gutter. No visible separator,
+        // so any residual monospace-alignment quirks aren't obvious.
+        text: `  ${c.name.padEnd(HELP_NAME_COLUMN_WIDTH)}    ${c.description}`,
       })),
     ],
   }),

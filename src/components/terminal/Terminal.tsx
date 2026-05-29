@@ -3,6 +3,7 @@
 import {
   useCallback,
   useEffect,
+  useLayoutEffect,
   useRef,
   useState,
   useSyncExternalStore,
@@ -62,6 +63,14 @@ export function Terminal() {
     getIsMobileServer,
   );
   const inputRef = useRef<HTMLInputElement>(null);
+  const terminalRef = useRef<HTMLElement>(null);
+
+  // Auto-scroll the terminal to the bottom whenever new output appears, so
+  // the latest line + the input prompt stay visible like a real terminal.
+  useLayoutEffect(() => {
+    const el = terminalRef.current;
+    if (el) el.scrollTop = el.scrollHeight;
+  }, [lines, demoText]);
 
   /**
    * Append response lines with a typewriter effect (one character at a time
@@ -269,6 +278,7 @@ export function Terminal() {
 
   return (
     <section
+      ref={terminalRef}
       className="terminal"
       onClick={() => {
         if (!isMobile) inputRef.current?.focus();

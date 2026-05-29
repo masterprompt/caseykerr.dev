@@ -2,13 +2,20 @@
   "meta": {
     "name": "Casey Kerr",
     "email": "me@caseykerr.com",
+    "phone": "414-573-2877",
     "location": "Waukesha, Wisconsin",
     "linkedin": "linkedin.com/in/caseykerr",
     "github": "github.com/masterprompt",
-    "portfolio": ""
+    "portfolio": "",
+    "twitter": "@Casey_Kerr",
+    "facebook": "facebook.com/case.t.kerr"
   },
-  "headline_default": "Senior Software Engineer — Full-Stack (React, Node.js, AWS)",
-  "summary_default": "Senior Software Engineer with deep full-stack expertise (React, Node.js, AWS) and a proven\ntrack record of modernizing legacy codebases, designing scalable architectures, and\nstreamlining CI/CD pipelines. Skilled in mentoring junior developers, integrating third-party\nsolutions, and leading technical teams to build both consumer-facing and enterprise\napplications. Adept at collaborating with cross-functional teams, managing agile projects, and\ninterfacing directly with stakeholders to deliver impactful, high-quality software.\n",
+  "variant": {
+    "id": "portfolio",
+    "label": "Portfolio Data Feed (caseykerr.dev + worker)"
+  },
+  "headline": "Senior Software Engineer — Full-Stack (React, Node.js, AWS)",
+  "summary": "Senior Software Engineer with deep full-stack expertise (React, Node.js, AWS) and a proven\ntrack record of modernizing legacy codebases, designing scalable architectures, and\nstreamlining CI/CD pipelines. Skilled in mentoring junior developers, integrating third-party\nsolutions, and leading technical teams to build both consumer-facing and enterprise\napplications. Adept at collaborating with cross-functional teams, managing agile projects, and\ninterfacing directly with stakeholders to deliver impactful, high-quality software.",
   "skills": [
     {
       "id": "react",
@@ -2236,7 +2243,7 @@
           "type": "repo",
           "url": "https://github.com/masterprompt/alfred-agent",
           "caption": "Source / config repo",
-          "public": false
+          "visibility": "private"
         }
       ],
       "summary": "A deployed, always-on agentic LLM assistant running 24/7 on self-hosted homelab hardware.\n",
@@ -2281,7 +2288,13 @@
         "pandoc",
         "LaTeX"
       ],
-      "media": [],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/WaukeshaMakerspace/governance-scribe",
+          "visibility": "private"
+        }
+      ],
       "summary": "An LLM-powered pipeline that turns raw meeting transcripts into board-ready minutes, action items, and agendas — in active use for nonprofit governance.\n",
       "bullets": [
         {
@@ -2327,7 +2340,13 @@
         "JWT",
         "OAuth 2.0"
       ],
-      "media": [],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/WaukeshaMakerspace/keymaster",
+          "visibility": "private"
+        }
+      ],
       "summary": "A centralized OAuth 2.0 / SSO and API-key management hub serving as the security backbone for a multi-service application ecosystem.\n",
       "bullets": [
         {
@@ -2373,7 +2392,13 @@
         "NextAuth",
         "AWS S3"
       ],
-      "media": [],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/WaukeshaMakerspace/atlas-inventory-system",
+          "visibility": "private"
+        }
+      ],
       "summary": "A polished full-stack inventory platform for tools, equipment, and materials with hierarchical locations, tagging, and search.\n",
       "bullets": [
         {
@@ -2415,6 +2440,11 @@
           "type": "demo",
           "url": "https://jarvis.caseykerr.dev",
           "caption": "Live application"
+        },
+        {
+          "type": "repo",
+          "url": "https://github.com/Kerrsoft-Labs/jarvis-app",
+          "visibility": "private"
         }
       ],
       "summary": "A shipped, live personal dashboard and kanban board built on Next.js 16 with AWS Cognito authentication — daily-driver tooling deployed under the caseykerr.dev domain.\n",
@@ -2460,7 +2490,13 @@
         "Fastify",
         "Drizzle"
       ],
-      "media": [],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/WaukeshaMakerspace/guildhall",
+          "visibility": "private"
+        }
+      ],
       "summary": "A comprehensive modular-monolith membership management platform — members, events, email, invoicing — designed to replace Wild Apricot for a nonprofit ecosystem.\n",
       "bullets": [
         {
@@ -2502,7 +2538,13 @@
         "Commander.js",
         "Wild Apricot"
       ],
-      "media": [],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/WaukeshaMakerspace/apricot-event-planter",
+          "visibility": "private"
+        }
+      ],
       "summary": "A command-line tool that uses the Claude API to draft and publish Wild Apricot events from natural-language prompts — paired companion to the apricot-harvester sync utility.\n",
       "bullets": [
         {
@@ -2541,7 +2583,7 @@
           "type": "repo",
           "url": "https://github.com/masterprompt/echo-chamber",
           "caption": "Public source repo",
-          "public": false
+          "visibility": "private"
         }
       ],
       "summary": "A personal memoir and life-lessons project built around an AI-assisted workflow: audio → transcription → analysis → thematic organization.\n",
@@ -2579,7 +2621,13 @@
         "Hono",
         "Drizzle"
       ],
-      "media": [],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/Kerrsoft-Labs/parallax-rpg",
+          "visibility": "private"
+        }
+      ],
       "summary": "An asynchronous correspondence-style RPG platform inspired by play-by-mail games — private turns, asymmetric information, AI-assisted narrative synthesis, slow play.\n",
       "bullets": [
         {
@@ -2616,7 +2664,13 @@
         "Express",
         "monorepo"
       ],
-      "media": [],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/Kerrsoft-Labs/character-forge",
+          "visibility": "private"
+        }
+      ],
       "summary": "A configurable TTRPG character creation platform with full lifecycle management (create, level, manage characters across game systems) and a package-based extensibility model.\n",
       "bullets": [
         {
@@ -2692,7 +2746,7 @@
           "type": "repo",
           "url": "https://github.com/masterprompt/crowd-eye",
           "caption": "Public source repo",
-          "public": false
+          "visibility": "private"
         }
       ],
       "summary": "A privacy-first foot-traffic counter for conference and craft-fair booths — edge face detection + embedding vectors, no cloud, no image storage.\n",
@@ -2733,7 +2787,13 @@
         "CompreFace",
         "Ubiquiti cameras"
       ],
-      "media": [],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/WaukeshaMakerspace/presence-spotter",
+          "visibility": "private"
+        }
+      ],
       "summary": "A real-time facial-recognition presence monitoring system pairing Ubiquiti cameras with CompreFace and Redis to track who is currently in a physical space.\n",
       "bullets": [
         {
@@ -2769,7 +2829,13 @@
         "Drizzle",
         "Material UI"
       ],
-      "media": [],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/WaukeshaMakerspace/mug-shot",
+          "visibility": "private"
+        }
+      ],
       "summary": "An admin web interface for reviewing facial-recognition enrollments — surfaces unknown faces detected by Presence Spotter and lets admins assign them to known members.\n",
       "bullets": [
         {
@@ -2812,7 +2878,8 @@
         {
           "type": "repo",
           "url": "https://github.com/masterprompt/caseykerr.dev",
-          "caption": "Public source repo"
+          "caption": "Public source repo",
+          "visibility": "public"
         }
       ],
       "summary": "A Next.js 16 personal portfolio site deployed to GitHub Pages, surfacing project work and writing under caseykerr.dev.\n",
@@ -2857,7 +2924,13 @@
         "Drizzle",
         "monorepo"
       ],
-      "media": [],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/Kerrsoft-Labs/dsha-suite",
+          "visibility": "private"
+        }
+      ],
       "summary": "A multi-app monorepo (Hono API, React web client, Expo mobile client, MySQL/Drizzle) replacing a legacy DSHA student enrollment and course-management platform — built primarily through AI with human-reviewed architecture and code.\n",
       "bullets": [
         {
@@ -2882,7 +2955,10 @@
       "tags": [
         "gamedev"
       ],
-      "skills": [],
+      "skills": [
+        "unity",
+        "csharp"
+      ],
       "tech": [
         "avatar framework",
         "Mii-style customization"
@@ -2922,6 +2998,7 @@
       ],
       "skills": [
         "unity",
+        "csharp",
         "mobile_games"
       ],
       "tech": [
@@ -2971,6 +3048,7 @@
       ],
       "skills": [
         "unity",
+        "csharp",
         "mobile_games"
       ],
       "tech": [
@@ -3008,7 +3086,10 @@
       "tags": [
         "gamedev"
       ],
-      "skills": [],
+      "skills": [
+        "unity",
+        "csharp"
+      ],
       "tech": [],
       "media": [
         {
@@ -3038,7 +3119,8 @@
         "gamedev"
       ],
       "skills": [
-        "unity"
+        "unity",
+        "csharp"
       ],
       "tech": [
         "Steam Greenlight"
@@ -3101,6 +3183,7 @@
       ],
       "skills": [
         "unity",
+        "csharp",
         "mobile_games"
       ],
       "tech": [
@@ -3168,7 +3251,13 @@
       "tech": [
         "Cinemachine"
       ],
-      "media": [],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/Kerrsoft-Labs/project-lantern",
+          "visibility": "private"
+        }
+      ],
       "summary": "A 2D top-down adventure game prototype (codename \"Project Lantern\"; eventual title \"The Lore of Hope\") in Unity 6 — SNES-era aesthetic with modern controls.\n",
       "bullets": [
         {
@@ -3202,7 +3291,13 @@
         "Fish-Networking",
         "Cassandra"
       ],
-      "media": [],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/masterprompt/tinkerverse",
+          "visibility": "private"
+        }
+      ],
       "summary": "A voxel-based sandbox multiplayer game design (Minecraft / No Man's Sky-inspired) on Unity 2022 LTS with Fish-Networking and a Node/Postgres/Cassandra backend.\n",
       "bullets": [
         {
@@ -3230,7 +3325,13 @@
       "tech": [
         "tabletop wargame rules"
       ],
-      "media": [],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/Kerrsoft-Labs/gridiron",
+          "visibility": "private"
+        }
+      ],
       "summary": "A tactical tabletop miniature wargame design (11-on-11 football on a grid) — physical game design and rules documentation project.\n",
       "bullets": [
         {
@@ -3264,7 +3365,8 @@
         {
           "type": "repo",
           "url": "https://github.com/masterprompt/hitchhikers-guide-prop",
-          "caption": "Public source repo"
+          "caption": "Public source repo",
+          "visibility": "public"
         }
       ],
       "summary": "A working replica of the Hitchhiker's Guide to the Galaxy clamshell book prop from the 2005 film — animated screen + electronics in a 3D-printed shell.\n",
@@ -3301,7 +3403,8 @@
         {
           "type": "repo",
           "url": "https://github.com/WaukeshaMakerspace/chromablast",
-          "caption": "Public source repo"
+          "caption": "Public source repo",
+          "visibility": "public"
         }
       ],
       "summary": "An Arduino-based arcade game using addressable LEDs and buttons — a color-matching shooter built for the Waukesha Makerspace.\n",
@@ -3337,7 +3440,8 @@
         {
           "type": "repo",
           "url": "https://github.com/masterprompt/companion-cube",
-          "caption": "Public source repo"
+          "caption": "Public source repo",
+          "visibility": "public"
         },
         {
           "type": "youtube",
@@ -3383,7 +3487,8 @@
         {
           "type": "repo",
           "url": "https://github.com/WaukeshaMakerspace/makercade-marquee",
-          "caption": "Public source repo"
+          "caption": "Public source repo",
+          "visibility": "public"
         }
       ],
       "summary": "An Arduino-controlled WS2812B LED marquee for the Waukesha Makerspace's retro arcade cabinet, with potentiometer + button mode controls.\n",
@@ -3414,7 +3519,13 @@
       "tech": [
         "Arduino"
       ],
-      "media": [],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/WaukeshaMakerspace/administration-cabinet-arduino",
+          "visibility": "private"
+        }
+      ],
       "summary": "An Arduino project supporting the Waukesha Makerspace administration cabinet.\n",
       "bullets": [
         {
@@ -3450,7 +3561,13 @@
         "UniFi Access",
         "Swagger"
       ],
-      "media": [],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/WaukeshaMakerspace/access-harvester",
+          "visibility": "private"
+        }
+      ],
       "summary": "A Node.js sync tool that harvests user/group data from UniFi Access into MySQL, with a Fastify REST API and Swagger documentation.\n",
       "bullets": [
         {
@@ -3484,7 +3601,13 @@
       "tech": [
         "UniFi Access"
       ],
-      "media": [],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/WaukeshaMakerspace/access-steward",
+          "visibility": "private"
+        }
+      ],
       "summary": "A containerized Node.js service that keeps the membership database in sync with UniFi Access — provisions and deactivates user access automatically.\n",
       "bullets": [
         {
@@ -3518,7 +3641,13 @@
         "Drizzle",
         "Wild Apricot"
       ],
-      "media": [],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/WaukeshaMakerspace/apricot-harvester",
+          "visibility": "private"
+        }
+      ],
       "summary": "A scheduled Node.js utility that syncs member data from Wild Apricot into MySQL.\n",
       "bullets": [
         {
@@ -3584,7 +3713,13 @@
       "tech": [
         "diff engine"
       ],
-      "media": [],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/WaukeshaMakerspace/sync-sentinel",
+          "visibility": "private"
+        }
+      ],
       "summary": "A `git diff`-style comparison engine for membership and access systems — compares data sources and produces actionable reconciliation lists.\n",
       "bullets": [
         {
@@ -3619,7 +3754,13 @@
         "Hono",
         "Drizzle"
       ],
-      "media": [],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/WaukeshaMakerspace/makers-calendar",
+          "visibility": "private"
+        }
+      ],
       "summary": "A streamlined event-management system replacing Wild Apricot's event complexity — member + public registration, codes, reminders.\n",
       "bullets": [
         {
@@ -3651,7 +3792,13 @@
       "tech": [
         "Vite"
       ],
-      "media": [],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/masterprompt/waukesha-makerspace-website",
+          "visibility": "private"
+        }
+      ],
       "summary": "The public marketing website for Waukesha Makerspace.\n",
       "bullets": [
         {
@@ -3681,7 +3828,13 @@
         "Vite",
         "GitHub Pages"
       ],
-      "media": [],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/masterprompt/waukesha-makerspace-floor-layout-tool",
+          "visibility": "public"
+        }
+      ],
       "summary": "An interactive floor-plan layout tool for the Waukesha Makerspace, deployed to GitHub Pages.\n",
       "bullets": [
         {
@@ -3709,7 +3862,13 @@
         "Ghost CMS",
         "Markdown"
       ],
-      "media": [],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/WaukeshaMakerspace/makerspace-launchpad-blog",
+          "visibility": "private"
+        }
+      ],
       "summary": "A content repository for a blog about starting and running community makerspaces — source of truth that publishes to a Ghost CMS.\n",
       "bullets": [
         {
@@ -3746,7 +3905,13 @@
         "Wild Apricot",
         "UniFi"
       ],
-      "media": [],
+      "media": [
+        {
+          "type": "repo",
+          "url": "https://github.com/masterprompt/waukesha-makerspace-utilities",
+          "visibility": "private"
+        }
+      ],
       "summary": "A pnpm monorepo of internal Wild Apricot + UniFi integration tools — Express API, React SPA, and CLI scripts.\n",
       "bullets": [
         {
@@ -3782,7 +3947,8 @@
         {
           "type": "repo",
           "url": "https://github.com/masterprompt/react-api-service-layer",
-          "caption": "Public source repo"
+          "caption": "Public source repo",
+          "visibility": "public"
         }
       ],
       "summary": "An npm-published React utility providing an ApiService abstraction for defining service classes around HTTP APIs.\n",
@@ -3818,7 +3984,8 @@
         {
           "type": "repo",
           "url": "https://github.com/masterprompt/react-compose-provider",
-          "caption": "Public source repo"
+          "caption": "Public source repo",
+          "visibility": "public"
         }
       ],
       "summary": "An npm package for composing multiple React providers into a single wrapper component.\n",
@@ -3854,7 +4021,8 @@
         {
           "type": "repo",
           "url": "https://github.com/masterprompt/react-controller-context",
-          "caption": "Public source repo"
+          "caption": "Public source repo",
+          "visibility": "public"
         }
       ],
       "summary": "An npm package generating React Context + Provider pairs from controller hooks via a `createContextBundle` helper.\n",
@@ -3916,7 +4084,10 @@
       "tags": [
         "hardware"
       ],
-      "skills": [],
+      "skills": [
+        "unity",
+        "csharp"
+      ],
       "tech": [
         "VR"
       ],
@@ -3956,7 +4127,7 @@
           "type": "repo",
           "url": "https://github.com/masterprompt/resumatic",
           "caption": "Public source repo",
-          "public": false
+          "visibility": "private"
         }
       ],
       "summary": "A personal resume management system: one canonical YAML source of truth + variant configs that render to Markdown and PDF via md-to-pdf.\n",
@@ -3994,7 +4165,7 @@
           "type": "repo",
           "url": "https://github.com/masterprompt/kerr-home-lab",
           "caption": "Public configuration repo",
-          "public": false
+          "visibility": "private"
         }
       ],
       "summary": "Documentation and configuration for a multi-site homelab — network infrastructure, services, and hosts at two physical locations linked via Twingate.\n",
@@ -4028,7 +4199,7 @@
           "type": "repo",
           "url": "https://github.com/masterprompt/the-chronoverse",
           "caption": "Public manuscript repo",
-          "public": false
+          "visibility": "private"
         }
       ],
       "summary": "A hard science-fiction horror book series set in the Sol system circa 2130, opening with \"The Chronos Incident\" — a prion outbreak spreading through a station network.\n",
@@ -4084,16 +4255,5 @@
     "Architecting and building the DSHA Applied Wellness Suite primarily through AI — setting the architectural direction and reviewing the AI's output — alongside AI-assisted delivery across numerous personal projects.",
     "Built a working machine-learning bot prototype in two days at Northwestern Mutual's internal ML competition (team of 6).",
     "Designed and developed Amazon Alexa voice skills and IoT prototypes (Node, Alexa Skills Kit, AWS Lambda)."
-  ],
-  "_sync": {
-    "sourceFile": "content/resume.yaml",
-    "sourceRepo": "github.com/masterprompt/resumatic (private)",
-    "generatedAt": "2026-05-28T18:21:18.777Z",
-    "generatedBy": "scripts/sync-portfolio.js",
-    "sanitization": [
-      "dropped: meta.phone",
-      "dropped: meta.twitter",
-      "dropped: meta.facebook"
-    ]
-  }
+  ]
 }

@@ -10,9 +10,11 @@
   --terminal-bg: #141414;
   --terminal-fg: #39ff14;
   --terminal-accent: #ffb000;
-  --terminal-font: var(--font-geist-mono), "Courier New", ui-monospace, monospace;
+  --terminal-font: ui-monospace, "SF Mono", Menlo, Consolas, "Courier New", monospace;
   --terminal-bloom: 0 0 3px currentColor;
   --terminal-scanline-opacity: 0.45;
+  --terminal-vignette-strength: 0.55;
+  --terminal-glare-strength: 0.06;
 }
 
 @theme inline {
@@ -36,38 +38,37 @@ body {
 }
 
 /* ──────────────────────────────────────────────────────────────────────
- * Terminal hero
- * Visual frame for the Auto-demo and Live REPL phases (CONTEXT.md).
- * Scanlines, bloom, prefers-reduced-motion handling arrive in #12.
+ * Global CRT overlay
+ * Scanlines + vignette + glare live on the body via position: fixed so they
+ * cover the entire viewport regardless of scroll. No section-boundary seam
+ * between the terminal and the sections below — the whole page is one CRT.
  * ──────────────────────────────────────────────────────────────────── */
-.terminal {
-  background: var(--terminal-bg);
-  color: var(--terminal-fg);
-  font-family: var(--terminal-font);
-  font-size: 0.95rem;
-  line-height: 1.5;
-  min-height: 100vh;
-  padding: 2rem 1.5rem;
-  cursor: text;
-  position: relative; /* anchor for the ::after scanline overlay */
-  text-shadow: var(--terminal-bloom);
-  /* Disable OpenType features that can break monospace alignment.
-   * Geist Mono ships with kerning + contextual alternates enabled by
-   * default via next/font; both can subtly vary character widths and
-   * misalign columns in monospace-formatted output like `help`. */
-  font-feature-settings: "calt" 0, "kern" 0, "liga" 0;
-  font-variant-ligatures: none;
-  font-kerning: none;
-}
-
-/* Scanlines + subtle flicker — overlay sits above content via ::after but
- * doesn't block clicks (pointer-events: none). Lines are ~1px on / 2px off
- * at low opacity; readability stays fine. */
-.terminal::after {
+body::before {
   content: "";
-  position: absolute;
+  position: fixed;
   inset: 0;
   pointer-events: none;
+  z-index: 100;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, var(--terminal-glare-strength)) 0%,
+      rgba(255, 255, 255, 0) 45%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse at center,
+      transparent 40%,
+      rgba(0, 0, 0, var(--terminal-vignette-strength)) 100%
+    );
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 101;
   background: repeating-linear-gradient(
     0deg,
     rgba(0, 0, 0, 0.6) 0,
@@ -99,16 +100,49 @@ body {
   }
 }
 
-/* Respect the user's motion preference: kill the cursor blink, scanline
- * flicker, and dance bounce. Scanlines themselves stay (static is fine);
- * the cursor stays visible as a solid block. */
 @media (prefers-reduced-motion: reduce) {
-  .terminal::after,
+  body::after,
   .terminal-cursor,
   .terminal-dance {
     animation: none;
   }
 }
+
+/* ──────────────────────────────────────────────────────────────────────
+ * Terminal hero
+ * Visual frame for the Auto-demo and Live REPL phases (CONTEXT.md).
+ * Scanlines, bloom, prefers-reduced-motion handling arrive in #12.
+ * ──────────────────────────────────────────────────────────────────── */
+.terminal {
+  background: var(--terminal-bg);
+  color: var(--terminal-fg);
+  font-family: var(--terminal-font);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  /* Fixed viewport height with internal scroll — content overflows up like
+   * a real terminal as more is typed/output. 100dvh handles mobile URL-bar
+   * shrink without resizing the terminal frame. */
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow-y: auto;
+  padding: 2rem 1.5rem;
+  cursor: text;
+  position: relative; /* anchor for the ::after scanline overlay */
+  text-shadow: var(--terminal-bloom);
+  /* Disable OpenType features that can break monospace alignment.
+   * Geist Mono ships with kerning + contextual alternates enabled by
+   * default via next/font; both can subtly vary character widths and
+   * misalign columns in monospace-formatted output like `help`. */
+  font-feature-settings: "calt" 0, "kern" 0, "liga" 0;
+  font-variant-ligatures: none;
+  font-kerning: none;
+}
+
+/* Note: scanlines + vignette + glare are now applied globally via
+ * body::before / body::after (above) so they span the whole viewport
+ * without a visible seam at the terminal's bottom edge. The terminal
+ * keeps its own background color + bloom, but its overlay pseudo-elements
+ * have moved up to body. */
 
 .terminal-line {
   white-space: pre-wrap;
