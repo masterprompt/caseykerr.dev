@@ -29,9 +29,9 @@ export function AboutSection() {
           electronics home to take apart and rebuild.
         </p>
         <p>
-          I got here the long way. From there the road wound through Apple
-          Industrial Machine Service, where I both built automated factory
-          equipment and programmed the PLCs that ran it. A few years at
+          I got here the long way. Apple Industrial Machine Service first,
+          building automated factory equipment and programming the PLCs that
+          ran it. A few years at
           Signicast next, automating foundry assembly lines that replaced
           thirty operators with four. Then GE Medical, calibrating MRI and PET
           scanners. Then a zigzag through enterprise Java, AngularJS, and
