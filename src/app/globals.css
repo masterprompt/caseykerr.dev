@@ -179,15 +179,19 @@ body::after {
   align-items: baseline;
 }
 
-/* Clickable command row in `help` output. Looks like a normal terminal
- * line; reveals as interactive on hover/focus so the menu reads as
- * text-first and only becomes "buttony" when the visitor reaches for it. */
+/* Clickable command row in `help` output. Wide screens get a monospace
+ * columnar layout (name column + description). Narrow screens stack
+ * name above description with vertical breathing room so wrapped rows
+ * don't visually fuse together. Reveals as interactive on hover/focus
+ * so the menu reads as text-first and only becomes "buttony" when the
+ * visitor reaches for it. */
 .terminal-help-row {
-  display: block;
+  display: flex;
+  align-items: baseline;
   width: 100%;
   background: transparent;
   border: 0;
-  padding: 0;
+  padding: 0.1rem 0 0.1rem 2ch;
   margin: 0;
   font: inherit;
   color: inherit;
@@ -195,10 +199,26 @@ body::after {
   cursor: pointer;
 }
 
+.terminal-help-row__name {
+  flex: 0 0 auto;
+  width: 12ch;
+  padding-inline-end: 2ch;
+}
+
+.terminal-help-row__description {
+  flex: 1 1 auto;
+}
+
 .terminal-help-row:hover,
 .terminal-help-row:focus-visible {
   color: var(--terminal-accent);
   outline: none;
+}
+
+@media (max-width: 600px) {
+  .terminal-help-row__description {
+    display: none;
+  }
 }
 
 /* Inline clickable command names — used by `ls` output. Gap matches the

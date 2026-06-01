@@ -334,7 +334,12 @@ export function Terminal() {
               className="terminal-line terminal-help-row"
               onClick={() => void executeCommand(line.commandName)}
             >
-              {line.text}
+              <span className="terminal-help-row__name">
+                {line.commandName}
+              </span>
+              <span className="terminal-help-row__description">
+                {line.description}
+              </span>
             </button>
           );
         }
