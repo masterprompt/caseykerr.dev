@@ -21,9 +21,13 @@ import {
 // during render (no setState in an effect) and stay SSR-safe. Resize is
 // intentionally not subscribed to in #03 — flipping desktop/mobile mid-session
 // is rare and would shuffle the UI in a confusing way during a Live REPL.
+// `(pointer: coarse) and (hover: none)` targets devices whose primary input
+// is touch with no hover (phones, tablets without a keyboard). Touchscreen
+// laptops report `pointer: fine` because the trackpad is primary, so they
+// correctly get the full REPL.
 const noopSubscribe = () => () => {};
 const getIsMobile = () =>
-  window.innerWidth < 768 || navigator.maxTouchPoints > 0;
+  window.matchMedia("(pointer: coarse) and (hover: none)").matches;
 const getIsMobileServer = () => false;
 
 /**
@@ -33,9 +37,9 @@ const getIsMobileServer = () => false;
  *   1. Auto-demo: typewriter sequence walking through AUTO_DEMO steps.
  *   2. Live REPL: keyboard-driven prompt (desktop only).
  *
- * Mobile (viewport < 768px OR navigator.maxTouchPoints > 0): auto-demo
- * plays, then a "tap to continue" cue replaces the input and scrolls
- * past the hero on tap.
+ * Touch-primary devices (pointer: coarse + hover: none — phones and
+ * keyboardless tablets): auto-demo plays, then a "tap to continue" cue
+ * replaces the input and scrolls past the hero on tap.
  */
 
 const PROMPT = "$ ";
