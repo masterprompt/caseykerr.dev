@@ -179,6 +179,52 @@ body::after {
   align-items: baseline;
 }
 
+/* Clickable command row in `help` output. Looks like a normal terminal
+ * line; reveals as interactive on hover/focus so the menu reads as
+ * text-first and only becomes "buttony" when the visitor reaches for it. */
+.terminal-help-row {
+  display: block;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.terminal-help-row:hover,
+.terminal-help-row:focus-visible {
+  color: var(--terminal-accent);
+  outline: none;
+}
+
+/* Inline clickable command names — used by `ls` output. Gap matches the
+ * old two-space gutter so it still reads as a monospace shell listing. */
+.terminal-command-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 2ch;
+}
+
+.terminal-command-link {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.terminal-command-link:hover,
+.terminal-command-link:focus-visible {
+  color: var(--terminal-accent);
+  outline: none;
+}
+
 .terminal-input {
   background: transparent;
   border: 0;
@@ -208,24 +254,6 @@ body::after {
   50% {
     transform: translateY(-10px);
   }
-}
-
-/* Mobile-only "tap to continue" cue (per #03 mobile fallback). */
-.terminal-mobile-continue {
-  display: inline-block;
-  background: transparent;
-  border: 1px dashed var(--terminal-accent);
-  color: var(--terminal-accent);
-  font: inherit;
-  padding: 0.75rem 1.25rem;
-  margin-top: 1.5rem;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.terminal-mobile-continue:focus-visible {
-  outline: 2px solid var(--terminal-accent);
-  outline-offset: 2px;
 }
 
 /* Section header: title on the left, back-to-top link on the right. */

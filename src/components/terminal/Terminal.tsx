@@ -37,9 +37,10 @@ const getIsMobileServer = () => false;
  *   1. Auto-demo: typewriter sequence walking through AUTO_DEMO steps.
  *   2. Live REPL: keyboard-driven prompt (desktop only).
  *
- * Touch-primary devices (pointer: coarse + hover: none — phones and
- * keyboardless tablets): auto-demo plays, then a "tap to continue" cue
- * replaces the input and scrolls past the hero on tap.
+ * The REPL input is rendered on every device. On touch-primary devices
+ * (pointer: coarse + hover: none) we skip autofocus so the on-screen
+ * keyboard doesn't pop up unbidden — visitors can tap the input to
+ * activate it, or just scroll past.
  */
 
 const PROMPT = "$ ";
@@ -78,15 +79,24 @@ export function Terminal() {
 
   /**
    * Append response lines with a typewriter effect (one character at a time
-   * per line, with a small pause between lines). Image lines render
-   * instantly. Used by `executeCommand`; the `ask` command's async path
-   * skips this because it has its own typewriter for the streamed answer.
+   * per line, with a small pause between lines). Image and help-row lines
+   * render instantly — help-row needs to be fully present so the click
+   * target is unambiguous; per-char typing also makes the menu feel slow.
+   * Used by `executeCommand`; the `ask` command's async path skips this
+   * because it has its own typewriter for the streamed answer.
    */
   const typewriteLines = useCallback(
     async (lines: CommandLine[]): Promise<void> => {
       for (const line of lines) {
-        if (line.kind === "image") {
+        if (
+          line.kind === "image" ||
+          line.kind === "help-row" ||
+          line.kind === "command-list"
+        ) {
           setLines((prev) => [...prev, line]);
+          if (INTER_LINE_PAUSE_MS > 0) {
+            await sleep(INTER_LINE_PAUSE_MS);
+          }
           continue;
         }
         const fullText = line.text;
@@ -97,7 +107,12 @@ export function Terminal() {
             if (prev.length === 0) return prev;
             const out = prev.slice();
             const last = out[out.length - 1];
-            if (last && last.kind !== "image") {
+            if (
+              last &&
+              last.kind !== "image" &&
+              last.kind !== "help-row" &&
+              last.kind !== "command-list"
+            ) {
               out[out.length - 1] = { ...line, text: fullText.slice(0, i) };
             }
             return out;
@@ -274,12 +289,6 @@ export function Terminal() {
     setInput("");
   }
 
-  function handleMobileContinue() {
-    document
-      .getElementById("about")
-      ?.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-
   return (
     <section
       ref={terminalRef}
@@ -317,6 +326,34 @@ export function Terminal() {
             </div>
           );
         }
+        if (line.kind === "help-row") {
+          return (
+            <button
+              key={i}
+              type="button"
+              className="terminal-line terminal-help-row"
+              onClick={() => void executeCommand(line.commandName)}
+            >
+              {line.text}
+            </button>
+          );
+        }
+        if (line.kind === "command-list") {
+          return (
+            <div key={i} className="terminal-line terminal-command-list">
+              {line.commandNames.map((name) => (
+                <button
+                  key={name}
+                  type="button"
+                  className="terminal-command-link"
+                  onClick={() => void executeCommand(name)}
+                >
+                  {name}
+                </button>
+              ))}
+            </div>
+          );
+        }
         return (
           <div
             key={i}
@@ -342,7 +379,7 @@ export function Terminal() {
         </div>
       )}
 
-      {phase === "live" && !isMobile && (
+      {phase === "live" && (
         <form
           onSubmit={handleSubmit}
           className="terminal-line terminal-input-line"
@@ -361,16 +398,6 @@ export function Terminal() {
             aria-label="Terminal input"
           />
         </form>
-      )}
-
-      {phase === "live" && isMobile && (
-        <button
-          type="button"
-          onClick={handleMobileContinue}
-          className="terminal-mobile-continue"
-        >
-          tap to continue ↓
-        </button>
       )}
     </section>
   );

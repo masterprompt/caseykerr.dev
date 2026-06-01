@@ -11,7 +11,9 @@ export type CommandLine =
   | { kind: "echo"; text: string }
   | { kind: "output"; text: string }
   | { kind: "error"; text: string }
-  | { kind: "image"; src: string; alt: string; className?: string };
+  | { kind: "image"; src: string; alt: string; className?: string }
+  | { kind: "help-row"; commandName: string; text: string }
+  | { kind: "command-list"; commandNames: string[] };
 
 export type AsyncCommandUpdater = (
   fn: (prev: CommandLine[]) => CommandLine[],
@@ -79,8 +81,8 @@ const lsCommand: CommandDef = {
   run: () => ({
     lines: [
       {
-        kind: "output",
-        text: SECTIONS.map((s) => s.id).join("  "),
+        kind: "command-list",
+        commandNames: SECTIONS.map((s) => s.id),
       },
     ],
   }),
@@ -97,7 +99,8 @@ const helpCommand: CommandDef = {
     lines: [
       { kind: "output", text: "Available commands:" },
       ...listedCommands().map((c) => ({
-        kind: "output" as const,
+        kind: "help-row" as const,
+        commandName: c.name,
         // Padded name column + wide whitespace gutter. No visible separator,
         // so any residual monospace-alignment quirks aren't obvious.
         text: `  ${c.name.padEnd(HELP_NAME_COLUMN_WIDTH)}    ${c.description}`,
