@@ -390,6 +390,12 @@ export function Terminal() {
           className="terminal-line terminal-input-line"
         >
           <span className="terminal-prompt">{PROMPT}</span>
+          {input === "" && (
+            <span
+              className="terminal-cursor terminal-cursor--idle"
+              aria-hidden
+            />
+          )}
           <input
             ref={inputRef}
             className="terminal-input"

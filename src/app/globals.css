@@ -179,6 +179,14 @@ body::after {
   align-items: baseline;
 }
 
+/* Idle blinking cursor stand-in for the empty input. Gives a visual
+ * "ready" cue when the input isn't focused (notably on mobile, where
+ * we don't autofocus). When the user focuses the input, the native
+ * caret takes over and we hide ours. */
+.terminal-input-line:focus-within .terminal-cursor--idle {
+  display: none;
+}
+
 /* Clickable command row in `help` output. Wide screens get a monospace
  * columnar layout (name column + description). Narrow screens stack
  * name above description with vertical breathing room so wrapped rows
