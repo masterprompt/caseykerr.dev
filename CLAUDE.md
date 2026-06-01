@@ -7,6 +7,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run dev` - Start development server (localhost:3000)
 - `npm run build` - Production build (outputs to `out/` directory)
 - `npm run lint` - Run ESLint
+- `npm test` - Run the Vitest suite once (CI mode)
+- `npm run test:watch` - Vitest in watch mode
 - `npm start` - Start production server (not used for static export)
 
 ## Deployment
