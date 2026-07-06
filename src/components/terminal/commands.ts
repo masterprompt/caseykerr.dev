@@ -143,6 +143,7 @@ const askCommand: CommandDef = {
       async: async (updater) => {
         let answer: string;
         let isError = false;
+        let quota: { used: number; limit: number } | undefined;
 
         try {
           const res = await fetch(`${ASK_WORKER_URL}/ask`, {
@@ -153,7 +154,9 @@ const askCommand: CommandDef = {
           const data = (await res.json()) as {
             answer?: string;
             error?: string;
+            quota?: { used: number; limit: number; remaining: number };
           };
+          quota = data.quota;
           if (data.answer) {
             answer = data.answer;
           } else {
@@ -176,6 +179,17 @@ const askCommand: CommandDef = {
           updater((prev) =>
             replaceLastWith(prev, { kind, text: answer.slice(0, i) }),
           );
+        }
+
+        // Show daily-question usage from the worker (per-IP cap).
+        if (quota) {
+          updater((prev) => [
+            ...prev,
+            {
+              kind: "output",
+              text: `(${quota.used}/${quota.limit} daily questions used)`,
+            },
+          ]);
         }
       },
     };
