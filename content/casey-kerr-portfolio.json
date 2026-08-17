@@ -2546,60 +2546,6 @@
       ]
     },
     {
-      "id": "jarvis_app",
-      "name": "Jarvis — Personal Dashboard & Kanban",
-      "codename": "Jarvis",
-      "url": "https://jarvis.caseykerr.dev",
-      "tier": 1,
-      "status": "shipped",
-      "start": "2026-02",
-      "end": "present",
-      "tags": [
-        "frontend",
-        "backend",
-        "core"
-      ],
-      "skills": [
-        "nextjs",
-        "react",
-        "typescript",
-        "mysql",
-        "aws"
-      ],
-      "tech": [
-        "AWS Cognito"
-      ],
-      "media": [
-        {
-          "type": "demo",
-          "url": "https://jarvis.caseykerr.dev",
-          "caption": "Live application"
-        },
-        {
-          "type": "repo",
-          "url": "https://github.com/Kerrsoft-Labs/jarvis-app",
-          "visibility": "private"
-        }
-      ],
-      "summary": "A shipped, live personal dashboard and kanban board built on Next.js 16 with AWS Cognito authentication — daily-driver tooling deployed under the caseykerr.dev domain.\n",
-      "bullets": [
-        {
-          "text": "Designed and shipped a Next.js 16 / TypeScript / MySQL personal dashboard with AWS Cognito auth, deployed and in active daily use.",
-          "tags": [
-            "frontend",
-            "backend",
-            "core"
-          ]
-        },
-        {
-          "text": "Serves as both a productivity tool and a live engineering portfolio piece under the caseykerr.dev domain.",
-          "tags": [
-            "frontend"
-          ]
-        }
-      ]
-    },
-    {
       "id": "guildhall",
       "name": "Guildhall — Membership Management Platform",
       "codename": "Guildhall",
